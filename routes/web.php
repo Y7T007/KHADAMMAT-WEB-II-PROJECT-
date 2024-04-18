@@ -52,7 +52,7 @@ Route::get('/verify-email-client/{id}/{hash}', [ClientVerificationController::cl
 Route::post('/verify-email-client/resend', [ClientVerificationController::class, 'resend'])->name('client.verification.resend');
 
 // Client routes
-Route::get('/client/dashboard', [ClientController::class, 'dashboard'])->name('client.dashboard');
+Route::get('/client/home', [ClientController::class, 'home'])->name('client.home');
 Route::get('/client/profile', [ClientController::class, 'profile'])->name('client.profile');
 Route::get('/client/profile-edit', [ClientController::class, 'editProfile'])->name('client.profile.edit');
 Route::post('/client/profile-edit', [ClientController::class, 'updateProfile']);

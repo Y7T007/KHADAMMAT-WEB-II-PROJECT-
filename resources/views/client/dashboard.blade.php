@@ -20,10 +20,10 @@
      data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
 
 
-    @include('Partenaire.header')
+    @include('client.header')
 
 
-    @include('Partenaire.sidebar')
+    @include('client.sidebar')
     <!-- ============================================================== -->
     <!-- End Left Sidebar - style you can find in sidebar.scss  -->
     <!-- ============================================================== -->

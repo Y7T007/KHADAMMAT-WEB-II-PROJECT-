@@ -8,10 +8,10 @@ use Illuminate\Support\Facades\Hash;
 
 class ClientController extends Controller
 {
-    public function dashboard()
+    public function home()
     {
         // return the view for the client dashboard
-        return view('client.dashboard');
+        return view('client.home');
     }
 
     public function profile()
