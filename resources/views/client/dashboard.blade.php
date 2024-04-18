@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
-@include('Partenaire.head')
+@include('client.head')
 
 <body>
 <!-- ============================================================== -->
