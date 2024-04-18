@@ -38,5 +38,6 @@ class ClientRegisterController extends Controller
 
         // redirect the client to their dashboard
         return redirect()->route('client.dashboard');
+
     }
 }
