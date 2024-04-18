@@ -13,13 +13,11 @@ class ClientRegisterController extends Controller
     public function showRegistrationForm()
     {
         // return the view for the registration form
-        return view('auth.client-register');
+        return view('auth.client-auth.register-client');
     }
 
     public function register(Request $request)
     {
-        // handle the registration logic
-
         // validate the form data
         $request->validate([
             'name' => 'required|string|max:255',
@@ -39,6 +37,5 @@ class ClientRegisterController extends Controller
 
         // redirect the client to their dashboard
         return redirect()->route('client.dashboard');
-
     }
 }

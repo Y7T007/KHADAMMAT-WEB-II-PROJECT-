@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.home')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="color: white;display: flex;flex-direction: column; align-items:center;justify-items: center;">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card" style="align-items: center;justify-content: center;justify-items:center;display: flex;flex-direction: column">
                     <div class="card-header">{{ __('Client Register') }}</div>
 
                     <div class="card-body">

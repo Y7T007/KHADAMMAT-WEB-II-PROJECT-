@@ -1,8 +1,18 @@
 <?php
 
+use App\Http\Controllers\Auth\ClientRegisterController;
+use App\Http\Controllers\Auth\ClientLoginController;
+use App\Http\Controllers\Auth\ClientForgotPasswordController;
+use App\Http\Controllers\Auth\ClientResetPasswordController;
+use App\Http\Controllers\Auth\ClientVerificationController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Partenaire;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,38 +36,39 @@ Route::get('/', function () {
 //   Editors: Y7T007,1Nossairsedki                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////
 
+
 // Client Authentication routes
-Route::get('/register-client', 'Auth\ClientRegisterController@showRegistrationForm')->name('client.register');
-Route::post('/register-client', 'Auth\ClientRegisterController@register');
-Route::get('/login-client', 'Auth\ClientLoginController@showLoginForm')->name('client.login');
-Route::post('/login-client', 'Auth\ClientLoginController@login');
-Route::post('/logout-client', 'Auth\ClientLoginController@logout')->name('client.logout');
-Route::get('/reset-password-client', 'Auth\ClientForgotPasswordController@showLinkRequestForm')->name('client.password.request');
-Route::post('/reset-password-client', 'Auth\ClientForgotPasswordController@sendResetLinkEmail')->name('client.password.email');
-Route::get('/reset-password-client/{token}', 'Auth\ClientResetPasswordController@showResetForm')->name('client.password.reset');
-Route::post('/reset-password-client', 'Auth\ClientResetPasswordController@reset');
-Route::get('/verify-email-client', 'Auth\ClientVerificationController@show')->name('client.verification.notice');
-Route::get('/verify-email-client/{id}/{hash}', 'Auth\ClientVerificationController@verify')->name('client.verification.verify');
-Route::post('/verify-email-client/resend', 'Auth\ClientVerificationController@resend')->name('client.verification.resend');
+Route::get('/register-client', [ClientRegisterController::class, 'showRegistrationForm'])->name('client.register');
+Route::post('/register-client', [ClientRegisterController::class, 'register']);
+Route::get('/login-client', [ClientLoginController::class, 'showLoginForm'])->name('client.login');
+Route::post('/login-client', [ClientLoginController::class, 'login']);
+Route::post('/logout-client', [ClientLoginController::class, 'logout'])->name('client.logout');
+Route::get('/reset-password-client', [ClientForgotPasswordController::class, 'showLinkRequestForm'])->name('client.password.request');
+Route::post('/reset-password-client', [ClientForgotPasswordController::class, 'sendResetLinkEmail'])->name('client.password.email');
+Route::get('/reset-password-client/{token}', [ClientResetPasswordController::class, 'showResetForm'])->name('client.password.reset');
+Route::post('/reset-password-client', [ClientResetPasswordController::class, 'reset']);
+Route::get('/verify-email-client', [ClientVerificationController::class, 'show'])->name('client.verification.notice');
+Route::get('/verify-email-client/{id}/{hash}', [ClientVerificationController::class, 'verify'])->name('client.verification.verify');
+Route::post('/verify-email-client/resend', [ClientVerificationController::class, 'resend'])->name('client.verification.resend');
 
 // Client routes
-Route::get('/client/dashboard', 'ClientController@dashboard')->name('client.dashboard');
-Route::get('/client/profile', 'ClientController@profile')->name('client.profile');
-Route::get('/client/profile-edit', 'ClientController@editProfile')->name('client.profile.edit');
-Route::post('/client/profile-edit', 'ClientController@updateProfile');
+Route::get('/client/dashboard', [ClientController::class, 'dashboard'])->name('client.dashboard');
+Route::get('/client/profile', [ClientController::class, 'profile'])->name('client.profile');
+Route::get('/client/profile-edit', [ClientController::class, 'editProfile'])->name('client.profile.edit');
+Route::post('/client/profile-edit', [ClientController::class, 'updateProfile']);
 
 // Service routes
-Route::get('/client/all-services', 'ServiceController@index')->name('client.services.index');
-Route::get('/client/view-service/{service}', 'ServiceController@show')->name('client.services.show');
-Route::get('/client/service-history', 'ServiceController@history')->name('client.services.history');
+Route::get('/client/all-services', [ServiceController::class, 'index'])->name('client.services.index');
+Route::get('/client/view-service/{service}', [ServiceController::class, 'show'])->name('client.services.show');
+Route::get('/client/service-history', [ServiceController::class, 'history'])->name('client.services.history');
 
 // Messaging routes
-Route::get('/client/message-box', 'MessageController@index')->name('client.messages.index');
-Route::get('/client/conversation/{receiver}', 'MessageController@show')->name('client.messages.show');
-Route::post('/client/conversation/{receiver}', 'MessageController@store');
+Route::get('/client/message-box', [MessageController::class, 'index'])->name('client.messages.index');
+Route::get('/client/conversation/{receiver}', [MessageController::class, 'show'])->name('client.messages.show');
+Route::post('/client/conversation/{receiver}', [MessageController::class, 'store']);
 
 // Notification routes
-Route::get('/client/notifications', 'NotificationController@index')->name('client.notifications.index');
+Route::get('/client/notifications', [NotificationController::class, 'index'])->name('client.notifications.index');
 
 // END OF CLIENT ROUTES
 
