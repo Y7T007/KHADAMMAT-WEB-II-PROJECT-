@@ -65,7 +65,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">client</h4>
+                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1"><h2>Client</h2></h4>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
@@ -100,9 +100,26 @@
                                         <div class="output2"> <h4>{{$client->email}}</h4></div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="mot_de_passe">Mot de passe</label>
-                                        <div class="output2"> <h4>{{$client->password}}</h4></div>
+                                        <label for="mot_de_passe">Genre</label>
+                                        <div class="output2"> <h4>{{$client->genre}}</h4></div>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="mot_de_passe">Téléphone</label>
+                                        <div class="output2"> <h4>{{$client->phone_number}}</h4></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mot_de_passe">Date de Naissance</label>
+                                        <div class="output2"> <h4>{{$client->date_naissance}}</h4></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mot_de_passe">ville</label>
+                                        <div class="output2"> <h4>{{$client->ville}}</h4></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mot_de_passe">adresse</label>
+                                        <div class="output2"> <h4>{{$client->address}}</h4></div>
+                                    </div>
+                                    
                                 </form>
                             </div>
                         </div>
