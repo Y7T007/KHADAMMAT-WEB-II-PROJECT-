@@ -40,6 +40,20 @@ Route::get('/', function () {
 // Client Authentication routes
 Route::get('/register-client', [ClientRegisterController::class, 'showRegistrationForm'])->name('client.register');
 Route::post('/register-client', [ClientRegisterController::class, 'register']);
+
+// Client 3 Steps Register routes
+Route::get('/register-client/{step}', [ClientRegisterController::class, 'showRegistrationForm'])->name('client.register');
+
+
+Route::get('/register-client/step1', [ClientRegisterController::class, 'showRegistrationFormStep1'])->name('client.register.step1');
+Route::post('/register-client/step1', [ClientRegisterController::class, 'registerStep1']);
+
+Route::get('/register-client/step2', [ClientRegisterController::class, 'showRegistrationFormStep2'])->name('client.register.step2');
+Route::post('/register-client/step2', [ClientRegisterController::class, 'registerStep2']);
+
+Route::get('/register-client/step3', [ClientRegisterController::class, 'showRegistrationFormStep3'])->name('client.register.step3');
+Route::post('/register-client/step3', [ClientRegisterController::class, 'registerStep3']);
+
 Route::get('/login-client', [ClientLoginController::class, 'showLoginForm'])->name('client.login');
 Route::post('/login-client', [ClientLoginController::class, 'login']);
 Route::post('/logout-client', [ClientLoginController::class, 'logout'])->name('client.logout');
