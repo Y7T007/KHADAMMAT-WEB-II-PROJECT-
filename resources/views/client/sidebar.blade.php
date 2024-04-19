@@ -11,29 +11,35 @@
 
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="home"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
-                                    class="hide-menu">Dashboard</span></a></li>
+                                    class="hide-menu">Home</span></a></li>
                         <li class="list-divider"></li>
 
 
-                        <li class="sidebar-item"> <a class="sidebar-link" href="Interventions"
-                                aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
-                                    class="hide-menu">Interventions List
+                        <li class="sidebar-item"> <a class="sidebar-link" href="all-services"
+                                aria-expanded="false"><i class="bi bi-tools"></i><span
+                                    class="hide-menu">Nos Services
                                 </span></a>
                         </li>
 
 
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="comment"
-                            aria-expanded="false"><i style="font-weight: bold" class="icon-envelope-open"></i><span
-                                class="hide-menu">Commentaire</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="all-partners"
+                            aria-expanded="false"><i class="bi bi-people-fill"></i><span
+                                class="hide-menu">Nos Partenaires</span></a></li>
 
-                                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="AddService"
-                                    aria-expanded="false"><i style="font-weight: bold" class="icon-handbag"></i><span
-                                        class="hide-menu">Ajouter Services </span></a></li>
+                                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="services-history"
+                                    aria-expanded="false"><i class="bi bi-clock-history"></i><span
+                                        class="hide-menu">Historique </span></a></li>
 
-                    
-                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="MesServices"
-                                      aria-expanded="false"><i style="font-weight: bold" class="icon-direction"></i><span
-                                           class="hide-menu">Mes Services </span></a></li>
+
+                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="messages"
+                                      aria-expanded="false"><i class="bi bi-chat-left-text-fill"></i><span
+                                           class="hide-menu">Messagerie </span></a></li>
+                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="profil"
+                                      aria-expanded="false"><i class="bi bi-person-fill"></i><span
+                                           class="hide-menu">Profil </span></a></li>
+                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="logout"
+                                      aria-expanded="false"><i class="bi bi-box-arrow-right"></i><span
+                                           class="hide-menu">Sign Out </span></a></li>
 
                         {{-- <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="app-chat"
                                 aria-expanded="false"><i data-feather="message-square" class="feather-icon"></i><span
@@ -42,9 +48,9 @@
                                 aria-expanded="false"><i data-feather="calendar" class="feather-icon"></i><span
                                     class="hide-menu">Calendar</span></a></li>
 
-                     
 
-                       
+
+
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
                                 aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
                                     class="hide-menu">Forms </span></a>
@@ -133,9 +139,7 @@
                         </li>
                         <!-- // --> --}}
 
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="authentication-login1"
-                                aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
-                                    class="hide-menu">Logout</span></a></li>
+
                         <!-- // -->
                     </ul>
                 </nav>
