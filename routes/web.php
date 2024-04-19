@@ -9,6 +9,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\FormController; // Add this line
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Partenaire;
@@ -40,6 +41,23 @@ Route::get('/', function () {
 // Client Authentication routes
 Route::get('/register-client', [ClientRegisterController::class, 'showRegistrationForm'])->name('client.register');
 Route::post('/register-client', [ClientRegisterController::class, 'register']);
+
+// Step 1 route
+Route::post('/register-client-step1', [ClientRegisterController::class, 'registerStep1'])->name('client.register.step1');
+
+// Step 2 route
+Route::post('/register-client-step2', [ClientRegisterController::class, 'registerStep2'])->name('client.register.step2');
+
+// Step 3 route
+Route::post('/register-client-step3', [ClientRegisterController::class, 'registerStep3'])->name('client.register.step3');
+
+Route::get('/register-client-step1', [FormController::class, 'step1'])->name('step1');
+Route::post('/register-client-step1',[FormController::class, 'postStep1'])->name('postStep1');
+Route::get('/register-client-step2', [FormController::class, 'step2'])->name('step2');
+Route::post('/register-client-step2',[FormController::class, 'postStep2'])->name('postStep2');
+Route::get('/register-client-step3', [FormController::class, 'step3'])->name('step3');
+Route::post('/register-client-step3', [FormController::class, 'postStep3'])->name('postStep3');
+
 
 Route::get('/login-client', [ClientLoginController::class, 'showLoginForm'])->name('client.login');
 Route::post('/login-client', [ClientLoginController::class, 'login']);

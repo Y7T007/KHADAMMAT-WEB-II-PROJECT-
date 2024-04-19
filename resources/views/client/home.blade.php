@@ -304,6 +304,26 @@
 <script src="../Partenaire/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
 <script src="../Partenaire/assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
 <script src="../Partenaire/dist/js/pages/dashboards/dashboard1.min.js"></script>
+<script>
+    let currentStep = 1;
+    const totalSteps = 3;
+
+    function nextStep() {
+        // Hide current step
+        document.getElementById('step' + currentStep).style.display = 'none';
+
+        // Increment current step
+        currentStep++;
+
+        // If we're past the last step, wrap around to the first step
+        if (currentStep > totalSteps) {
+            currentStep = 1;
+        }
+
+        // Show next step
+        document.getElementById('step' + currentStep).style.display = 'block';
+    }
+</script>
 </body>
 
 </html>

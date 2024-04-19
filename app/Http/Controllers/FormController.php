@@ -1,21 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Client;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
-class ClientRegisterController extends Controller
+class FormController extends Controller
 {
-    public function showRegistrationForm()
+    public function step1()
     {
-        return view('auth.client-auth.register-client');
+        return view('auth.client-auth.steps.register-client-step1');
     }
 
-    public function registerStep1(Request $request)
+    public function postStep1(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
@@ -33,10 +32,15 @@ class ClientRegisterController extends Controller
 
         Auth::guard('client')->login($client);
 
-        return redirect()->route('client.register.step2');
+        return redirect()->route('register-client-step2');
     }
 
-    public function registerStep2(Request $request)
+    public function step2()
+    {
+        return view('auth.client-auth.steps.register-client-step2');
+    }
+
+    public function postStep2(Request $request)
     {
         $request->validate([
             'ville' => 'required|string|max:255',
@@ -54,10 +58,15 @@ class ClientRegisterController extends Controller
         $client->gender = $request->gender;
         $client->save();
 
-        return redirect()->route('client.register.step3');
+        return redirect()->route('register-client-step3');
     }
 
-    public function registerStep3(Request $request)
+    public function step3()
+    {
+        return view('auth.client-auth.steps.register-client-step3');
+    }
+
+    public function postStep3(Request $request)
     {
         $request->validate([
             'maison' => 'required|string|max:255',
