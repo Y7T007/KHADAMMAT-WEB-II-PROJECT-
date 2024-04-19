@@ -19,8 +19,10 @@ class ClientController extends Controller
 
     public function profile()
     {
+        $client = Auth::guard('client')->user();
+
         // return the view for the client profile
-        return view('client.profile');
+        return view('client.profile')->with('client', $client);
     }
 
     public function editProfile()

@@ -10,12 +10,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="Partenaire/assets/images/logo.jpeg">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Partenaire/assets/images/logo.jpeg">
     <title>Freedash Template - The Ultimate Multipurpose admin template</title>
     <!-- Custom CSS -->
-    <link href="Partenaire/assets/libs/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet" />
+    <link href="../Partenaire/assets/libs/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet" />
     <!-- Custom CSS -->
-    <link href="Partenaire/dist/css/style.min.css" rel="stylesheet">
+    <link href="../Partenaire/dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -44,7 +44,7 @@
         <!-- ============================================================== -->
 
         @include('client.header')
-        
+
         <!-- ============================================================== -->
         <!-- End Topbar header -->
         <!-- ============================================================== -->
@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-            
+
                 <div class="row mt-5">
                     <div class="col-md-6">
                         <div class="card">
@@ -86,15 +86,15 @@
                                     <div class="form-group">
                                         <label for="image">Image</label>
                                         <div class="custom-file">
-                                            <img style="border-radius: 50% ; width:200px ; margin-left:30px ; margin-top:10px ; margin-bottom:20px"  src="Partenaire/assets/images/users/5.jpg" alt="">
+                                            <img style="border-radius: 50% ; width:200px ; margin-left:30px ; margin-top:10px ; margin-bottom:20px"  src="../Partenaire/assets/images/users/5.jpg" alt="">
                                         </div>
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <label for="nom">Nom</label>
                                         <div class="output2"> <h4>{{$client->name}}</h4></div>
                                     </div>
-                                  
+
                                     <div class="form-group">
                                         <label for="email">Email</label>
                                         <div class="output2"> <h4>{{$client->email}}</h4></div>
@@ -136,11 +136,11 @@
                                             <div class="form-group">
                                                 <label for="note_moyenne">Note moyenne</label>
                                                 <div class="slide-reviews__rating">
-                                                    <img src="Page_Principale/images/reviews/star-gold.svg" alt="yellow star" />
-                                                    <img src="Page_Principale/images/reviews/star-gold.svg" alt="yellow star" />
-                                                    <img src="Page_Principale/images/reviews/star-gold.svg" alt="yellow star" />
-                                                    <img src="Page_Principale/images/reviews/star-gold.svg" alt="yellow star" />
-                                                    <img src="Page_Principale/images/reviews/star-grey.svg" alt="gray star" />
+                                                    <img src="../Page_Principale/images/reviews/star-gold.svg" alt="yellow star" />
+                                                    <img src="../Page_Principale/images/reviews/star-gold.svg" alt="yellow star" />
+                                                    <img src="../Page_Principale/images/reviews/star-gold.svg" alt="yellow star" />
+                                                    <img src="../Page_Principale/images/reviews/star-gold.svg" alt="yellow star" />
+                                                    <img src="../Page_Principale/images/reviews/star-grey.svg" alt="gray star" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -154,11 +154,11 @@
                         </div>
                     </div>
                 </div>
-                
-         
 
 
-            
+
+
+
 
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
@@ -181,22 +181,22 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="Partenaire/assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="Partenaire/assets/extra-libs/taskboard/js/jquery.ui.touch-punch-improved.js"></script>
-    <script src="Partenaire/assets/extra-libs/taskboard/js/jquery-ui.min.js"></script>
-    <script src="Partenaire/assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="Partenaire/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../Partenaire/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../Partenaire/assets/extra-libs/taskboard/js/jquery.ui.touch-punch-improved.js"></script>
+    <script src="../Partenaire/assets/extra-libs/taskboard/js/jquery-ui.min.js"></script>
+    <script src="../Partenaire/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../Partenaire/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- apps -->
-    <script src="Partenaire/dist/js/app-style-switcher.js"></script>
-    <script src="Partenaire/dist/js/feather.min.js"></script>
-    <script src="Partenaire/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="Partenaire/dist/js/sidebarmenu.js"></script>
+    <script src="../Partenaire/dist/js/app-style-switcher.js"></script>
+    <script src="../Partenaire/dist/js/feather.min.js"></script>
+    <script src="../Partenaire/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../Partenaire/dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
-    <script src="Partenaire/dist/js/custom.min.js"></script>
+    <script src="../Partenaire/dist/js/custom.min.js"></script>
     <!--This page JavaScript -->
-    <script src="Partenaire/assets/libs/moment/min/moment.min.js"></script>
-    <script src="Partenaire/assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
-    <script src="Partenaire/dist/js/pages/calendar/cal-init.js"></script>
+    <script src="../Partenaire/assets/libs/moment/min/moment.min.js"></script>
+    <script src="../Partenaire/assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="../Partenaire/dist/js/pages/calendar/cal-init.js"></script>
 </body>
 
 </html>
