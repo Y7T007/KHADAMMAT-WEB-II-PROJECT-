@@ -1,28 +1,30 @@
 @extends('layouts.home')
 
-@section('content')
-    $step=1;
-    {{--Switch for the steps pages based on the variable step:--}}
-    @if($step==1)
-        @include('auth.client-auth.register-client-step1')
-    @elseif($step==2)
-        @include('auth.client-auth.register-client-step2')
-    @elseif($step==3)
-        @include('auth.client-auth.register-client-step3')
-    @endif
-@endsection
-
-
 {{--@section('content')--}}
-{{--    <div class="container" style="color: white;display: flex;flex-direction: column; align-items:center;justify-items: center;">--}}
-{{--        <div class="row justify-content-center">--}}
-{{--            <div class="col-md-8">--}}
-{{--                <div class="card" style="align-items: center;justify-content: center;justify-items:center;display: flex;flex-direction: column">--}}
-{{--                    <div class="card-header">{{ __('Client Register') }}</div>--}}
+{{--    $step=1;--}}
+{{--    --}}{{--Switch for the steps pages based on the variable step:--}}
+{{--    @if($step==1)--}}
+{{--        @include('auth.client-auth.register-client-step1')--}}
+{{--    @elseif($step==2)--}}
+{{--        @include('auth.client-auth.register-client-step2')--}}
+{{--    @elseif($step==3)--}}
+{{--        @include('auth.client-auth.register-client-step3')--}}
+{{--    @endif--}}
+{{--@endsection--}}
 
-{{--                    <div class="card-body">--}}
-{{--                        <form method="POST" action="{{ route('client.register') }}">--}}
-{{--                            @csrf--}}
+
+@section('content')
+    <div class="container" style="color: white;display: flex;flex-direction: column; align-items:center;justify-items: center;">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card" style="align-items: center;justify-content: center;justify-items:center;display: flex;flex-direction: column">
+                    <div class="card-header">{{ __('Client Register') }}</div>
+
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('client.register') }}">
+                            @csrf
+
+                            @livewire('client-register')
 
 {{--                            <div class="form-group row">--}}
 {{--                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>--}}
@@ -81,10 +83,10 @@
 {{--                                    </button>--}}
 {{--                                </div>--}}
 {{--                            </div>--}}
-{{--                        </form>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--@endsection--}}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
