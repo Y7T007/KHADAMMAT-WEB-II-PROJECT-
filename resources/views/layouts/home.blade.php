@@ -14,6 +14,11 @@
     <link rel="shortcut icon" href="signIn_signup/images/logo.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="signIn_signup/css/styles.css">
     <script src="signIn_signup/js/script.js" defer></script>
+
+{{--    rECAPATCHA : --}}
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Ldo6cApAAAAANllnHYRR_lUhi3GcoX6JurvLAqp"></script>
+
+
     <style>
         /* Styling the select element */
         #user_type {
