@@ -21,10 +21,25 @@
                     <div class="card-header">{{ __('Client Register') }}</div>
 
                     <div class="card-body">
+                        <form>
+                            @csrf
+
+                            @livewire('client-register-multi-steps')
+
+                            <div class="flex items-center justify-end mt-4">
+                                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                                    {{ __('Already registered?') }}
+                                </a>
+
+                                <x-button class="ml-4">
+                                    {{ __('Register') }}
+                                </x-button>
+                            </div>
+                        </form>
                         <form method="POST" action="{{ route('client.register') }}">
                             @csrf
 
-                            @livewire('client-register')
+{{--                            @livewire('client-register-multi-steps')--}}
 
 {{--                            <div class="form-group row">--}}
 {{--                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>--}}

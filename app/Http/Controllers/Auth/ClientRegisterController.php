@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Hash;
 
 class ClientRegisterController extends Controller
 {
-    public function showRegistrationForm($step = 1)
+    public function showRegistrationForm()
     {
-        return view('auth.client-auth.register-client-step' . $step);
+        return view('auth.client-auth.register-client');
     }
 
     public function register(Request $request)
