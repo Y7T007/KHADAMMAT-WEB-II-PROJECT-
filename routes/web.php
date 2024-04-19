@@ -51,6 +51,9 @@ Route::get('/verify-email-client', [ClientVerificationController::class, 'show']
 Route::get('/verify-email-client/{id}/{hash}', [ClientVerificationController::class, 'verify'])->name('client.verification.verify');
 Route::post('/verify-email-client/resend', [ClientVerificationController::class, 'resend'])->name('client.verification.resend');
 
+// Client Logout Route:
+Route::get('/client/logout', [ClientLoginController::class, 'logout'])->name('client.logout');
+
 // Client routes
 Route::get('/client/home', [ClientController::class, 'home'])->name('client.home');
 Route::get('/client/profile', [ClientController::class, 'profile'])->name('client.profile');
