@@ -135,10 +135,6 @@
             <h4 class="card-title">Informations Maison</h4>
             <form class="mt-4">
                 <div class="form-group">
-                    <label for="metier">superficie</label>
-                    <div class="output2"> <h4>{{$client->superficie}} m²</h4></div>
-                </div>
-                <div class="form-group">
                     <label for="metier">Nombre des chambres</label>
                     <div class="output2"> <h4>{{$client->nb_chambre}}</h4></div>
                 </div>

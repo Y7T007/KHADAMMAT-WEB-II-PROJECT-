@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\ClientLoginController;
 use App\Http\Controllers\Auth\ClientForgotPasswordController;
 use App\Http\Controllers\Auth\ClientResetPasswordController;
 use App\Http\Controllers\Auth\ClientVerificationController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\MessageController;
@@ -54,6 +55,7 @@ Route::post('/verify-email-client/resend', [ClientVerificationController::class,
 // Client routes
 Route::get('/client/home', [ClientController::class, 'home'])->name('client.home');
 Route::get('/client/profile', [ClientController::class, 'profile'])->name('client.profile');
+Route::post('/upload-profile-picture/{client}', [ImageController::class, 'uploadProfilePicture'])->name('upload.profile.picture');
 Route::get('/client/profile-edit', [ClientController::class, 'editProfile'])->name('client.profile.edit');
 Route::post('/client/profile-edit', [ClientController::class, 'updateProfile']);
 
