@@ -150,7 +150,7 @@
                             <div class="mt-4 activity">
                                 <div class="d-flex align-items-start border-left-line pb-3">
                                     <div>
-                                        <img style="width: 50px ; border-radius:50%" src="Partenaire/assets/images/users/3.jpg" alt="">
+                                        <img style="width: 50px ; border-radius:50%" src="../Partenaire/assets/images/users/3.jpg" alt="">
                                     </div>
                                     <div class="ms-3 mt-2">
                                         <h5 class="text-dark font-weight-medium mb-2">Nouveau Commentaire!</h5>
@@ -162,7 +162,7 @@
                                 </div>
                                 <div class="d-flex align-items-start border-left-line pb-3">
                                     <div>
-                                        <img style="width: 50px ; border-radius:50%" src="Partenaire/assets/images/users/2.jpg" alt="">
+                                        <img style="width: 50px ; border-radius:50%" src="../Partenaire/assets/images/users/2.jpg" alt="">
                                     </div>
                                     <div class="ms-3 mt-2">
                                         <h5 class="text-dark font-weight-medium mb-2">Demande Service</h5>
@@ -173,7 +173,7 @@
                                 </div>
                                 <div class="d-flex align-items-start border-left-line">
                                     <div>
-                                        <img style="width: 50px ; border-radius:50%" src="Partenaire/assets/images/users/5.jpg" alt="">
+                                        <img style="width: 50px ; border-radius:50%" src="../Partenaire/assets/images/users/5.jpg" alt="">
                                     </div>
                                     <div class="ms-3 mt-2">
                                         <h5 class="text-dark font-weight-medium mb-2">Demande Service
@@ -220,7 +220,7 @@
                                         <td class="border-top-0 px-2 py-4">
                                             <div class="d-flex no-block align-items-center">
                                                 <div class="me-3"><img
-                                                        src="Partenaire/assets/images/users/4.jpg"
+                                                        src="../Partenaire/assets/images/users/4.jpg"
                                                         alt="user" class="rounded-circle" width="45"
                                                         height="45" /></div>
                                                 <div class="">
@@ -286,24 +286,24 @@
 <!-- ============================================================== -->
 <!-- All Jquery -->
 <!-- ============================================================== -->
-<script src="Partenaire/assets/libs/jquery/dist/jquery.min.js"></script>
-<script src="Partenaire/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../Partenaire/assets/libs/jquery/dist/jquery.min.js"></script>
+<script src="../Partenaire/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <!-- apps -->
 <!-- apps -->
-<script src="Partenaire/dist/js/app-style-switcher.js"></script>
-<script src="Partenaire/dist/js/feather.min.js"></script>
-<script src="Partenaire/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-<script src="Partenaire/dist/js/sidebarmenu.js"></script>
+<script src="../Partenaire/dist/js/app-style-switcher.js"></script>
+<script src="../Partenaire/dist/js/feather.min.js"></script>
+<script src="../Partenaire/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+<script src="../Partenaire/dist/js/sidebarmenu.js"></script>
 <!--Custom JavaScript -->
-<script src="Partenaire/dist/js/custom.min.js"></script>
+<script src="../Partenaire/dist/js/custom.min.js"></script>
 <!--This page JavaScript -->
-<script src="Partenaire/assets/extra-libs/c3/d3.min.js"></script>
-<script src="Partenaire/assets/extra-libs/c3/c3.min.js"></script>
-<script src="Partenaire/assets/libs/chartist/dist/chartist.min.js"></script>
-<script src="Partenaire/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-<script src="Partenaire/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
-<script src="Partenaire/assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
-<script src="Partenaire/dist/js/pages/dashboards/dashboard1.min.js"></script>
+<script src="../Partenaire/assets/extra-libs/c3/d3.min.js"></script>
+<script src="../Partenaire/assets/extra-libs/c3/c3.min.js"></script>
+<script src="../Partenaire/assets/libs/chartist/dist/chartist.min.js"></script>
+<script src="../Partenaire/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+<script src="../Partenaire/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
+<script src="../Partenaire/assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
+<script src="../Partenaire/dist/js/pages/dashboards/dashboard1.min.js"></script>
 </body>
 
 </html>

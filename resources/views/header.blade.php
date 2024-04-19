@@ -19,7 +19,10 @@
               <a data-goto=".talk" href="#" class="menu__link u-hover">Contact</a>
             </li>
             <li class="menu__item">
-              <a  href="{{ route('login') }}"  class="menu__link u-hover">Connexion</a>
+              <a  href="/login-client"  class="menu__link u-hover">Connexion</a>
+            </li>
+            <li class="menu__item">
+              <a  href="{{ route('login') }}"  class="menu__link u-hover">Devenir Partenaire</a>
             </li>
           </ul>
         </nav>

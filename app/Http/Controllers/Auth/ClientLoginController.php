@@ -25,7 +25,7 @@ class ClientLoginController extends Controller
         // attempt to log the client in
         if (Auth::guard('client')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
             // if successful, redirect to their intended location in the views  inside the client folder
-            return redirect()->intended(route('client.dashboard'));
+            return redirect()->intended(route('client.home'));
 
         }
 

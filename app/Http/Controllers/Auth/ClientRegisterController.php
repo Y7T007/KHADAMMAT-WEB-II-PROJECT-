@@ -36,6 +36,6 @@ class ClientRegisterController extends Controller
         Auth::guard('client')->login($client);
 
         // redirect the client to their dashboard
-        return redirect()->route('client.dashboard');
+        return redirect()->route('client.home');
     }
 }
