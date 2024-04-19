@@ -10,8 +10,11 @@ class ClientController extends Controller
 {
     public function home()
     {
-        // return the view for the client dashboard
-        return view('client.home');
+        // get the current logged in client
+        $client = Auth::guard('client')->user();
+
+        // return the view for the client dashboard with client data
+        return view('client.home')->with('client', $client);
     }
 
     public function profile()
