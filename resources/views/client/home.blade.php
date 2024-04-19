@@ -30,6 +30,8 @@
     <!-- ============================================================== -->
     <!-- Page wrapper  -->
     <!-- ============================================================== -->
+
+
     <div class="page-wrapper">
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
@@ -62,76 +64,7 @@
             <!-- *************************************************************** -->
             <div class="row">
 
-                <div  class="col-sm-6 col-lg-3">
-                    <div class="card border-end">
-                        <div style="background-color: rgba(122, 211, 246, 0.758) ; border-radius:30px ;" class="card-body">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">3</h2>
-
-                                    </div>
-                                    <h6 class=" font-weight-normal mb-0  text-truncate">Nombre Des Services
-                                    </h6>
-                                </div>
-                                <div class="ms-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 "><i style="font-size: 20px ; font-weight:bold ; color:rgb(84, 84, 84)" class="icon-basket-loaded "></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-lg-3">
-                    <div class="card border-end ">
-                        <div class="card-body" style="background-color: rgba(246, 122, 122, 0.758) ; border-radius:30px ;">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium">2</h2>
-                                    <h6 class=" font-weight-normal mb-0 w-100 text-truncate">Domaine D'expertice
-                                    </h6>
-                                </div>
-                                <div class="ms-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 "><i style="font-size: 20px ; font-weight:bold ; color:rgb(84, 84, 84)" class="icon-briefcase"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="card border-end ">
-                        <div class="card-body" style="background-color: rgba(122, 246, 139, 0.758) ; border-radius:30px ; ">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">4</h2>
-
-                                    </div>
-                                    <h6 style="" class=" font-weight-normal mb-0 w-100 text-truncate">Nombre Des Clients
-                                    </h6>
-                                </div>
-                                <div class="ms-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 "><i style="font-size: 20px ; font-weight:bold ;color:rgb(84, 84, 84) " class="icon-people"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="card ">
-                        <div class="card-body" style="background-color: rgba(246, 122, 234, 0.758) ; border-radius:30px ;">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <h2 class="text-dark mb-1 font-weight-medium">3</h2>
-                                    <h6 class=" font-weight-normal mb-0 w-100 text-truncate">Reviews</h6>
-                                </div>
-                                <div class="ms-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 "><i style="color:rgb(84, 84, 84)" data-feather="globe"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <h2>Home Page for the client side </h2>
             </div>
 
 
@@ -141,116 +74,116 @@
             <!-- *************************************************************** -->
             <!-- Start Location and Earnings Charts Section -->
             <!-- *************************************************************** -->
-            <div class="row">
+{{--            <div class="row">--}}
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Les activites Recent</h4>
-                            <div class="mt-4 activity">
-                                <div class="d-flex align-items-start border-left-line pb-3">
-                                    <div>
-                                        <img style="width: 50px ; border-radius:50%" src="../Partenaire/assets/images/users/3.jpg" alt="">
-                                    </div>
-                                    <div class="ms-3 mt-2">
-                                        <h5 class="text-dark font-weight-medium mb-2">Nouveau Commentaire!</h5>
-                                        <p class="font-14 mb-2 ">John Musa just comment
-                                        </p>
-                                        <a onclick="window.location.href = '/comment';" href="javascript:void(0)"
-                                           class="font-14 border-bottom pb-1 border-info">Voir</a>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-start border-left-line pb-3">
-                                    <div>
-                                        <img style="width: 50px ; border-radius:50%" src="../Partenaire/assets/images/users/2.jpg" alt="">
-                                    </div>
-                                    <div class="ms-3 mt-2">
-                                        <h5 class="text-dark font-weight-medium mb-2">Demande Service</h5>
-                                        <p class="font-14 mb-2 ">Richardson just demande service </p>
-                                        <a onclick="window.location.href = '/comment';" href="javascript:void(0)"
-                                           class="font-14 border-bottom pb-1 border-info">Voir</a>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-start border-left-line">
-                                    <div>
-                                        <img style="width: 50px ; border-radius:50%" src="../Partenaire/assets/images/users/5.jpg" alt="">
-                                    </div>
-                                    <div class="ms-3 mt-2">
-                                        <h5 class="text-dark font-weight-medium mb-2">Demande Service
-                                        </h5>
-                                        <p class="font-14 mb-2 ">Yassir just demande service </p>
-                                        <a onclick="window.location.href = '/comment';" href="javascript:void(0)"
-                                           class="font-14 border-bottom pb-1 border-info">Voir</a>
+{{--                <div class="col-md-6 col-lg-4">--}}
+{{--                    <div class="card">--}}
+{{--                        <div class="card-body">--}}
+{{--                            <h4 class="card-title">Les activites Recent</h4>--}}
+{{--                            <div class="mt-4 activity">--}}
+{{--                                <div class="d-flex align-items-start border-left-line pb-3">--}}
+{{--                                    <div>--}}
+{{--                                        <img style="width: 50px ; border-radius:50%" src="../Partenaire/assets/images/users/3.jpg" alt="">--}}
+{{--                                    </div>--}}
+{{--                                    <div class="ms-3 mt-2">--}}
+{{--                                        <h5 class="text-dark font-weight-medium mb-2">Nouveau Commentaire!</h5>--}}
+{{--                                        <p class="font-14 mb-2 ">John Musa just comment--}}
+{{--                                        </p>--}}
+{{--                                        <a onclick="window.location.href = '/comment';" href="javascript:void(0)"--}}
+{{--                                           class="font-14 border-bottom pb-1 border-info">Voir</a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="d-flex align-items-start border-left-line pb-3">--}}
+{{--                                    <div>--}}
+{{--                                        <img style="width: 50px ; border-radius:50%" src="../Partenaire/assets/images/users/2.jpg" alt="">--}}
+{{--                                    </div>--}}
+{{--                                    <div class="ms-3 mt-2">--}}
+{{--                                        <h5 class="text-dark font-weight-medium mb-2">Demande Service</h5>--}}
+{{--                                        <p class="font-14 mb-2 ">Richardson just demande service </p>--}}
+{{--                                        <a onclick="window.location.href = '/comment';" href="javascript:void(0)"--}}
+{{--                                           class="font-14 border-bottom pb-1 border-info">Voir</a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="d-flex align-items-start border-left-line">--}}
+{{--                                    <div>--}}
+{{--                                        <img style="width: 50px ; border-radius:50%" src="../Partenaire/assets/images/users/5.jpg" alt="">--}}
+{{--                                    </div>--}}
+{{--                                    <div class="ms-3 mt-2">--}}
+{{--                                        <h5 class="text-dark font-weight-medium mb-2">Demande Service--}}
+{{--                                        </h5>--}}
+{{--                                        <p class="font-14 mb-2 ">Yassir just demande service </p>--}}
+{{--                                        <a onclick="window.location.href = '/comment';" href="javascript:void(0)"--}}
+{{--                                           class="font-14 border-bottom pb-1 border-info">Voir</a>--}}
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-4">
-                                <h4 class="card-title">Derniers Demandes</h4>
-                                <div class="ms-auto">
-
-                                </div>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table no-wrap v-middle mb-0">
-                                    <thead>
-                                    <tr class="border-0">
-                                        <th class="border-0 font-14 font-weight-medium ">Client
-                                        </th>
-                                        <th class="border-0 font-14 font-weight-medium  px-2">Date
-                                        </th>
-                                        <th class="border-0 font-14 font-weight-medium  text-center">
-                                            Durre
-                                        </th>
-                                        <th class="border-0 font-14 font-weight-medium ">Statue</th>
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
 
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td class="border-top-0 px-2 py-4">
-                                            <div class="d-flex no-block align-items-center">
-                                                <div class="me-3"><img
-                                                        src="../Partenaire/assets/images/users/4.jpg"
-                                                        alt="user" class="rounded-circle" width="45"
-                                                        height="45" /></div>
-                                                <div class="">
-                                                    <h5 class="text-dark mb-0 font-16 font-weight-medium">Ikram Sarghini</h5>
-                                                    <span class=" font-14">Ikram Sarghini@gmail.com</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="border-top-0  px-2 py-4 font-14">Elite Admin</td>
-                                        <td class="border-top-0 px-2 py-4">
-                                            5 Jours
-                                        </td>
-                                        <td class="border-top-0 text-center px-2 py-4">
+{{--                <div class="col-md-8">--}}
+{{--                    <div class="card">--}}
+{{--                        <div class="card-body">--}}
+{{--                            <div class="d-flex align-items-center mb-4">--}}
+{{--                                <h4 class="card-title">Derniers Demandes</h4>--}}
+{{--                                <div class="ms-auto">--}}
 
-                                            <button style="background-color: rgb(49, 166, 255);color:aliceblue" type="button" class="btn  btn-rounded"><i
-                                                    class="fas fa-check"></i> En Attente</button>
-
-                                    </tr>
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="table-responsive">--}}
+{{--                                <table class="table no-wrap v-middle mb-0">--}}
+{{--                                    <thead>--}}
+{{--                                    <tr class="border-0">--}}
+{{--                                        <th class="border-0 font-14 font-weight-medium ">Client--}}
+{{--                                        </th>--}}
+{{--                                        <th class="border-0 font-14 font-weight-medium  px-2">Date--}}
+{{--                                        </th>--}}
+{{--                                        <th class="border-0 font-14 font-weight-medium  text-center">--}}
+{{--                                            Durre--}}
+{{--                                        </th>--}}
+{{--                                        <th class="border-0 font-14 font-weight-medium ">Statue</th>--}}
 
 
+{{--                                    </tr>--}}
+{{--                                    </thead>--}}
+{{--                                    <tbody>--}}
+{{--                                    <tr>--}}
+{{--                                        <td class="border-top-0 px-2 py-4">--}}
+{{--                                            <div class="d-flex no-block align-items-center">--}}
+{{--                                                <div class="me-3"><img--}}
+{{--                                                        src="../Partenaire/assets/images/users/4.jpg"--}}
+{{--                                                        alt="user" class="rounded-circle" width="45"--}}
+{{--                                                        height="45" /></div>--}}
+{{--                                                <div class="">--}}
+{{--                                                    <h5 class="text-dark mb-0 font-16 font-weight-medium">Ikram Sarghini</h5>--}}
+{{--                                                    <span class=" font-14">Ikram Sarghini@gmail.com</span>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </td>--}}
+{{--                                        <td class="border-top-0  px-2 py-4 font-14">Elite Admin</td>--}}
+{{--                                        <td class="border-top-0 px-2 py-4">--}}
+{{--                                            5 Jours--}}
+{{--                                        </td>--}}
+{{--                                        <td class="border-top-0 text-center px-2 py-4">--}}
 
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                                            <button style="background-color: rgb(49, 166, 255);color:aliceblue" type="button" class="btn  btn-rounded"><i--}}
+{{--                                                    class="fas fa-check"></i> En Attente</button>--}}
+
+{{--                                    </tr>--}}
 
 
-            </div>
+
+{{--                                    </tbody>--}}
+{{--                                </table>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+
+
+{{--            </div>--}}
             <!-- *************************************************************** -->
             <!-- End Location and Earnings Charts Section -->
             <!-- *************************************************************** -->
