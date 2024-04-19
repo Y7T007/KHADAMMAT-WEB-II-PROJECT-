@@ -59,7 +59,7 @@
                                 <img src="{{$client->profile_picture}}" onerror="this.onerror=null; this.src='../Partenaire/assets/images/users/2.jpg'" class="rounded-circle" width="40">                                <span class="ms-2 d-none d-lg-inline-block"><span>Hello,</span> <span class="text-dark">{{$client-> name}}</span> <i data-feather="chevron-down" class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-right user-dd animated flipInY">
-                                <a class="dropdown-item" href="Profile"><i data-feather="user" class="svg-icon me-2 ms-1"></i> My Profile</a>
+                                <a class="dropdown-item" href="profileClient"><i data-feather="user" class="svg-icon me-2 ms-1"></i> My Profile</a>
 
                                 <a class="dropdown-item" href="UpdateProfile"><i data-feather="user" class="svg-icon me-2 ms-1"></i>Update My Profile</a>
 
