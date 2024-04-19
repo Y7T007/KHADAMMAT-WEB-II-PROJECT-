@@ -1,45 +1,17 @@
 @extends('layouts.home')
 
 @section('content')
-    <div id="step1" class="step">
-        @include('auth.client-auth.steps.register-client-step1')
-        <button id="nextButton" onclick="nextStep()">Next</button>
-    </div>
-    <div id="step2" class="step" style="display: none;">
-        @include('auth.client-auth.steps.register-client-step2')
-        <button id="nextButton" onclick="nextStep()">Next</button>
-    </div>
-    <div id="step3" class="step" style="display: none;">
-        @include('auth.client-auth.steps.register-client-step3')
-        <button type="submit" id="nextButton" >Submit</button>
-    </div>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <form method="POST" action="{{ route('client.register') }}">
+        @csrf
+        <!-- Other form fields -->
 
+        <div class="form-group">
+            <div class="g-recaptcha" data-sitekey="your-site-key"></div>
+        </div>
 
-    <script>
-        let currentStep = 1;
-        const totalSteps = 3;
-
-        function nextStep() {
-            // Hide current step
-            document.getElementById('step' + currentStep).style.display = 'none';
-
-            // Increment current step
-            currentStep++;
-
-            // If we're past the last step, wrap around to the first step
-            if (currentStep > totalSteps) {
-                currentStep = 1;
-            }
-
-            // Show next step
-            document.getElementById('step' + currentStep).style.display = 'block';
-
-            // Update progress bar
-            const progressBar = document.getElementById('progressBar');
-            progressBar.style.width = (currentStep / totalSteps * 100) + '%';
-            progressBar.innerHTML = 'Step ' + currentStep + ' of ' + totalSteps;
-        }
-    </script>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
 @endsection
 {{--@section('content')--}}
 {{--    <div class="container" style="color: white;display: flex;flex-direction: column; align-items:center;justify-items: center;">--}}

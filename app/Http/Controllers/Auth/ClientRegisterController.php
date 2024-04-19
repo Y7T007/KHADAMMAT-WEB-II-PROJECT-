@@ -10,6 +10,18 @@ use Illuminate\Support\Facades\Hash;
 
 class ClientRegisterController extends Controller
 {
+
+    public function register(Request $request)
+    {
+        $request->validate([
+            'g-recaptcha-response' => 'required|captcha',
+            // Other validation rules
+        ]);
+
+        // Handle the registration process
+
+        return redirect()->route('client.register.step1');
+    }
     public function showRegistrationForm()
     {
         return view('auth.client-auth.register-client');
