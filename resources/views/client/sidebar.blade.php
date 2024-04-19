@@ -34,9 +34,9 @@
                              <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="messages"
                                       aria-expanded="false"><i class="bi bi-chat-left-text-fill"></i><span
                                            class="hide-menu">Messagerie </span></a></li>
-                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="profil"
+                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="profile"
                                       aria-expanded="false"><i class="bi bi-person-fill"></i><span
-                                           class="hide-menu">Profil </span></a></li>
+                                           class="hide-menu">Profile </span></a></li>
                              <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="logout"
                                       aria-expanded="false"><i class="bi bi-box-arrow-right"></i><span
                                            class="hide-menu">Sign Out </span></a></li>
