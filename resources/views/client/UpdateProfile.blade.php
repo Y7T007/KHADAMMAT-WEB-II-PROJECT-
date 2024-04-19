@@ -89,7 +89,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Informations</h4>
+                                    <h4 class="card-title">Informations personnelles</h4>
                                     <form action="{{ route('update.profile') }}" method="POST"
                                         enctype="multipart/form-data">
 
@@ -126,21 +126,6 @@
                                                 name="date_naissance"
                                                 placeholder="Entrez le nombre d'années d'expérience"
                                                 value="{{ $partenaire->annee_experience }}">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="adresse" class="form-label">nombre  :</label>
-                                            <input type="text" class="form-control" id="adresse" name="adresse"
-                                                placeholder="Entrez votre adresse" value="{{ $partenaire->address }}">
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="image" class="form-label">Image :</label>
-                                            <input type="file" class="form-control" id="image"
-                                                name="image">
-                                        </div>
-                                        <div class="text-center">
-                                            <button type="submit" style="width: 250px"
-                                                class="btn btn-warning btn-rounded">Update</button>
                                         </div>
                                     </form>
 

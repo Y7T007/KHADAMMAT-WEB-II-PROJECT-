@@ -87,7 +87,8 @@
     <label for="image">Image</label>
     <div class="custom-file">
     @if($client->profile_picture)
-            <img style="border-radius: 50%; width: 200px; margin-left: 30px; margin-top: 10px; margin-bottom: 20px;" src="{{ Storage::url($client->profile_picture) }}" alt="Photo de profil">    @else
+        <img style="border-radius: 50%; width: 200px; margin-left: 30px; margin-top: 10px; margin-bottom: 20px;" src="{{ asset($client->profile_picture) }}" alt="Photo de profil">
+    @else
         <p>Aucune image de profil disponible</p>
     @endif
     </div>
