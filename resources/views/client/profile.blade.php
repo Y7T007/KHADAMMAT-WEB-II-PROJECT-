@@ -87,8 +87,7 @@
     <label for="image">Image</label>
     <div class="custom-file">
     @if($client->profile_picture)
-        <img style="border-radius: 50%; width: 200px; margin-left: 30px; margin-top: 10px; margin-bottom: 20px;" src="{{ asset($client->profile_picture) }}" alt="Photo de profil">
-    @else
+            <img style="border-radius: 50%; width: 200px; margin-left: 30px; margin-top: 10px; margin-bottom: 20px;" src="{{ Storage::url($client->profile_picture) }}" alt="Photo de profil">    @else
         <p>Aucune image de profil disponible</p>
     @endif
     </div>
@@ -124,7 +123,7 @@
                                         <label for="mot_de_passe">adresse</label>
                                         <div class="output2"> <h4>{{$client->address}}</h4></div>
                                     </div>
-                                    
+
                                 </form>
                             </div>
                         </div>
@@ -140,13 +139,13 @@
                 </div>
                 <div class="form-group">
                     <label for="metier">Nombre des chambres</label>
-                    <div class="output2"> <h4>{{$client->nb_chambre}}</h4></div>
+                    <div class="output2"> <h4>{{$client->nb_chambres}}</h4></div>
                 </div>
                 <div class="form-group">
                     <label for="ville">Nombre du bain</label>
                     <div class="output2"> <h4>{{$client->nb_bain}}</h4></div>
                 </div>
-               
+
                 @if($client->Garage)
                 <div class="form-group">
                     <label for="garage">Garage</label>
@@ -178,7 +177,7 @@
 </div>
 
 
-                       
+
                     </div>
                 </div>
 

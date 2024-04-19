@@ -30,7 +30,7 @@ class FormController extends Controller
         $client->name = $request->name;
         $client->email = $request->email;
         $client->password = Hash::make($request->password);
-        $client->profile_picture = $request->file('profile_picture')->store('profile_pictures');
+        $client->profile_picture = $request->file('profile_picture')->store('public/profile_pictures');
         $client->save();
 
         Auth::guard('client')->login($client);
