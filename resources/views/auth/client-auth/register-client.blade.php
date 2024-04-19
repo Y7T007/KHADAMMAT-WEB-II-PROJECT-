@@ -2,15 +2,44 @@
 
 @section('content')
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Ldo6cApAAAAANllnHYRR_lUhi3GcoX6JurvLAqp"></script>
+
     <form method="POST" action="{{ route('client.register') }}">
         @csrf
         <!-- Other form fields -->
 
-        <div class="form-group">
-            <div class="g-recaptcha" data-sitekey="your-site-key"></div>
-        </div>
 
-        <button type="submit" class="btn btn-primary">Register</button>
+        <div class="form-group -align-center align-content-center">
+            <h2 style="color :white">Please verify that your are not a robot !!</h2><br><br>
+            <div class="g-recaptcha" data-sitekey="https://recaptchaenterprise.googleapis.com/v1/projects/web-ii-khadamat--1713549030001/assessments?key=API_KEY"></div>
+
+            @csrf
+            <!-- Other form fields -->
+
+                <div class="form-group">
+                    <div id="g-recaptcha"></div>
+                </div>
+
+                <!-- Development mode button -->
+            <br>
+                <a href="/register-client-step1" type="submit" class="btn btn-secondary">Skip reCAPTCHA (Dev Mode)</a>
+        </div>
+        <!-- Replace the variables below. -->
+        <script>
+            function onSubmit(token) {
+                document.getElementById("demo-form").submit();
+            }
+        </script>
+
+        <script>
+            function onClick(e) {
+                e.preventDefault();
+                grecaptcha.enterprise.ready(async () => {
+                    const token = await grecaptcha.enterprise.execute('6Ldo6cApAAAAANllnHYRR_lUhi3GcoX6JurvLAqp', {action: 'LOGIN'});
+                });
+            }
+        </script>
+
     </form>
 @endsection
 {{--@section('content')--}}

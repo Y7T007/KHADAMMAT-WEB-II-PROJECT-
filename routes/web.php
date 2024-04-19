@@ -51,11 +51,11 @@ Route::post('/register-client-step2', [ClientRegisterController::class, 'registe
 // Step 3 route
 Route::post('/register-client-step3', [ClientRegisterController::class, 'registerStep3'])->name('client.register.step3');
 
-Route::get('/register-client-step1', [FormController::class, 'step1'])->name('step1');
+Route::get('/register-client-step1', [FormController::class, 'step1'])->name('register-client-step1');
 Route::post('/register-client-step1',[FormController::class, 'postStep1'])->name('postStep1');
-Route::get('/register-client-step2', [FormController::class, 'step2'])->name('step2');
+Route::get('/register-client-step2', [FormController::class, 'step2'])->name('register-client-step2');
 Route::post('/register-client-step2',[FormController::class, 'postStep2'])->name('postStep2');
-Route::get('/register-client-step3', [FormController::class, 'step3'])->name('step3');
+Route::get('/register-client-step3', [FormController::class, 'step3'])->name('register-client-step3');
 Route::post('/register-client-step3', [FormController::class, 'postStep3'])->name('postStep3');
 
 

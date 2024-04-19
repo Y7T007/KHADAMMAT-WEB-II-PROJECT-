@@ -23,6 +23,9 @@ class FormController extends Controller
             'profile_picture' => 'required|image',
         ]);
 
+//        Log::info('Step 1 data: ', $request->all()); // Log request data
+
+
         $client = new Client();
         $client->name = $request->name;
         $client->email = $request->email;
@@ -46,16 +49,16 @@ class FormController extends Controller
             'ville' => 'required|string|max:255',
             'address' => 'required|string|max:255',
             'phone_number' => 'required|numeric',
-            'date_of_birth' => 'required|date',
-            'gender' => 'required|in:M,F',
+            'date_naissance' => 'required|date',
+            'genre' => 'required|in:M,F',
         ]);
 
         $client = Auth::guard('client')->user();
         $client->ville = $request->ville;
         $client->address = $request->address;
         $client->phone_number = $request->phone_number;
-        $client->date_of_birth = $request->date_of_birth;
-        $client->gender = $request->gender;
+        $client->date_naissance = $request->date_naissance;
+        $client->genre = $request->genre;
         $client->save();
 
         return redirect()->route('register-client-step3');
@@ -69,23 +72,34 @@ class FormController extends Controller
     public function postStep3(Request $request)
     {
         $request->validate([
-            'maison' => 'required|string|max:255',
-            'jardin' => 'required|boolean',
-            'garage' => 'required|boolean',
-            'nb_chambres' => 'required|integer',
-            'nb_bain' => 'required|integer',
-            'appareil_electriques' => 'required|string|max:255',
+            'jardin' => 'sometimes',
+            'garage' => 'sometimes',
+            'nb_chambres' => 'sometimes',
+            'nb_bain' => 'sometimes',
+            'television' => 'sometimes',
+            'refrigirateur' => 'sometimes',
+            'machine_a_laver' => 'sometimes',
+            'autres' => 'sometimes',
+            'superficie' => 'sometimes',
         ]);
 
         $client = Auth::guard('client')->user();
-        $client->maison = $request->maison;
-        $client->jardin = $request->jardin;
-        $client->garage = $request->garage;
-        $client->nb_chambres = $request->nb_chambres;
-        $client->nb_bain = $request->nb_bain;
-        $client->appareil_electriques = $request->appareil_electriques;
-        $client->save();
 
-        return redirect()->route('client.home');
+        if ($client) {
+            $client->jardin = (int)$request->has('jardin');
+            $client->garage = (int)$request->has('garage');
+            $client->nb_chambres = $request->nb_chambres ?? 0;
+            $client->nb_bain = $request->nb_bain ?? 0;
+            $client->television = $request->television ?? 0;
+            $client->refrigirateur = $request->refrigirateur ?? 0;
+            $client->machine_a_laver = $request->machine_a_laver ?? 0;
+            $client->superficie = $request->superficie ?? 0;
+            $client->save();
+
+            return redirect()->route('client.home');
+        } else {
+            // Handle the case where the user is not authenticated
+            return redirect()->route('client.login');
+        }
     }
 }

@@ -15,6 +15,17 @@ class Client extends Authenticatable
         'address',
         'phone_number',
         'profile_picture',
-
+        'ville',
+        'date_naissance',
+        'genre',
+        'nb_chambre',
+        'nb_bain',
+        'television',
+        'refrigirateur',
+        'machine_a_laver',
+        'autres',
+        'Garage',
+        'jardin',
+        'superficie',
     ];
 }
