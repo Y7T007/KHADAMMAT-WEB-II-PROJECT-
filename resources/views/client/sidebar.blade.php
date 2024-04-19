@@ -15,29 +15,29 @@
                         <li class="list-divider"></li>
 
 
-                        <li class="sidebar-item"> <a class="sidebar-link" href="Interventions"
+                        <li class="sidebar-item"> <a class="sidebar-link" href="all-services"
                                 aria-expanded="false"><i class="bi bi-tools"></i><span
                                     class="hide-menu">Nos Services
                                 </span></a>
                         </li>
 
 
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="comment"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="all-partners"
                             aria-expanded="false"><i class="bi bi-people-fill"></i><span
                                 class="hide-menu">Nos Partenaires</span></a></li>
 
-                                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="AddService"
+                                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="services-history"
                                     aria-expanded="false"><i class="bi bi-clock-history"></i><span
                                         class="hide-menu">Historique </span></a></li>
 
 
-                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="MesServices"
+                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="messages"
                                       aria-expanded="false"><i class="bi bi-chat-left-text-fill"></i><span
                                            class="hide-menu">Messagerie </span></a></li>
-                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="MesServices"
+                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="profil"
                                       aria-expanded="false"><i class="bi bi-person-fill"></i><span
                                            class="hide-menu">Profil </span></a></li>
-                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="MesServices"
+                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="logout"
                                       aria-expanded="false"><i class="bi bi-box-arrow-right"></i><span
                                            class="hide-menu">Sign Out </span></a></li>
 
