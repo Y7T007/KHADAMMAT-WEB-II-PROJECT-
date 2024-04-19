@@ -59,7 +59,7 @@ class ClientRegisterController extends Controller
         // Store the data in the session
         $request->session()->put('register_data.step1', $data);
 
-        return redirect()->route('client.register', ['step' => 2]);
+        return view('auth.client-auth.register-client-step2');
     }
 
     public function registerStep2(Request $request)
@@ -74,7 +74,7 @@ class ClientRegisterController extends Controller
 
         $request->session()->put('register_data.step2', $request->all());
 
-        return redirect()->route('client.register', ['step' => 3]);
+        return view('auth.client-auth.register-client-step3');
     }
 
     public function registerStep3(Request $request)
