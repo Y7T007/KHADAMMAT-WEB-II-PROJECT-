@@ -56,13 +56,13 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                                <img src="{{$client->profile_picture}}" onerror="this.onerror=null; this.src='../Partenaire/assets/images/users/2.jpg'" class="rounded-circle" width="40">
+                                <img src="{{ Storage::url($client->profile_picture) }}" onerror="this.onerror=null; this.src='../Partenaire/assets/images/users/2.jpg'" class="rounded-circle" width="40">
                                 <span class="ms-2 d-none d-lg-inline-block"><span>Hello,</span> <span class="text-dark">{{$client-> name}}</span> <i data-feather="chevron-down" class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-right user-dd animated flipInY">
-                                <a class="dropdown-item" href="profileClient"><i data-feather="user" class="svg-icon me-2 ms-1"></i> My Profile</a>
+                                <a class="dropdown-item" href="profile"><i data-feather="user" class="svg-icon me-2 ms-1"></i> My Profile</a>
 
-                                <a class="dropdown-item" href="UpdateProfile"><i data-feather="user" class="svg-icon me-2 ms-1"></i>Update My Profile</a>
+                                <a class="dropdown-item" href="profile_edit"><i data-feather="user" class="svg-icon me-2 ms-1"></i>Update My Profile</a>
 
 
                                 <a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="dropdown-item"><i data-feather="power" class="svg-icon me-2 ms-1"></i> Logout</a>

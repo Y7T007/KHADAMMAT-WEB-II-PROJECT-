@@ -27,29 +27,58 @@ class ClientController extends Controller
 
     public function editProfile()
     {
-        // return the view for the client profile edit
-        return view('client.profile-edit');
+        $client = Auth::guard('client')->user();
+        return view('client.profile_edit', compact('client'));
     }
-
+    
     public function updateProfile(Request $request)
     {
-        // validate the form data
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255',
-            'password' => 'required|string|min:8|confirmed',
+            'address' => 'nullable|string|max:255',
+            'phone_number' => 'nullable|integer',
+            'ville' => 'nullable|string|max:50',
+            'date_naissance' => 'nullable|date',
+            'genre' => 'nullable|string|max:10',
+            'nb_chambres' => 'nullable|integer',
+            'nb_bain' => 'nullable|integer',
+            'television' => 'nullable|boolean',
+            'refrigirateur' => 'nullable|boolean',
+            'machine_a_laver' => 'nullable|boolean',
+            'Garage' => 'nullable|boolean',
+            'jardin' => 'nullable|boolean',
+            'superficie' => 'nullable|integer',
+            'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Ajout de la validation pour l'image
         ]);
-
-        // get the current logged in client
+    
         $client = Auth::guard('client')->user();
-
-        // update the client's profile
         $client->name = $request->name;
-        $client->email = $request->email;
-        $client->password = Hash::make($request->password);
+        $client->address = $request->address;
+        $client->phone_number = $request->phone_number;
+        $client->ville = $request->ville;
+        $client->date_naissance = $request->date_naissance;
+        $client->genre = $request->genre;
+        $client->nb_chambres = $request->nb_chambres;
+        $client->nb_bain = $request->nb_bain;
+        $client->television = $request->has('television');
+        $client->refrigirateur = $request->has('refrigirateur');
+        $client->machine_a_laver = $request->has('machine_a_laver');
+        $client->Garage = $request->has('Garage');
+        $client->jardin = $request->has('jardin');
+        $client->superficie = $request->superficie;
+    
+        // Vérifie si une nouvelle image a été téléchargée
+        if ($request->hasFile('profile_picture')) {
+            // Stocke le fichier dans le dossier public/profile_pictures
+            $profilePicturePath = $request->file('profile_picture')->store('public/profile_pictures');
+            // Enregistre le chemin de l'image dans la base de données
+            $client->profile_picture = str_replace('public/', '', $profilePicturePath);
+        }
+    
         $client->save();
-
-        // redirect the client to their profile
-        return redirect()->route('client.profile');
+    
+        return redirect()->route('client.profile')->with('success', 'Profil mis à jour avec succès!');
     }
-}
+        
+    
+    }
