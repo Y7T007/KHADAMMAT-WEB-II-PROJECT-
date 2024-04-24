@@ -60,80 +60,80 @@
                             <div class="card-body">
                                 <h4 class="card-title">Informations personnelles</h4>{{ $errors->first('field_name') }}
                                 <form action="{{ route('client.profile.update') }}" method="POST" enctype="multipart/form-data">
-                                    @csrf <!-- Ajoutez ceci pour la protection CSRF, si vous utilisez Laravel -->
+                                    @csrf
+
                                     <!-- Votre formulaire ici -->
                                     <div class="mb-3">
                                     <label for="name" class="form-label">Nom :</label><br>
                                     <input type="text" class="form-control" id="name" name="name"
-                                        placeholder="Entrez votre nom" value="{{ $client->name }}">
+                                       placeholder=" {{ $client->name }}">
                                 </div>
                                 <div class="mb-3">
                                     <label for="address" class="form-label">Adresse :</label>
                                     <input type="text" class="form-control" id="address" name="address"
-                                        placeholder="Entrez votre adresse" value="{{ $client->address }}">
+                                         placeholder=" {{ $client->address }}">
                                 </div>
                                 <div class="mb-3">
                                     <label for="phone_number" class="form-label">Numéro de téléphone :</label>
                                     <input type="number" min="0" class="form-control" id="phone_number" name="phone_number"
-                                        placeholder="Entrez votre numéro de téléphone"
-                                        value="{{ $client->phone_number }}" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)">
+
+                                        placeholder=" {{ $client->phone_number }}" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)">
                                 </div>
                                 <div class="mb-3">
                                     <label for="ville" class="form-label">Ville :</label>
                                     <input type="text" class="form-control" id="ville" name="ville"
-                                        placeholder="Entrez votre ville" value="{{ $client->ville }}">
+                                        placeholder=" {{ $client->ville }}">
                                 </div>
                                 <div class="mb-3">
                                     <label for="date_naissance" class="form-label">Date de naissance :</label>
                                     <input type="date" class="form-control" id="date_naissance"
-                                        name="date_naissance" placeholder="Entrez votre date de naissance"
-                                        value="{{ $client->date_naissance }}">
+                                        name="date_naissance" placeholder=" {{ $client->date_naissance }}">
                                 </div>
                                 <div class="mb-3">
                                     <label for="genre" class="form-label">Genre :</label>
                                     <input type="text" class="form-control" id="genre" name="genre"
-                                        placeholder="Entrez votre genre" value="{{ $client->genre }}">
+                                         placeholder=" {{ $client->genre }}">
                                 </div>
                                 <h4 class="card-title">Informations Maison</h4>
 
                                 <div class="mb-3">
                                     <label for="nb_chambres" class="form-label">Nombre de chambres :</label>
                                     <input type="number" class="form-control" id="nb_chambres" name="nb_chambres"
-                                        placeholder="Entrez le nombre de chambres"
-                                        value="{{ $client->nb_chambres }}">
+
+                                        placeholder=" {{ $client->nb_chambres }}">
                                 </div>
                                 <div class="mb-3">
                                     <label for="nb_bain" class="form-label">Nombre de salles de bain :</label>
                                     <input type="number" class="form-control" id="nb_bain" name="nb_bain"
-                                        placeholder="Entrez le nombre de salles de bain" value="{{ $client->nb_bain }}">
+                                         placeholder=" {{ $client->nb_bain }}">
                                 </div>
                                 <div class="mb-3">
                                     <label for="television" class="form-label">Télévision :</label>
-                                    <input type="checkbox" id="television" name="television"
+                                    <input type="checkbox" value="1" id="television" name="television"
                                         {{ $client->television ? 'checked' : '' }}>
                                 </div>
                                 <div class="mb-3">
                                     <label for="refrigirateur" class="form-label">Réfrigérateur :</label>
-                                    <input type="checkbox" id="refrigerateur" name="refrigerateur"
+                                    <input type="checkbox" value="1" id="refrigerateur" name="refrigerateur"
                                         {{ $client->refrigirateur ? 'checked' : '' }}>
                                 </div>
                                 <div class="mb-3">
                                     <label for="machine_a_laver" class="form-label">Machine à laver :</label>
-                                    <input type="checkbox" id="machine_a_laver" name="machine_a_laver"
+                                    <input type="checkbox" value="1" id="machine_a_laver" name="machine_a_laver"
                                         {{ $client->machine_a_laver ? 'checked' : '' }}>
                                 </div>
                                 <div class="mb-3">
                                     <label for="Garage" class="form-label">Garage :</label>
-                                    <input type="checkbox" id="Garage" name="Garage" {{ $client->Garage ? 'checked' : '' }}>
+                                    <input type="checkbox" value="1" id="Garage" name="Garage" {{ $client->Garage ? 'checked' : '' }}>
                                 </div>
                                 <div class="mb-3">
                                     <label for="jardin" class="form-label">Jardin :</label>
-                                    <input type="checkbox" id="jardin" name="jardin" {{ $client->jardin ? 'checked' : '' }}>
+                                    <input type="checkbox" value="1" id="jardin" name="jardin" {{ $client->jardin ? 'checked' : '' }}>
                                 </div>
                                 <div class="mb-3">
                                     <label for="superficie" class="form-label">Superficie :</label>
                                     <input type="number" class="form-control" id="superficie" name="superficie"
-                                        placeholder="Entrez la superficie" value="{{ $client->superficie }}">
+                                         placeholder=" {{ $client->superficie }}">
                                 </div>
                                 <div class="mb-3">
     <label for="profile_picture" class="form-label">Image de profil :</label><br>
@@ -142,7 +142,7 @@
         <img src="{{ Storage::url($client->profile_picture) }}" alt="Profile Picture" style="max-width: 200px; margin-bottom: 10px;"><br>
     @endif
     <!-- Champ de texte pour afficher le nom de fichier actuel -->
-    <input type="text" class="form-control" id="profile_picture_name" readonly value="{{ $client->profile_picture }}">
+    <input type="text" class="form-control" id="profile_picture_name" readonly placeholder=" {{ $client->profile_picture }}">
     <!-- Champ pour télécharger une nouvelle image -->
     <input type="file" class="form-control" id="profile_picture" name="profile_picture">
 </div>
@@ -151,6 +151,7 @@
 
                                     <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
                                 </form>
+
                             </div>
                         </div>
                     </div>
