@@ -69,43 +69,69 @@
                     <p class="custom_heading-text"> Explorez notre sélection de services à domicile de qualité. Des experts compétents pour chaque besoin, un confort sans souci pour vous. Découvrez nos services dès aujourd'hui et simplifiez votre vie ! </p>
                     <div class="search-box">
                         <button class="btn-search"><i class="fas fa-search"></i></button>
-                        <input type="text" class="input-search" placeholder="Type to Search...">
+                        <input type="text" class="input-search" id="searchInput" placeholder="Type to Search...">
                     </div>
-                    <div class="row">
+                    <div class="row" id="serviceCards">
                         <?php
-// Read the JSON file
+                        // Read the JSON file
                         $json = file_get_contents('./Services/services.json');
 
-// Decode the JSON into a PHP object
+                        // Decode the JSON into a PHP object
                         $services = json_decode($json);
 
-// Loop through the services
+                        // Loop through the services
                         foreach ($services->services as $service) {
                             // Generate the HTML for the service card
                             echo '
-    <div class="col-md-4">
-        <div class="nft">
-            <div class="main justify-content-center justify-self-auto" style="width: 100%;height:500px;">
-                <img class="tokenImage" width="100%" src="' . $service->url_icone . '" alt="' . $service->nom . '">
-                <h2>' . ($service->nom) . '</h2>
-                <p class="description">' . $service->sous_titre . '</p>
-                <div class="tokenInfo">
-                    <div class="price">
-                        <p>Partenaires :&nbsp;&nbsp;' . $service->partenaires . '</p>
-                    </div>
-                    <div class="duration">
-                        <p>' . $service->temps_moyen . '</p>
+            <div class="col-md-4 service-card">
+                <div class="nft">
+                    <div class="main justify-content-center justify-self-auto" style="width: 100%;height:500px;">
+                        <img class="tokenImage" width="100%" src="' . $service->url_icone . '" alt="' . $service->nom . '">
+                        <h2>' . ($service->nom) . '</h2>
+                        <p class="description">' . $service->sous_titre . '</p>
+                        <div class="tokenInfo">
+                            <div class="price">
+                                <p>Partenaires :&nbsp;&nbsp;' . $service->partenaires . '</p>
+                            </div>
+                            <div class="duration">
+                                <p>' . $service->temps_moyen . '</p>
+                            </div>
+                        </div>
+                        <hr>
                     </div>
                 </div>
-                <hr>
-
             </div>
-        </div>
-    </div>
-    ';
+        ';
                         }
                         ?>
                     </div>
+
+                    <script>
+                        // Function to handle search functionality
+                        function searchServices() {
+                            // Declare variables
+                            var input, filter, cards, card, title, i, txtValue;
+                            input = document.getElementById("searchInput");
+                            filter = input.value.toUpperCase();
+                            cards = document.getElementsByClassName("service-card");
+
+                            // Loop through all service cards, and hide those that don't match the search query
+                            for (i = 0; i < cards.length; i++) {
+                                card = cards[i];
+                                title = card.getElementsByTagName("h2")[0];
+                                txtValue = title.textContent || title.innerText;
+                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                    card.style.display = "";
+                                } else {
+                                    card.style.display = "none";
+                                }
+                            }
+                        }
+
+                        // Add event listener for input change
+                        document.getElementById("searchInput").addEventListener("input", searchServices);
+                    </script>
+
                     <div class="d-flex justify-content-center"><a href="" class="custom_dark-btn"> Read More </a></div>
                 </div>
             </section>
