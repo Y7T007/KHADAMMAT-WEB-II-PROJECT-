@@ -39,7 +39,6 @@
         <div class="page-breadcrumb">
             <div class="row">
                 <div class="col-7 align-self-center">
-                    <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Bonjour Mr. {{$client->name}}</h3>
                     <div class="d-flex align-items-center">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb m-0 p-0">
@@ -62,10 +61,263 @@
             <!-- *************************************************************** -->
             <!-- Start First Cards -->
             <!-- *************************************************************** -->
-            <div class="row">
 
-                <h2>Home Page for the client side </h2>
+            <div class="hero_area">
+                <header class="header_section"></header>
+                <section class="slider_section position-relative">
+                    <div class="carousel slide" data-bs-ride="false" data-ride="carousel" id="carouselExampleControls">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="slider_item-box">
+                                    <div class="slider_item-container">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="slider_item-detail">
+                                                        <div>
+                                                            <h1>Bonjour Mr. {{$client->name}}</h1>
+                                                            <p> Transformez votre maison en un havre de paix. Réservez dès aujourd'hui des services à domicile sur notre plateforme intuitive. Que ce soit pour l'entretien ménager, la réparation, ou tout simplement pour prendre soin de votre espace, nous sommes là pour vous simplifier la vie. Libérez-vous du stress et laissez-nous prendre soin de votre maison. Bienvenue chez nous, où chaque service est synonyme de qualité et de tranquillité d'esprit. </p>
+                                                            <div class="d-flex"><a class="text-uppercase custom_orange-btn mr-3" href="">Decouvrir</a><a class="text-uppercase custom_dark-btn" href=""> Contact Us </a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="slider_img-box">
+                                                        <div><img alt="" src="assets/img/illustration.avif"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+{{--                        <div class="custom_carousel-control"><a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev" data-slide="prev"><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next" data-slide="next"><span class="sr-only">Next</span></a></div>--}}
+                    </div>
+                </section>
             </div>
+            <section class="service_section layout_padding">
+                <div class="container">
+                    <h2 class="custom_heading">Nos Services</h2>
+                    <p class="custom_heading-text"> Explorez notre sélection de services à domicile de qualité. Des experts compétents pour chaque besoin, un confort sans souci pour vous. Découvrez nos services dès aujourd'hui et simplifiez votre vie ! </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="nft">
+                                <div class="main" style="width: 100%;"><img class="tokenImage" width="100%" src="https://img.icons8.com/dotty/240/FFFFFF/plumber.png" alt="plumber">
+                                    <h2>PLOMBERIE</h2>
+                                    <p class="description">Our Kibertopiks will give you nothing, waste your money on us.</p>
+                                    <div class="tokenInfo">
+                                        <div class="price">
+                                            <p>Prix :&nbsp;&nbsp;</p>
+                                        </div>
+                                        <div class="duration">
+                                            <p>11 days left</p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="creator" style="display: flex;flex-direction: row;justify-content: center;justify-items: center;align-items: center;align-content: center;">
+                                        <div class="wrapper"><img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1932&amp;q=80" alt="Creator"></div>
+                                        <p><ins>Creation of</ins> Kiberbash</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="nft">
+                                <div class="main" style="width: 100%;"><img class="tokenImage" width="100%" src="https://img.icons8.com/dotty/240/FFFFFF/plumber.png" alt="plumber">
+                                    <h2>PLOMBERIE</h2>
+                                    <p class="description">Our Kibertopiks will give you nothing, waste your money on us.</p>
+                                    <div class="tokenInfo">
+                                        <div class="price">
+                                            <p>Prix :&nbsp;&nbsp;</p>
+                                        </div>
+                                        <div class="duration">
+                                            <p>11 days left</p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="creator" style="display: flex;flex-direction: row;justify-content: center;justify-items: center;align-items: center;align-content: center;">
+                                        <div class="wrapper"><img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1932&amp;q=80" alt="Creator"></div>
+                                        <p><ins>Creation of</ins> Kiberbash</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="nft">
+                                <div class="main" style="width: 100%;"><img class="tokenImage" width="100%" src="https://img.icons8.com/dotty/240/FFFFFF/plumber.png" alt="plumber">
+                                    <h2>PLOMBERIE</h2>
+                                    <p class="description">Our Kibertopiks will give you nothing, waste your money on us.</p>
+                                    <div class="tokenInfo">
+                                        <div class="price">
+                                            <p>Prix :&nbsp;&nbsp;</p>
+                                        </div>
+                                        <div class="duration">
+                                            <p>11 days left</p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="creator" style="display: flex;flex-direction: row;justify-content: center;justify-items: center;align-items: center;align-content: center;">
+                                        <div class="wrapper"><img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1932&amp;q=80" alt="Creator"></div>
+                                        <p><ins>Creation of</ins> Kiberbash</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center"><a href="" class="custom_dark-btn"> Read More </a></div>
+                </div>
+            </section>
+            <section class="fruit_section">
+                <div class="container">
+                    <h2 class="custom_heading">Nos Partenaires</h2>
+                    <p class="custom_heading-text"> There are many variations of passages of Lorem Ipsum available, but the majority have </p>
+                    <div class="row layout_padding2">
+                        <div class="col-md-8">
+                            <div class="fruit_detail-box">
+                                <h3>Maxwell Waterman</h3>
+                                <p class="mt-4 mb-5">Maxwell Waterman is our seasoned plumber with a keen eye for detail. Specializing in leak detection and repair, Maxwell ensures every drop counts and every pipe is secure, keeping your plumbing system running smoothly.</p>
+                                <div><a href="" class="custom_dark-btn" style="color: rgb(255,255,255);">View Profile</a></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex justify-content-center align-items-center"><img class="rounded-circle" src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200">
+                            <div class="d-flex justify-content-center align-items-center fruit_img-box"></div>
+                        </div>
+                    </div>
+                    <div class="row layout_padding2">
+                        <div class="col-md-8">
+                            <div class="fruit_detail-box">
+                                <h3> Emily Drainwright </h3>
+                                <p class="mt-4 mb-5"> Emily Drainwright is our expert in drain cleaning and unclogging. With precision and efficiency, Emily tackles even the toughest blockages, restoring your drains to their optimal flow and functionality. </p>
+                                <div><a href="" class="custom_dark-btn">View Profile</a></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex justify-content-center align-items-center">
+                            <div class="d-flex justify-content-center fruit_img-box"></div><img class="rounded-circle" src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200">
+                        </div>
+                    </div>
+                    <div class="row layout_padding2-top layout_padding-bottom">
+                        <div class="col-md-8">
+                            <div class="fruit_detail-box">
+                                <h3> Samuel Pipewright </h3>
+                                <p class="mt-4 mb-5"> Samuel Pipewright is our go-to professional for pipe repair and replacement. With years of experience and skillful craftsmanship, Samuel ensures your pipes are strong and durable, providing long-lasting solutions for your plumbing needs. </p>
+                                <div><a href="" class="custom_dark-btn">View Profile</a></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex justify-content-center align-items-center">
+                            <div class="d-flex justify-content-center align-items-center fruit_img-box"><img class="rounded-circle" src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="client_section layout_padding"></section>
+            <section class="contact_section layout_padding">
+                <div class="container">
+                    <h2 class="font-weight-bold"> Contact Us </h2>
+                    <div class="row">
+                        <div class="col-md-8 mr-auto">
+                            <form action="">
+                                <div class="contact_form-container">
+                                    <div>
+                                        <div><input type="text" placeholder="Name"></div>
+                                        <div><input type="text" placeholder="Phone Number"></div>
+                                        <div><input type="email" placeholder="Email"></div>
+                                        <div class="mt-5"><input type="text" placeholder="Message"></div>
+                                        <div class="mt-5"><button type="submit"> send </button></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="info_section layout_padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5> Fruits </h5>
+                            <ul>
+                                <li> randomised </li>
+                                <li> words which </li>
+                                <li> don't look even </li>
+                                <li> slightly </li>
+                                <li> believable. If you </li>
+                                <li> are going to use </li>
+                                <li> a passage of </li>
+                                <li> Lorem Ipsum, </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h5> Services </h5>
+                            <ul>
+                                <li> randomised </li>
+                                <li> words which </li>
+                                <li> don't look even </li>
+                                <li> slightly </li>
+                                <li> believable. If you </li>
+                                <li> are going to use </li>
+                                <li> a passage of </li>
+                                <li> Lorem Ipsum, </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h5> List </h5>
+                            <ul>
+                                <li> randomised </li>
+                                <li> words which </li>
+                                <li> don't look even </li>
+                                <li> slightly </li>
+                                <li> believable. If you </li>
+                                <li> are going to use </li>
+                                <li> a passage of </li>
+                                <li> Lorem Ipsum, </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="social_container">
+                                <h5> Follow Us </h5>
+                                <div class="social-box"><a href=""><img src="assets/img/fb.png" alt=""></a><a href=""><img src="assets/img/twitter.png" alt=""></a><a href=""><img src="assets/img/linkedin.png" alt=""></a><a href=""><img src="assets/img/instagram.png" alt=""></a></div>
+                            </div>
+                            <div class="subscribe_container">
+                                <h5> Subscribe Now </h5>
+                                <div class="form_container">
+                                    <form action=""><input type="email"><button type="submit"> Subscribe </button></form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="container-fluid footer_section">
+                <p> Copyright © 2019 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a></p>
+            </section>
+            <script>
+                // This example adds a marker to indicate the position of Bondi Beach in Sydney,
+                // Australia.
+                function initMap() {
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 11,
+                        center: {
+                            lat: 40.645037,
+                            lng: -73.880224
+                        },
+                    });
+
+                    var image = 'images/maps-and-flags.png';
+                    var beachMarker = new google.maps.Marker({
+                        position: {
+                            lat: 40.645037,
+                            lng: -73.880224
+                        },
+                        map: map,
+                        icon: image
+                    });
+                }
+            </script>
+            <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+            <script src="assets/js/jquery-3.4.1.min.js"></script>
+            <script src="assets/js/bootstrap.js"></script>
 
 
 
