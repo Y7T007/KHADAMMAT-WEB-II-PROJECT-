@@ -262,7 +262,7 @@
                 </div>
             </section>
             <section class="container-fluid footer_section">
-                <p> Copyright © 2019 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a></p>
+                <p> Copyright © 2024 All Rights Reserved<a href="https://html.design/"></a></p>
             </section>
             <script>
                 // This example adds a marker to indicate the position of Bondi Beach in Sydney,

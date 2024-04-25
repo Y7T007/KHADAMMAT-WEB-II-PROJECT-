@@ -14,6 +14,7 @@ use App\Http\Controllers\FormController; // Add this line
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Partenaire;
+use App\Http\Controllers\PartnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,6 +82,7 @@ Route::post('/upload-profile-picture/{client}', [ImageController::class, 'upload
 Route::get('/client/profile_edit', [ClientController::class, 'editProfile'])->name('client.profile.edit');
 Route::post('/client/profile_edit', [ClientController::class, 'updateProfile'])->name('client.profile.update');
 Route::get('/services', 'ServiceController@index')->name('services.index');
+Route::get('/all-partners', 'PartnerController@index')->name('partners.index');
 
 // Service routes
 Route::get('/client/all-services', [ServiceController::class, 'allServices'])->name('client.services.index');
