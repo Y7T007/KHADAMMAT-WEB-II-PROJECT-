@@ -672,3 +672,19 @@ a:hover, a:focus {
     border-bottom:1px solid rgba(0, 0, 0, 0.5);
     transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
+
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff; /* Background color of the navbar */
+    padding: 10px 0; /* Adjust padding as needed */
+    z-index: 1000; /* Ensure the navbar stays on top of other content */
+    transition: top 0.3s; /* Add a smooth transition effect */
+}
+
+/* Add some styles to the content below the navbar */
+.content {
+    padding: 20px;
+    height: 2000px; /* Just for demonstration purposes */
+}
