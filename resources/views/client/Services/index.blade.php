@@ -62,41 +62,7 @@
             <!-- Start First Cards -->
             <!-- *************************************************************** -->
 
-            <div class="hero_area">
-                <header class="header_section"></header>
-                <section class="slider_section position-relative">
-                    <div class="carousel slide" data-bs-ride="false" data-ride="carousel" id="carouselExampleControls">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="slider_item-box">
-                                    <div class="slider_item-container">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="slider_item-detail">
-                                                        <div>
-                                                            <h1>Bonjour Mr. {{$client->name}}</h1>
-                                                            <p> Transformez votre maison en un havre de paix. Réservez dès aujourd'hui des services à domicile sur notre plateforme intuitive. Que ce soit pour l'entretien ménager, la réparation, ou tout simplement pour prendre soin de votre espace, nous sommes là pour vous simplifier la vie. Libérez-vous du stress et laissez-nous prendre soin de votre maison. Bienvenue chez nous, où chaque service est synonyme de qualité et de tranquillité d'esprit. </p>
-                                                            <div class="d-flex"><a class="text-uppercase custom_orange-btn mr-3" href="">Decouvrir</a><a class="text-uppercase custom_dark-btn" href=""> Contact Us </a></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="slider_img-box">
-                                                        <div><img alt="" src="assets/img/illustration.avif"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                        </div>
-                        {{--                        <div class="custom_carousel-control"><a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev" data-slide="prev"><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next" data-slide="next"><span class="sr-only">Next</span></a></div>--}}
-                    </div>
-                </section>
-            </div>
             <section class="service_section layout_padding">
                 <div class="container">
                     <h2 class="custom_heading">Nos Services</h2>
@@ -117,7 +83,7 @@
         <div class="nft">
             <div class="main justify-content-center justify-self-auto" style="width: 100%;height:500px;">
                 <img class="tokenImage" width="100%" src="' . $service->url_icone . '" alt="' . $service->nom . '">
-                <h2>' . strtoupper($service->nom) . '</h2>
+                <h2>' . ($service->nom) . '</h2>
                 <p class="description">' . $service->sous_titre . '</p>
                 <div class="tokenInfo">
                     <div class="price">
