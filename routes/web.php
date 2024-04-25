@@ -82,7 +82,7 @@ Route::get('/client/profile_edit', [ClientController::class, 'editProfile'])->na
 Route::post('/client/profile_edit', [ClientController::class, 'updateProfile'])->name('client.profile.update');
 
 // Service routes
-Route::get('/client/all-services', [ServiceController::class, 'index'])->name('client.services.index');
+Route::get('/client/all-services', [ServiceController::class, 'allServices'])->name('client.services.index');
 Route::get('/client/view-service/{service}', [ServiceController::class, 'show'])->name('client.services.show');
 Route::get('/client/service-history', [ServiceController::class, 'history'])->name('client.services.history');
 
