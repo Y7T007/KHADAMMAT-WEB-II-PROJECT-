@@ -21,10 +21,14 @@
                                 </span></a>
                         </li>
 
+                        <li class="sidebar-item">
+    <a class="sidebar-link sidebar-link" href="{{ route('partners.index') }}" aria-expanded="false">
+        <i class="bi bi-people-fill"></i>
+        <span class="hide-menu">Nos Partenaires</span>
+    </a>
+</li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="all-partners"
-                            aria-expanded="false"><i class="bi bi-people-fill"></i><span
-                                class="hide-menu">Nos Partenaires</span></a></li>
+
 
                                 <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="services-history"
                                     aria-expanded="false"><i class="bi bi-clock-history"></i><span

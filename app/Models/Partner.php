@@ -3,16 +3,27 @@
 // Partner model
 namespace App\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class Partner extends Authenticatable
+class Partner extends Model
 {
-    protected $table = 'partners';
+    protected $table = 'business_partners';
+
+    protected $primaryKey = 'partner_id';
 
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'company_name',
+        'location_city',
+        'years_of_experience',
+        'availability_status',
+        'rate',
+        'expertise_areas',
         // Add other partner-specific fields here
     ];
+
+    // Define the relationship with the professional areas table
+    public function professionalAreas()
+    {
+        return $this->belongsTo(ProfessionalArea::class, 'expertise_areas');
+    }
 }
