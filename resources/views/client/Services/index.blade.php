@@ -67,6 +67,10 @@
                 <div class="container">
                     <h2 class="custom_heading">Nos Services</h2>
                     <p class="custom_heading-text"> Explorez notre sélection de services à domicile de qualité. Des experts compétents pour chaque besoin, un confort sans souci pour vous. Découvrez nos services dès aujourd'hui et simplifiez votre vie ! </p>
+                    <div class="search-box">
+                        <button class="btn-search"><i class="fas fa-search"></i></button>
+                        <input type="text" class="input-search" placeholder="Type to Search...">
+                    </div>
                     <div class="row">
                         <?php
 // Read the JSON file
