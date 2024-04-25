@@ -169,6 +169,7 @@
                             // Generate the HTML for the service card
                             echo '
             <div class="col-md-4 service-card">
+                            <a href="/client/service'.$service->id.'">
                 <div class="nft">
                     <div class="main justify-content-center justify-self-auto" style="width: 100%;height:500px;">
                         <img class="tokenImage" width="100%" src="' . $service->url_icone . '" alt="' . $service->nom . '">
@@ -185,6 +186,7 @@
                         <hr>
                     </div>
                 </div>
+            </a>
             </div>
         ';
                         }

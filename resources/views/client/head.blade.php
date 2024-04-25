@@ -13,6 +13,7 @@
     <link href="../Partenaire/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="../Partenaire/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="../Partenaire/dist/css/style.min.css" rel="stylesheet">

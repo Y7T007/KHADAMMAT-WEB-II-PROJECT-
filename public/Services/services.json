@@ -1,6 +1,7 @@
 {
     "services": [
         {
+            "id": 1,
             "nom": "Plomberie",
             "sous_titre": "Services de plomberie professionnels",
             "partenaires": 10,
@@ -8,6 +9,7 @@
             "url_icone": "https://img.icons8.com/dotty/240/FFFFFF/plumber.png"
         },
         {
+            "id": 2,
             "nom": "Électricité",
             "sous_titre": "Services électriques certifiés",
             "partenaires": 8,
@@ -15,6 +17,7 @@
             "url_icone": "https://img.icons8.com/dotty/240/FFFFFF/conflict.png"
         },
         {
+            "id": 3,
             "nom": "Aménagement",
             "sous_titre": "Services d'aménagement paysager de qualité",
             "partenaires": 7,
@@ -22,6 +25,7 @@
             "url_icone": "https://img.icons8.com/dotty/240/FFFFFF/rearrange.png"
         },
         {
+            "id": 4,
             "nom": "Peinture",
             "sous_titre": "Services de peinture intérieure et extérieure",
             "partenaires": 5,
@@ -29,6 +33,7 @@
             "url_icone": "https://img.icons8.com/dotty/240/FFFFFF/paint-brush.png"
         },
         {
+            "id": 5,
             "nom": "Nettoyage",
             "sous_titre": "Services de nettoyage résidentiel et commercial",
             "partenaires": 12,
@@ -36,6 +41,7 @@
             "url_icone": "https://img.icons8.com/dotty/240/FFFFFF/broom.png"
         },
         {
+            "id": 6,
             "nom": "Menuiserie",
             "sous_titre": "Services de menuiserie sur mesure",
             "partenaires": 6,
@@ -43,6 +49,7 @@
             "url_icone": "https://img.icons8.com/dotty/240/FFFFFF/circular-saw.png"
         },
         {
+            "id": 7,
             "nom": "CVC",
             "sous_titre": "Services de chauffage et de climatisation",
             "partenaires": 9,
@@ -50,6 +57,7 @@
             "url_icone": "https://img.icons8.com/dotty/240/FFFFFF/spa.png"
         },
         {
+            "id": 8,
             "nom": "Toiture",
             "sous_titre": "Services de toiture professionnels",
             "partenaires": 4,
@@ -57,6 +65,7 @@
             "url_icone": "https://img.icons8.com/dotty/240/FFFFFF/reinforced-concrete.png"
         },
         {
+            "id": 9,
             "nom": "Revêtement de sol",
             "sous_titre": "Services de revêtement de sol de qualité",
             "partenaires": 7,
