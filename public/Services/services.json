@@ -1,0 +1,67 @@
+{
+    "services": [
+        {
+            "nom": "Plomberie",
+            "sous_titre": "Services de plomberie professionnels",
+            "partenaires": 10,
+            "temps_moyen": "3 heures",
+            "url_icone": "https://img.icons8.com/dotty/240/FFFFFF/plumber.png"
+        },
+        {
+            "nom": "Électricité",
+            "sous_titre": "Services électriques certifiés",
+            "partenaires": 8,
+            "temps_moyen": "2 heures",
+            "url_icone": "https://img.icons8.com/dotty/240/FFFFFF/conflict.png"
+        },
+        {
+            "nom": "Aménagement paysager",
+            "sous_titre": "Services d'aménagement paysager de qualité",
+            "partenaires": 7,
+            "temps_moyen": "4 heures",
+            "url_icone": "https://img.icons8.com/dotty/240/FFFFFF/rearrange.png"
+        },
+        {
+            "nom": "Peinture",
+            "sous_titre": "Services de peinture intérieure et extérieure",
+            "partenaires": 5,
+            "temps_moyen": "5 heures",
+            "url_icone": "https://img.icons8.com/dotty/240/FFFFFF/paint-brush.png"
+        },
+        {
+            "nom": "Nettoyage",
+            "sous_titre": "Services de nettoyage résidentiel et commercial",
+            "partenaires": 12,
+            "temps_moyen": "2 heures",
+            "url_icone": "https://img.icons8.com/dotty/240/FFFFFF/broom.png"
+        },
+        {
+            "nom": "Menuiserie",
+            "sous_titre": "Services de menuiserie sur mesure",
+            "partenaires": 6,
+            "temps_moyen": "6 heures",
+            "url_icone": "https://img.icons8.com/dotty/240/FFFFFF/circular-saw.png"
+        },
+        {
+            "nom": "CVC",
+            "sous_titre": "Services de chauffage et de climatisation",
+            "partenaires": 9,
+            "temps_moyen": "4 heures",
+            "url_icone": "https://img.icons8.com/dotty/240/FFFFFF/spa.png"
+        },
+        {
+            "nom": "Toiture",
+            "sous_titre": "Services de toiture professionnels",
+            "partenaires": 4,
+            "temps_moyen": "8 heures",
+            "url_icone": "https://img.icons8.com/dotty/240/FFFFFF/reinforced-concrete.png"
+        },
+        {
+            "nom": "Revêtement de sol",
+            "sous_titre": "Services de revêtement de sol de qualité",
+            "partenaires": 7,
+            "temps_moyen": "7 heures",
+            "url_icone": "https://img.icons8.com/dotty/240/FFFFFF/drilled-well.png"
+        }
+    ]
+}

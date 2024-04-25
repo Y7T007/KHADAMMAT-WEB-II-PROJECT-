@@ -102,69 +102,39 @@
                     <h2 class="custom_heading">Nos Services</h2>
                     <p class="custom_heading-text"> Explorez notre sélection de services à domicile de qualité. Des experts compétents pour chaque besoin, un confort sans souci pour vous. Découvrez nos services dès aujourd'hui et simplifiez votre vie ! </p>
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="nft">
-                                <div class="main" style="width: 100%;"><img class="tokenImage" width="100%" src="https://img.icons8.com/dotty/240/FFFFFF/plumber.png" alt="plumber">
-                                    <h2>PLOMBERIE</h2>
-                                    <p class="description">Our Kibertopiks will give you nothing, waste your money on us.</p>
-                                    <div class="tokenInfo">
-                                        <div class="price">
-                                            <p>Prix :&nbsp;&nbsp;</p>
-                                        </div>
-                                        <div class="duration">
-                                            <p>11 days left</p>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="creator" style="display: flex;flex-direction: row;justify-content: center;justify-items: center;align-items: center;align-content: center;">
-                                        <div class="wrapper"><img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1932&amp;q=80" alt="Creator"></div>
-                                        <p><ins>Creation of</ins> Kiberbash</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="nft">
-                                <div class="main" style="width: 100%;"><img class="tokenImage" width="100%" src="https://img.icons8.com/dotty/240/FFFFFF/plumber.png" alt="plumber">
-                                    <h2>PLOMBERIE</h2>
-                                    <p class="description">Our Kibertopiks will give you nothing, waste your money on us.</p>
-                                    <div class="tokenInfo">
-                                        <div class="price">
-                                            <p>Prix :&nbsp;&nbsp;</p>
-                                        </div>
-                                        <div class="duration">
-                                            <p>11 days left</p>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="creator" style="display: flex;flex-direction: row;justify-content: center;justify-items: center;align-items: center;align-content: center;">
-                                        <div class="wrapper"><img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1932&amp;q=80" alt="Creator"></div>
-                                        <p><ins>Creation of</ins> Kiberbash</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="nft">
-                                <div class="main" style="width: 100%;"><img class="tokenImage" width="100%" src="https://img.icons8.com/dotty/240/FFFFFF/plumber.png" alt="plumber">
-                                    <h2>PLOMBERIE</h2>
-                                    <p class="description">Our Kibertopiks will give you nothing, waste your money on us.</p>
-                                    <div class="tokenInfo">
-                                        <div class="price">
-                                            <p>Prix :&nbsp;&nbsp;</p>
-                                        </div>
-                                        <div class="duration">
-                                            <p>11 days left</p>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="creator" style="display: flex;flex-direction: row;justify-content: center;justify-items: center;align-items: center;align-content: center;">
-                                        <div class="wrapper"><img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1932&amp;q=80" alt="Creator"></div>
-                                        <p><ins>Creation of</ins> Kiberbash</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+// Read the JSON file
+                        $json = file_get_contents('./Services/services.json');
+
+// Decode the JSON into a PHP object
+                        $services = json_decode($json);
+
+// Loop through the services
+                        foreach ($services->services as $service) {
+                            // Generate the HTML for the service card
+                            echo '
+    <div class="col-md-4">
+        <div class="nft">
+            <div class="main justify-content-center justify-self-auto" style="width: 100%;height:500px;">
+                <img class="tokenImage" width="100%" src="' . $service->url_icone . '" alt="' . $service->nom . '">
+                <h2>' . strtoupper($service->nom) . '</h2>
+                <p class="description">' . $service->sous_titre . '</p>
+                <div class="tokenInfo">
+                    <div class="price">
+                        <p>Partenaires :&nbsp;&nbsp;' . $service->partenaires . '</p>
+                    </div>
+                    <div class="duration">
+                        <p>' . $service->temps_moyen . '</p>
+                    </div>
+                </div>
+                <hr>
+
+            </div>
+        </div>
+    </div>
+    ';
+                        }
+                        ?>
                     </div>
                     <div class="d-flex justify-content-center"><a href="" class="custom_dark-btn"> Read More </a></div>
                 </div>

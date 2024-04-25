@@ -485,10 +485,8 @@ a:hover, a:focus {
   max-width: 300px;
   margin: 5rem auto;
   border: 1px solid #ffffff22;
-  background-color: #282c34;
-  background: linear-gradient(0deg, #282c34 0%, rgba(17, 0, 32, 0.5) 100%);
-  box-shadow: 0 7px 20px 5px #00000088;
-  border-radius: 0.7rem;
+  background-color: #2771ff;
+    background: linear-gradient(0deg, #0f2d43 0%, #3f3115 100%);  border-radius: 0.7rem;
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
   overflow: hidden;
@@ -523,7 +521,8 @@ a:hover, a:focus {
   border-radius: 0.5rem;
   max-width: 100%;
   height: 250px;
-  object-fit: cover;
+  object-fit: contain;
+    padding: 20px;
 }
 
 .nft .main .description {
