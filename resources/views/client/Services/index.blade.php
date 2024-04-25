@@ -162,6 +162,7 @@
 
                         // Decode the JSON into a PHP object
                         $services = json_decode($json);
+                        $i=0;
 
                         // Loop through the services
                         foreach ($services->services as $service) {

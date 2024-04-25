@@ -108,11 +108,12 @@
 
 // Decode the JSON into a PHP object
                         $services = json_decode($json);
+                        $i=0;
 
 // Loop through the services
                         foreach ($services->services as $service) {
                             // Generate the HTML for the service card
-                            echo '
+                            echo $i<3?'
     <div class="col-md-4">
         <div class="nft">
             <div class="main justify-content-center justify-self-auto" style="width: 100%;height:500px;">
@@ -132,11 +133,12 @@
             </div>
         </div>
     </div>
-    ';
+    ':'';
+                            $i++;
                         }
                         ?>
                     </div>
-                    <div class="d-flex justify-content-center"><a href="" class="custom_dark-btn"> Read More </a></div>
+                    <div class="d-flex justify-content-center"><a href="/client/all-services" class="custom_dark-btn"> Read More </a></div>
                 </div>
             </section>
             <section class="fruit_section">
