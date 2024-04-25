@@ -18,7 +18,7 @@ class Client extends Authenticatable
         'ville',
         'date_naissance',
         'genre',
-        'nb_chambre',
+        'nb_chambres',
         'nb_bain',
         'television',
         'refrigirateur',

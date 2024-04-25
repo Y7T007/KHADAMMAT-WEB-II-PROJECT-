@@ -29,8 +29,7 @@
             <div class="lds-pos"></div>
         </div>
     </div>
-    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-        data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
 
         @include('client.header')
 
@@ -64,90 +63,80 @@
 
                                     <!-- Votre formulaire ici -->
                                     <div class="mb-3">
-                                    <label for="name" class="form-label">Nom :</label><br>
-                                    <input type="text" class="form-control" id="name" name="name"
-                                       placeholder=" {{ $client->name }}">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="address" class="form-label">Adresse :</label>
-                                    <input type="text" class="form-control" id="address" name="address"
-                                         placeholder=" {{ $client->address }}">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="phone_number" class="form-label">Numéro de téléphone :</label>
-                                    <input type="number" min="0" class="form-control" id="phone_number" name="phone_number"
-
-                                        placeholder=" {{ $client->phone_number }}" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="ville" class="form-label">Ville :</label>
-                                    <input type="text" class="form-control" id="ville" name="ville"
-                                        placeholder=" {{ $client->ville }}">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="date_naissance" class="form-label">Date de naissance :</label>
-                                    <input type="date" class="form-control" id="date_naissance"
-                                        name="date_naissance" placeholder=" {{ $client->date_naissance }}">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="genre" class="form-label">Genre :</label>
-                                    <input type="text" class="form-control" id="genre" name="genre"
-                                         placeholder=" {{ $client->genre }}">
-                                </div>
-                                <h4 class="card-title">Informations Maison</h4>
-
-                                <div class="mb-3">
-                                    <label for="nb_chambres" class="form-label">Nombre de chambres :</label>
-                                    <input type="number" class="form-control" id="nb_chambres" name="nb_chambres"
-
-                                        placeholder=" {{ $client->nb_chambres }}">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="nb_bain" class="form-label">Nombre de salles de bain :</label>
-                                    <input type="number" class="form-control" id="nb_bain" name="nb_bain"
-                                         placeholder=" {{ $client->nb_bain }}">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="television" class="form-label">Télévision :</label>
-                                    <input type="checkbox" value="1" id="television" name="television"
-                                        {{ $client->television ? 'checked' : '' }}>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="refrigirateur" class="form-label">Réfrigérateur :</label>
-                                    <input type="checkbox" value="1" id="refrigerateur" name="refrigerateur"
-                                        {{ $client->refrigirateur ? 'checked' : '' }}>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="machine_a_laver" class="form-label">Machine à laver :</label>
-                                    <input type="checkbox" value="1" id="machine_a_laver" name="machine_a_laver"
-                                        {{ $client->machine_a_laver ? 'checked' : '' }}>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="Garage" class="form-label">Garage :</label>
-                                    <input type="checkbox" value="1" id="Garage" name="Garage" {{ $client->Garage ? 'checked' : '' }}>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="jardin" class="form-label">Jardin :</label>
-                                    <input type="checkbox" value="1" id="jardin" name="jardin" {{ $client->jardin ? 'checked' : '' }}>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="superficie" class="form-label">Superficie :</label>
-                                    <input type="number" class="form-control" id="superficie" name="superficie"
-                                         placeholder=" {{ $client->superficie }}">
-                                </div>
-                                <div class="mb-3">
-    <label for="profile_picture" class="form-label">Image de profil :</label><br>
-    <!-- Afficher l'image de profil actuelle -->
-    @if($client->profile_picture)
-        <img src="{{ Storage::url($client->profile_picture) }}" alt="Profile Picture" style="max-width: 200px; margin-bottom: 10px;"><br>
-    @endif
-    <!-- Champ de texte pour afficher le nom de fichier actuel -->
-    <input type="text" class="form-control" id="profile_picture_name" readonly placeholder=" {{ $client->profile_picture }}">
-    <!-- Champ pour télécharger une nouvelle image -->
-    <input type="file" class="form-control" id="profile_picture" name="profile_picture">
+                                        <label for="name" class="form-label">Nom :</label><br>
+                                        <input type="text" class="form-control" id="name" name="name" value=" {{ $client->name }}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="address" class="form-label">Adresse :</label>
+                                        <input type="text" class="form-control" id="address" name="address" value=" {{ $client->address }}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="phone_number" class="form-label">Numéro de téléphone :</label>
+                                        <input type="text" class="form-control" id="phone_number" name="phone_number" value="{{ old('phone_number', $client->phone_number) }}" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="ville" class="form-label">Ville :</label>
+                                        <input type="text" class="form-control" id="ville" name="ville" value=" {{ $client->ville }}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="date_naissance" class="form-label">Date de naissance :</label>
+                                        <input type="date" class="form-control" id="date_naissance" name="date_naissance" value="{{ old('date_naissance', $client->date_naissance) }}">
+                                    </div>
+                                    <div class="mb-3">
+    <label for="genre" class="form-label">Genre :</label>
+    <select class="form-select" id="genre" name="genre">
+        <option value="homme" {{ $client->genre == 'homme' ? 'selected' : '' }}>Homme</option>
+        <option value="femme" {{ $client->genre == 'femme' ? 'selected' : '' }}>Femme</option>
+    </select>
 </div>
 
-                                <!-- Ajoutez d'autres champs ici en suivant la structure ci-dessus -->
+                                    <h4 class="card-title">Informations Maison</h4>
+
+                                    <div class="mb-3">
+                                        <label for="nb_chambres" class="form-label">Nombre de chambres :</label>
+                                        <input type="text" class="form-control" id="nb_chambres" name="nb_chambres" value="{{ old('nb_chambres', $client->nb_chambres) }}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="nb_bain" class="form-label">Nombre de salles de bain :</label>
+                                        <input type="text" class="form-control" id="nb_bain" name="nb_bain" value="{{ old('nb_bain', $client->nb_bain) }}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="television" class="form-label">Télévision :</label>
+                                        <input type="checkbox" value="1" id="television" name="television" {{ $client->television ? 'checked' : '' }}>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="refrigirateur" class="form-label">Réfrigérateur :</label>
+                                        <input type="checkbox" value="1" id="refrigirateur" name="refrigirateur" {{ $client->refrigirateur ? 'checked' : '' }}>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="machine_a_laver" class="form-label">Machine à laver :</label>
+                                        <input type="checkbox" value="1" id="machine_a_laver" name="machine_a_laver" {{ $client->machine_a_laver ? 'checked' : '' }}>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="Garage" class="form-label">Garage :</label>
+                                        <input type="checkbox" value="1" id="Garage" name="Garage" {{ $client->Garage ? 'checked' : '' }}>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="jardin" class="form-label">Jardin :</label>
+                                        <input type="checkbox" value="1" id="jardin" name="jardin" {{ $client->jardin ? 'checked' : '' }}>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="superficie" class="form-label">Superficie :</label>
+                                        <input type="text" class="form-control" id="superficie" name="superficie" value="{{ old('superficie', $client->superficie) }}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="profile_picture" class="form-label">Image de profil :</label><br>
+                                        <!-- Afficher l'image de profil actuelle -->
+                                        @if($client->profile_picture)
+                                        <img src="{{ Storage::url($client->profile_picture) }}" alt="Profile Picture" style="max-width: 200px; margin-bottom: 10px;"><br>
+                                        @endif
+                                        <!-- Champ de texte pour afficher le nom de fichier actuel -->
+                                        <input type="text" class="form-control" id="profile_picture_name" readonly placeholder=" {{ $client->profile_picture }}">
+                                        <!-- Champ pour télécharger une nouvelle image -->
+                                        <input type="file" class="form-control" id="profile_picture" name="profile_picture">
+                                    </div>
+
+                                    <!-- Ajoutez d'autres champs ici en suivant la structure ci-dessus -->
 
                                     <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
                                 </form>
@@ -173,11 +162,11 @@
         <script src="../Partenaire/assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
         <script src="../Partenaire/dist/js/pages/calendar/cal-init.js"></script>
         <script>
-    function displayFileName(input) {
-        var fileName = input.files[0].name;
-        document.getElementById('profile_picture_name').value = fileName;
-    }
-</script>
+            function displayFileName(input) {
+                var fileName = input.files[0].name;
+                document.getElementById('profile_picture_name').value = fileName;
+            }
+        </script>
     </div>
 </body>
 

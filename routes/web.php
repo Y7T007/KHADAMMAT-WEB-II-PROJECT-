@@ -80,6 +80,7 @@ Route::get('/client/profile', [ClientController::class, 'profile'])->name('clien
 Route::post('/upload-profile-picture/{client}', [ImageController::class, 'uploadProfilePicture'])->name('upload.profile.picture');
 Route::get('/client/profile_edit', [ClientController::class, 'editProfile'])->name('client.profile.edit');
 Route::post('/client/profile_edit', [ClientController::class, 'updateProfile'])->name('client.profile.update');
+Route::get('/services', 'ServiceController@index')->name('services.index');
 
 // Service routes
 Route::get('/client/all-services', [ServiceController::class, 'allServices'])->name('client.services.index');
