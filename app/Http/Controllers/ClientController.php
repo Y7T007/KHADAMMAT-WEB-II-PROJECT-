@@ -30,81 +30,69 @@ class ClientController extends Controller
         $client = Auth::guard('client')->user();
         return view('client.profile_edit', compact('client'));
     }
-
+  
     public function updateProfile(Request $request)
     {
         $request->validate([
             'name' => 'sometimes|required|string|max:255',
-            'address' => 'sometimes|nullable|string|max:255',
-            'phone_number' => 'sometimes|nullable|integer',
-            'ville' => 'sometimes|nullable|string|max:50',
-            'date_naissance' => 'sometimes|nullable|date',
-            'genre' => 'sometimes|nullable|string|max:10',
-            'nb_chambres' => 'sometimes|nullable|integer',
-            'nb_bain' => 'sometimes|nullable|integer',
-            'television' => 'sometimes|nullable|boolean',
-            'refrigirateur' => 'sometimes|nullable|boolean',
-            'machine_a_laver' => 'sometimes|nullable|boolean',
-            'Garage' => 'sometimes|nullable|boolean',
-            'jardin' => 'sometimes|nullable|boolean',
-            'superficie' => 'sometimes|nullable|integer',
-            'profile_picture' => 'sometimes|nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'address' => 'nullable|string|max:255',
+            'phone_number' => 'nullable|string|max:10', // Modifié pour accepter les numéros de téléphone
+            'ville' => 'nullable|string|max:50',
+            'date_naissance' => 'nullable|date',
+            'genre' => 'nullable|string|max:6', // Modifié pour une longueur maximale de 6 caractères
+            'nb_chambres' => 'nullable|integer',
+            'nb_bain' => 'nullable|integer',
+            'television' => 'nullable|boolean',
+            'refrigirateur' => 'nullable|boolean',
+            'machine_a_laver' => 'nullable|boolean',
+            'Garage' => 'nullable|boolean',
+            'jardin' => 'nullable|boolean',
+            'superficie' => 'nullable|integer',
+            'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
+    
         $client = Auth::guard('client')->user();
-
-        if ($request->has('name') && !is_null($request->name) && $client->name != $request->name) {
-            $client->name = $request->name;
-        }
-        if ($request->has('address') && !is_null($request->address) && $client->address != $request->address) {
-            $client->address = $request->address;
-        }
-        if ($request->has('phone_number') && !is_null($request->phone_number) && $client->phone_number != $request->phone_number) {
-            $client->phone_number = $request->phone_number;
-        }
-        if ($request->has('ville') && !is_null($request->ville) && $client->ville != $request->ville) {
-            $client->ville = $request->ville;
-        }
-        if ($request->has('date_naissance') && !is_null($request->date_naissance) && $client->date_naissance != $request->date_naissance) {
-            $client->date_naissance = $request->date_naissance;
-        }
-        if ($request->has('genre') && !is_null($request->genre) && $client->genre != $request->genre) {
-            $client->genre = $request->genre;
-        }
-        if ($request->has('nb_chambres') && !is_null($request->nb_chambres) && $client->nb_chambres != $request->nb_chambres) {
-            $client->nb_chambres = $request->nb_chambres;
-        }
-        if ($request->has('nb_bain') && !is_null($request->nb_bain) && $client->nb_bain != $request->nb_bain) {
-            $client->nb_bain = $request->nb_bain;
-        }
-        if ($request->has('television') && !is_null($request->television) && $client->television != $request->television) {
-            $client->television = $request->television;
-        }
-        if ($request->has('refrigirateur') && !is_null($request->refrigirateur) && $client->refrigirateur != $request->refrigirateur) {
-            $client->refrigirateur = $request->refrigirateur;
-        }
-        if ($request->has('machine_a_laver') && !is_null($request->machine_a_laver) && $client->machine_a_laver != $request->machine_a_laver) {
-            $client->machine_a_laver = $request->machine_a_laver;
-        }
-        if ($request->has('Garage') && !is_null($request->Garage) && $client->Garage != $request->Garage) {
-            $client->Garage = $request->Garage;
-        }
-        if ($request->has('jardin') && !is_null($request->jardin) && $client->jardin != $request->jardin) {
-            $client->jardin = $request->jardin;
-        }
-        if ($request->has('superficie') && !is_null($request->superficie) && $client->superficie != $request->superficie) {
-            $client->superficie = $request->superficie;
-        }
-        if ($request->hasFile('profile_picture') && !is_null($request->profile_picture)) {
+    
+        // Mettre à jour les données du client avec les valeurs des champs du formulaire
+        $client->update([
+            'name' => $request->input('name'),
+            'address' => $request->input('address'),
+            'phone_number' => $request->input('phone_number'),
+            'ville' => $request->input('ville'),
+            'date_naissance' => $request->input('date_naissance'),
+            'genre' => $request->input('genre'),
+            'nb_chambres' => $request->input('nb_chambres'),
+            'nb_bain' => $request->input('nb_bain'),
+            'superficie' => $request->input('superficie'),
+        ]);
+    
+        // Traitement spécial pour les valeurs des cases à cocher
+        $television = $request->has('television') ? 1 : 0;
+        $refrigirateur = $request->has('refrigirateur') ? 1 : 0;
+        $machine_a_laver = $request->has('machine_a_laver') ? 1 : 0;
+        $Garage = $request->has('Garage') ? 1 : 0;
+        $jardin = $request->has('jardin') ? 1 : 0;
+    
+        // Mettre à jour les valeurs des cases à cocher dans la base de données
+        $client->update([
+            'television' => $television,
+            'refrigirateur' => $refrigirateur,
+            'machine_a_laver' => $machine_a_laver,
+            'Garage' => $Garage,
+            'jardin' => $jardin,
+        ]);
+    
+        // Traitement spécial pour l'image de profil
+        if ($request->hasFile('profile_picture')) {
             $profilePicturePath = $request->file('profile_picture')->store('public/profile_pictures');
             $client->profile_picture = str_replace('public/', '', $profilePicturePath);
         }
-
-
+    
+        // Enregistrer les modifications dans la base de données
         $client->save();
-
+    
         return redirect()->route('client.profile')->with('success', 'Profil mis à jour avec succès!');
     }
-
-
+    
+    
     }
