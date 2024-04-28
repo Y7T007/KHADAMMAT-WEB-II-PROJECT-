@@ -21,12 +21,16 @@
                                 </span></a>
                         </li>
 
-                        <li class="sidebar-item">
-    <a class="sidebar-link sidebar-link" href="{{ route('partners.index') }}" aria-expanded="false">
+                       <!-- Dans votre sidebar.blade.php ou un fichier similaire -->
+<!-- Sidebar item for 'Nos Partenaires' -->
+<li class="sidebar-item"> 
+    <a class="sidebar-link" href="{{ route('client.partners.index') }}" aria-expanded="false">
         <i class="bi bi-people-fill"></i>
         <span class="hide-menu">Nos Partenaires</span>
     </a>
 </li>
+
+
 
 
 

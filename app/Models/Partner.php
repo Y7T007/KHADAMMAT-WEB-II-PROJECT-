@@ -1,6 +1,5 @@
 <?php
 
-// Partner model
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -18,12 +17,18 @@ class Partner extends Model
         'availability_status',
         'rate',
         'expertise_areas',
-        // Add other partner-specific fields here
+        'user_id',
     ];
 
-    // Define the relationship with the professional areas table
+    // Définir la relation avec les domaines d'expertise
     public function professionalAreas()
     {
-        return $this->belongsTo(ProfessionalArea::class, 'expertise_areas');
+        return $this->belongsToMany(ProfessionalArea::class, 'partner_expertise', 'partner_id', 'area_id');
+    }
+
+    // Définir la relation avec l'utilisateur
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

@@ -1,15 +1,15 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Partner; // Assurez-vous d'importer le modèle approprié
 
 class PartnerController extends Controller
 {
     public function index()
     {
-        $partners = Partner::all(); // Récupère tous les partenaires depuis la base de données
-        return view('client.Partenaires.index', compact('partners')); // Mettez à jour le chemin de la vue
+        $partners = Partner::with(['user', 'professionalAreas'])->get();
+        $client = Auth::guard('client')->user();  // Récupère l'utilisateur connecté
+        return view('client.partners.index', compact('partners', 'client'));
     }
 }
