@@ -198,9 +198,11 @@
             <p class="text-muted font-size-sm">{{ $partner->location_city }}</p>
         </div>
         <div class="card-footer text-center">
-        <button class="btn btn-follow btn-sm bg-white has-icon btn-block" type="button">
-     Voir profil
+        <button class="btn btn-follow btn-sm bg-white has-icon btn-block view-profile-btn" data-partner-id="{{ $partner->partner_id }}">
+  Voir profil
 </button>
+
+
 
         </div>
     </div>
@@ -252,7 +254,18 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('searchInput').addEventListener('keyup', filterCards);
 });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var viewProfileButtons = document.querySelectorAll('.view-profile-btn');
+    viewProfileButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var partnerId = this.getAttribute('data-partner-id');
+            window.location.href = '{{ url("partners") }}/' + partnerId;
+        });
+    });
+});
 
+</script>
 
 </body>
 </html>

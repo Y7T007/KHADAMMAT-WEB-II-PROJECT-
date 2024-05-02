@@ -84,6 +84,7 @@ Route::get('/client/profile_edit', [ClientController::class, 'editProfile'])->na
 Route::post('/client/profile_edit', [ClientController::class, 'updateProfile'])->name('client.profile.update');
 Route::get('/services', 'ServiceController@index')->name('services.index');
 Route::get('/client/partners', [PartnerController::class, 'index'])->name('client.partners.index');
+Route::get('/partners/{partner_id}', [PartnerController::class, 'show'])->name('partners.show');
 
 // Service routes
 Route::get('/client/all-services', [ServiceController::class, 'allServices'])->name('client.services.index');

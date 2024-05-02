@@ -12,4 +12,13 @@ class PartnerController extends Controller
         $client = Auth::guard('client')->user();  // Récupère l'utilisateur connecté
         return view('client.partners.index', compact('partners', 'client'));
     }
+
+    public function show($id)
+{
+    $partner = Partner::with(['user', 'professionalAreas'])->findOrFail($id);
+    $client = Auth::guard('client')->user();  // Récupère l'utilisateur connecté
+    return view('client.partner.show', compact('partner' , 'client'));
+}
+
+
 }
