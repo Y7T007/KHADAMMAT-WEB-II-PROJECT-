@@ -6,19 +6,28 @@ use Illuminate\Database\Eloquent\Model;
 
 class Partner extends Model
 {
-    protected $table = 'business_partners';
 
-    protected $primaryKey = 'partner_id';
+    protected $table = 'users';
+
+    protected $primaryKey = 'id';
 
     protected $fillable = [
-        'company_name',
-        'location_city',
-        'years_of_experience',
-        'availability_status',
-        'rate',
-        'expertise_areas',
-        'user_id',
+        'name',
+        'email',
+        'email_verified_at',
+        'password',
+        'remember_token',
+        'current_team_id',
+        'profile_photo_path',
+        'created_at',
+        'updated_at',
+        'type',
     ];
+
+    public function isPartner()
+    {
+        return $this->type === 'partner';
+    }
 
     // Définir la relation avec les domaines d'expertise
     public function professionalAreas()

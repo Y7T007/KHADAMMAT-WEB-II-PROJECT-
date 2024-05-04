@@ -15,9 +15,9 @@
     <!-- Custom CSS -->
     <link href="../Partenaire/assets/libs/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet" />
     <link href="../Partenaire/dist/css/style.min.css" rel="stylesheet">
-    
+
     <!-- Custom Styles for Cards -->
-  
+
 </head>
 <style>
 /* Base settings for the card layout */
@@ -148,7 +148,7 @@
     <!-- ============================================================== -->
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
-     
+
     @include('client.header')
     @include('client.sidebar')
 
@@ -177,43 +177,34 @@
     </div>
 </div>
 
-                <div class="row">
+<div class="row">
     <div class="main-body container">
-    <div class="row gutters-sm" id="cardsContainer">
-    @foreach ($partners as $partner)
-<div class="col-md-4 mb-3">
-    <div class="card h-100" data-name="{{ $partner->user->name }}" data-city="{{ $partner->location_city }}" data-domain="{{ $partner->professionalAreas->pluck('domain')->join(', ') }}">
-        <img src="{{ asset('storage/profile_pictures/cover.jpg') }}" alt="Cover" class="card-img-top">
-        <div class="card-body text-center">
-            <img src="{{ Storage::url($partner->user->profile_photo_path) }}" alt="{{ $partner->user->name }}" class="img-fluid img-thumbnail profile-img">
-            <h5 class="card-title">{{ $partner->user->name }}</h5>
-            <p class="text-secondary mb-1">
-                @foreach ($partner->professionalAreas as $area)
-                    {{ $area->domain }}
-                    @if (!$loop->last)
-                        ,
-                    @endif
-                @endforeach
-            </p>
-            <p class="text-muted font-size-sm">{{ $partner->location_city }}</p>
-        </div>
-        <div class="card-footer text-center">
-        <button class="btn btn-follow btn-sm bg-white has-icon btn-block view-profile-btn" data-partner-id="{{ $partner->partner_id }}">
-  Voir profil
-</button>
-
-
-
+        <div class="row gutters-sm" id="cardsContainer">
+            @foreach ($partners as $partner)
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100" data-name="{{ $partner->name }}" data-city="{{ $partner->location_city }}" data-domain="{{ $services[$partner->id]['nom'] }}">
+                        <img src="{{ asset('storage/profile_pictures/cover.jpg') }}" alt="Cover" class="card-img-top">
+                        <div class="card-body text-center">
+                            <img src="{{ Storage::url($partner->profile_photo_path) }}" alt="{{ $partner->name }}" class="img-fluid img-thumbnail profile-img">
+                            <h5 class="card-title">{{ $partner->name }}</h5>
+                            <p class="text-secondary mb-1">
+                                {{ $services[$partner->id]['nom'] }}
+                            </p>
+                            <p class="text-muted font-size-sm">{{ $partner->location_city }}</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <button class="btn btn-follow btn-sm bg-white has-icon btn-block view-profile-btn" data-partner-id="{{ $partner->partner_id }}">
+                                Voir profil
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
-</div>
-@endforeach
-
-    </div>
-</div>
 <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../Partenaire/assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="../Partenaire/assets/extra-libs/taskboard/js/jquery.ui.touch-punch-improved.js"></script>
@@ -238,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var filter = input.value.toUpperCase();
         var cardsContainer = document.getElementById('cardsContainer');
         var cards = cardsContainer.getElementsByClassName('card');
-        
+
         for (var i = 0; i < cards.length; i++) {
             var name = cards[i].getAttribute('data-name');
             var city = cards[i].getAttribute('data-city');
