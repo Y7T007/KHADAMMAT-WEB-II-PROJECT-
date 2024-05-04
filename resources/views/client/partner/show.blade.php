@@ -118,20 +118,20 @@
 
                           </div>
                           <h6>Domaines d'expertise</h6>
-            <p class="text-muted">
-                @foreach ($partner->professionalAreas as $area)
-                    {{ $area->domain }}@if (!$loop->last),@endif
-                @endforeach
-            </p>
+                            <p class="text-muted">
+                                @foreach ($partner->professionalAreas as $area)
+                                    {{ $area->domain }}@if (!$loop->last),@endif
+                                @endforeach
+                            </p>
 
-            <h6>Années d'expérience</h6>
-            <p class="text-muted">{{ $partner->years_of_experience ?? 'Non spécifié' }} ans</p>
+                            <h6>Années d'expérience</h6>
+                            <p class="text-muted">{{ $partner->years_of_experience ?? 'Non spécifié' }} ans</p>
 
-            <h6>Disponibilité</h6>
-            <p class="text-muted">{{ $partner->availability_status ? 'Disponible' : 'Non disponible' }}</p>
+                            <h6>Disponibilité</h6>
+                            <p class="text-muted">{{ $partner->availability_status ? 'Disponible' : 'Non disponible' }}</p>
 
-            <h6>Taux de satisfaction</h6>
-            <p class="text-muted">{{ $partner->rate ?? 'Non évalué' }}</p>
+                            <h6>Taux de satisfaction</h6>
+                            <p class="text-muted">{{ $partner->rate ?? 'Non évalué' }}</p>
                         </div>
 
                       </div>
