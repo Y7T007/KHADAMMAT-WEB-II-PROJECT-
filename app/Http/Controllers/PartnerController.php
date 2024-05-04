@@ -20,5 +20,23 @@ class PartnerController extends Controller
     return view('client.partner.show', compact('partner' , 'client'));
 }
 
+    public function getPartnersForService(Request $request)
+    {
+        $serviceId = $request->get('service_id');
+        $date = $request->get('date');
+
+        // Get the partners that provide the selected service
+        $partners = Partner::whereHas('services', function ($query) use ($serviceId) {
+            $query->where('id', $serviceId);
+        })->get();
+
+        // Check the availability of each partner
+        foreach ($partners as $partner) {
+            $servicesCount = $partner->services()->whereDate('created_at', $date)->count();
+            $partner->availability = $servicesCount >= 2 ? 'Next day' : 'Available';
+        }
+
+        return response()->json($partners);
+    }
 
 }
