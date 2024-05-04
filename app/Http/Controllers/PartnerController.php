@@ -1,9 +1,11 @@
 <?php
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request; // Add this line
+use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Partner; // Make sure to import the correct model
+use App\Models\Partner;
+use App\Models\Service;
 
 class PartnerController extends Controller
 {
@@ -23,20 +25,28 @@ class PartnerController extends Controller
 
     public function getPartnersForService(Request $request)
     {
-        $service = $request->get('service');
-        return 'the asked service is : ' . $service;
+        $serviceName = $request->get('service');
 
-        // Get the partners that provide the selected service
-        $partners = Partner::whereHas('services', function ($query) use ($service) {
-            $query->where('nom', $service);
-        })->get();
+        // Log the requested service
+        \Log::info('Requested service: ' . $serviceName);
 
-        // Check the availability of each partner
-        foreach ($partners as $partner) {
-            $servicesCount = $partner->services()->whereDate('created_at', Carbon::today())->count();
-            $partner->availability = $servicesCount >= 2 ? 'Next day' : 'Available';
+        // Get the service with the given name
+        $service = Service::where('nom', $serviceName)->first();
+
+        if ($service) {
+            // Get the partner that provides the selected service
+            $partner = User::where('id', $service->partenaireid)->first();
+
+            if ($partner) {
+                // Return the partner as a JSON response
+                return response()->json(['partner' => $partner]);
+            } else {
+                // No partner found for the given service
+                return response()->json(['error' => 'No partner found for the given service'], 404);
+            }
+        } else {
+            // No service found with the given name
+            return response()->json(['error' => 'No service found with the given name'], 404);
         }
-
-        return response()->json(['partners' => $partners]);
     }
 }
