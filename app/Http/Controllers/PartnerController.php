@@ -8,28 +8,17 @@ class PartnerController extends Controller
 {
     public function index()
     {
-        $partners = Partner::with('user')->get();
-        $client = Auth::guard('client')->user();  // Get the logged in user
-
-        // Fetch professional areas from the JSON file
-        $json = file_get_contents(public_path('Services/services.json'));
-        $services = json_decode($json, true)['services'];
-
-        return view('client.partners.index', compact('partners', 'client', 'services'));
+        $partners = Partner::with(['user', 'professionalAreas'])->get();
+        $client = Auth::guard('client')->user();  // Récupère l'utilisateur connecté
+        return view('client.partners.index', compact('partners', 'client'));
     }
 
     public function show($id)
-    {
-        $partner = Partner::with('user')->findOrFail($id);
-        if (!$partner->isPartner()) {
-            abort(404); // Or any other handling when the user is not a partner
-        }
-        $client = Auth::guard('client')->user();  // Get the logged in user
+{
+    $partner = Partner::with(['user', 'professionalAreas'])->findOrFail($id);
+    $client = Auth::guard('client')->user();  // Récupère l'utilisateur connecté
+    return view('client.partner.show', compact('partner' , 'client'));
+}
 
-        // Fetch professional areas from the JSON file
-        $json = file_get_contents(public_path('Services/services.json'));
-        $services = json_decode($json, true)['services'];
 
-        return view('client.partner.show', compact('partner' , 'client', 'services'));
-    }
 }
