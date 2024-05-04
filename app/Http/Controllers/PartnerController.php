@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request; // Add this line
 use Illuminate\Support\Facades\Auth;
 use App\Models\Partner; // Make sure to import the correct model
 
@@ -22,21 +23,20 @@ class PartnerController extends Controller
 
     public function getPartnersForService(Request $request)
     {
-        $serviceId = $request->get('service_id');
-        $date = $request->get('date');
+        $service = $request->get('service');
+        return 'the asked service is : ' . $service;
 
         // Get the partners that provide the selected service
-        $partners = Partner::whereHas('services', function ($query) use ($serviceId) {
-            $query->where('id', $serviceId);
+        $partners = Partner::whereHas('services', function ($query) use ($service) {
+            $query->where('nom', $service);
         })->get();
 
         // Check the availability of each partner
         foreach ($partners as $partner) {
-            $servicesCount = $partner->services()->whereDate('created_at', $date)->count();
+            $servicesCount = $partner->services()->whereDate('created_at', Carbon::today())->count();
             $partner->availability = $servicesCount >= 2 ? 'Next day' : 'Available';
         }
 
-        return response()->json($partners);
+        return response()->json(['partners' => $partners]);
     }
-
 }

@@ -562,7 +562,7 @@
 <!-- ============================================================== -->
 <!-- All Jquery -->
 <!-- ============================================================== -->
-<script src="../Partenaire/assets/libs/jquery/dist/jquery.min.js"></script>
+<script src="../Partenaire/assets/libs/jquery/dist/jquery.min.js"></script> <!-- Move this line to here -->
 <script src="../Partenaire/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <!-- apps -->
 <!-- apps -->

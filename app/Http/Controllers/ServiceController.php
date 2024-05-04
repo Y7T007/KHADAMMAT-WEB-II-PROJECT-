@@ -36,4 +36,5 @@ class ServiceController extends Controller
 
         return view('client.services.show', ['service' => $service])->with('client', $client);
     }
+
 }
