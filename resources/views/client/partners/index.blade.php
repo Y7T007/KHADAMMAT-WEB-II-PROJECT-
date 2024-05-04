@@ -188,12 +188,13 @@
                             <img src="{{ Storage::url($partner->profile_photo_path) }}" alt="{{ $partner->name }}" class="img-fluid img-thumbnail profile-img">
                             <h5 class="card-title">{{ $partner->name }}</h5>
                             <p class="text-secondary mb-1">
+                                {{ $services[$partner->id]['nom'] }} ;
                                 {{ $services[$partner->id]['nom'] }}
                             </p>
                             <p class="text-muted font-size-sm">{{ $partner->location_city }}</p>
                         </div>
                         <div class="card-footer text-center">
-                            <button class="btn btn-follow btn-sm bg-white has-icon btn-block view-profile-btn" data-partner-id="{{ $partner->partner_id }}">
+                            <button class="btn btn-follow btn-sm bg-white has-icon btn-block view-profile-btn" data-partner-id="{{ $partner->id }}">
                                 Voir profil
                             </button>
                         </div>

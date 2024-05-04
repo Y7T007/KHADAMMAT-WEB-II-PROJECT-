@@ -3,7 +3,7 @@
 <head>
 @include('client.head')
 
-<title>Profil de {{ $partner->user->name }}</title>
+<title>Profil de {{ $partner->name }}</title>
 <style>
         .gradient-custom {
           background: linear-gradient(70deg, #d2b55b 40%, #a3c1da 100%);
@@ -39,7 +39,7 @@
         background-color: #f7f4b5; /* Couleur de fond */
         border: 2px solid #d2b55b; /* Bordure */
         border-radius: 5px; /* Arrondissement des coins */
-    
+
         }
         .col-6.mb-3 {
         background-color: #f9f9f9; /* Couleur de fond de la div */
@@ -88,7 +88,7 @@
     <!-- ============================================================== -->
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
-     
+
 @include('client.header')
 @include('client.sidebar')
 
@@ -99,8 +99,8 @@
         <div class="card mb-3" style="border-radius: .5rem;">
           <div class="row g-0">
             <div  class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-              <img src="{{ Storage::url($partner->user->profile_photo_path) }}" alt="{{ $partner->user->name }}"  class="img-fluid profile-img">
-              <h5>{{ $partner->user->name }}</h5>
+              <img src="{{ Storage::url($partner->profile_photo_path) }}" alt="{{ $partner->name }}"  class="img-fluid profile-img">
+              <h5>{{ $partner->name }}</h5>
                 <p>{{ $partner->location_city }}</p>
             </div>
             <div class="col-md-8">
@@ -110,12 +110,12 @@
                 <div class="row pt-1">
                   <div class="col-6 mb-3">
                     <h6>Email</h6>
-                    <p class="text-muted">{{ $partner->user->email }}</p>
+                    <p class="text-muted">{{ $partner->email }}</p>
                   </div>
                   <div class="col-6 mb-3">
                     <h6>Company name</h6>
                     <p class="text-muted">{{ $partner->company_name ?? 'N/A' }}</p>
-                   
+
                   </div>
                   <h6>Domaines d'expertise</h6>
     <p class="text-muted">
@@ -123,17 +123,17 @@
             {{ $area->domain }}@if (!$loop->last),@endif
         @endforeach
     </p>
-    
+
     <h6>Années d'expérience</h6>
     <p class="text-muted">{{ $partner->years_of_experience ?? 'Non spécifié' }} ans</p>
 
     <h6>Disponibilité</h6>
     <p class="text-muted">{{ $partner->availability_status ? 'Disponible' : 'Non disponible' }}</p>
-    
+
     <h6>Taux de satisfaction</h6>
     <p class="text-muted">{{ $partner->rate ?? 'Non évalué' }}</p>
                 </div>
-               
+
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../Partenaire/assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="../Partenaire/assets/extra-libs/taskboard/js/jquery.ui.touch-punch-improved.js"></script>
