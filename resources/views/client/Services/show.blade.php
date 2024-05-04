@@ -437,25 +437,17 @@
 
                                 </div>
 
-                                <div class="address-choose">
-                                    <label for="charge_horaire">Charge Horaire (en Heures)</label><br>
-                                    <input type="number" name="charge_horaire" id="charge_horaire" min="0" placeholder="" value="0">
-                                    <br>
+                                <div class="product-color">
+                                    <span>Sous Services Demande</span>
+
+                                    <div class="address-choose">
+                                        <select name="sub_service" style="padding: 25px; border-radius: 15px">
+                                            @foreach($service->sous_services as $subService)
+                                                <option value="{{ $subService }}">{{ $subService }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
-
-                                <!-- Cable Configuration -->
-                                <div class="cable-config">
-{{--                                    <span>Choisissez votre Agent</span>--}}
-
-{{--                                    <div class="cable-choose">--}}
-{{--                                        <button>Partenaire 1</button>--}}
-{{--                                        <button>Partenaire 2</button>--}}
-{{--                                        <button>Partenaire 3</button>--}}
-{{--                                    </div>--}}
-
-                                    <a href="#">Voir la liste de tous les agents</a>
-                                </div>
-                            </div>
 
                             <!-- Product Pricing -->
                             <div class="product-price">
