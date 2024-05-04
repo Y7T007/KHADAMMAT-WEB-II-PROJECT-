@@ -188,7 +188,7 @@ create table system_agents
     constraint fk_partner_responses
         foreign key (partner_responses) references business_partners (partner_id)
 );
-
+drop table if exists users;
 create table users
 (
     id                 bigint unsigned auto_increment

@@ -3,6 +3,19 @@
         {
             "id": 1,
             "nom": "Plomberie",
+            "sous_services": [
+                "Installation de plomberie",
+                "Réparation de plomberie",
+                "Débouchage de canalisations",
+                "Installation de chauffe-eau",
+                "Réparation de chauffe-eau",
+                "Installation de robinetterie",
+                "Réparation de robinetterie",
+                "Installation de sanitaires",
+                "Réparation de sanitaires",
+                "Installation de tuyauterie",
+                "Réparation de tuyauterie"
+            ],
             "sous_titre": "Services de plomberie professionnels",
             "partenaires": 10,
             "temps_moyen": "3 heures",
@@ -11,6 +24,16 @@
         {
             "id": 2,
             "nom": "Électricité",
+            "sous_services" : [
+                "Installation électrique",
+                "Réparation électrique",
+                "Dépannage électrique",
+                "Installation de luminaires",
+                "Réparation de luminaires",
+                "Installation de prises électriques",
+                "Réparation de prises électriques",
+
+            ],
             "sous_titre": "Services électriques certifiés",
             "partenaires": 8,
             "temps_moyen": "2 heures",
@@ -19,6 +42,19 @@
         {
             "id": 3,
             "nom": "Aménagement",
+            "sous_services": [
+                "Aménagement de jardin",
+                "Aménagement de terrasse",
+                "Aménagement de balcon",
+                "Aménagement de patio",
+                "Aménagement de piscine",
+                "Aménagement de cour",
+                "Aménagement de clôture",
+                "Aménagement de jardin d'hiver",
+                "Aménagement de jardin d'été",
+                "Aménagement de jardin d'automne",
+                "Aménagement de jardin de printemps"
+            ],
             "sous_titre": "Services d'aménagement paysager de qualité",
             "partenaires": 7,
             "temps_moyen": "4 heures",
@@ -27,6 +63,18 @@
         {
             "id": 4,
             "nom": "Peinture",
+            "sous_services": [
+
+                "Peinture intérieure",
+                "Peinture extérieure",
+                "Peinture de façade",
+                "Peinture de portes",
+                "Peinture de fenêtres",
+                "Peinture de murs",
+                "Peinture de plafonds",
+                "Peinture de sols",
+
+            ],
             "sous_titre": "Services de peinture intérieure et extérieure",
             "partenaires": 5,
             "temps_moyen": "5 heures",
@@ -35,7 +83,18 @@
         {
             "id": 5,
             "nom": "Nettoyage",
-            "sous_titre": "Services de nettoyage résidentiel et commercial",
+            "sous_services": [
+
+                "Nettoyage de vitres",
+                "Nettoyage de sols",
+                "Nettoyage de murs",
+                "Nettoyage de plafonds",
+                "Nettoyage de façades",
+                "Nettoyage de toitures",
+                "Nettoyage de terrasses",
+
+            ],
+                "sous_titre": "Services de nettoyage résidentiel et commercial",
             "partenaires": 12,
             "temps_moyen": "2 heures",
             "url_icone": "https://img.icons8.com/dotty/240/FFFFFF/broom.png"
@@ -43,6 +102,19 @@
         {
             "id": 6,
             "nom": "Menuiserie",
+            "sous_services": [
+                "Installation de menuiserie",
+                "Réparation de menuiserie",
+                "Dépannage de menuiserie",
+                "Installation de portes",
+                "Réparation de portes",
+                "Installation de fenêtres",
+                "Réparation de fenêtres",
+                "Installation de volets",
+                "Réparation de volets",
+                "Installation de portails",
+                "Réparation de portails"
+            ],
             "sous_titre": "Services de menuiserie sur mesure",
             "partenaires": 6,
             "temps_moyen": "6 heures",
@@ -51,6 +123,18 @@
         {
             "id": 7,
             "nom": "CVC",
+            "sous_services": [
+                "Installation de chauffage",
+                "Réparation de chauffage",
+                "Installation de climatisation",
+                "Réparation de climatisation",
+                "Installation de ventilation",
+                "Réparation de ventilation",
+                "Installation de VMC",
+                "Réparation de VMC",
+                "Installation de pompe à chaleur",
+                "Réparation de pompe à chaleur"
+            ],
             "sous_titre": "Services de chauffage et de climatisation",
             "partenaires": 9,
             "temps_moyen": "4 heures",
@@ -59,6 +143,19 @@
         {
             "id": 8,
             "nom": "Toiture",
+            "sous_services": [
+                "Installation de toiture",
+                "Réparation de toiture",
+                "Dépannage de toiture",
+                "Installation de gouttières",
+                "Réparation de gouttières",
+                "Installation de fenêtres de toit",
+                "Réparation de fenêtres de toit",
+                "Installation de lucarnes",
+                "Réparation de lucarnes",
+                "Installation de cheminées",
+                "Réparation de cheminées"
+            ],
             "sous_titre": "Services de toiture professionnels",
             "partenaires": 4,
             "temps_moyen": "8 heures",
@@ -67,6 +164,19 @@
         {
             "id": 9,
             "nom": "Revêtement de sol",
+            "sous_services": [
+                "Installation de revêtement de sol",
+                "Réparation de revêtement de sol",
+                "Dépannage de revêtement de sol",
+                "Installation de parquet",
+                "Réparation de parquet",
+                "Installation de carrelage",
+                "Réparation de carrelage",
+                "Installation de moquette",
+                "Réparation de moquette",
+                "Installation de lino",
+                "Réparation de lino"
+            ],
             "sous_titre": "Services de revêtement de sol de qualité",
             "partenaires": 7,
             "temps_moyen": "7 heures",
