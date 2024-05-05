@@ -591,6 +591,52 @@
                     </div>
 
                     <!-- Scripts -->
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+                    <script>
+                        $(document).ready(function() {
+                            // When the form is submitted
+                            $('#demandForm').submit(function(event) {
+                                // Prevent the default form submission action
+                                event.preventDefault();
+
+                                // Submit the form via AJAX
+                                $.ajax({
+                                    type: 'POST',
+                                    url: $(this).attr('action'),
+                                    data: $(this).serialize(),
+                                    success: function(response) {
+                                        // Show success alert
+                                        Swal.fire({
+                                            title: "Success!",
+                                            text: response.message, // Show the success message from the server
+                                            backdrop: `
+                        rgba(0,0,123,0.4)
+                    `,
+                                            icon: "success",
+                                            didClose: function () {
+                                                // Redirect to the service history page when the modal is closed
+                                                window.location.href = '/client/service-history';
+                                            }
+                                        });
+                                        // Optionally, you can perform additional actions after successful submission
+                                    },
+                                    error: function(xhr, status, error) {
+                                        // Handle error response
+                                        var errorMessage = xhr.responseJSON.message;
+                                        Swal.fire({
+                                            title: "Error!",
+                                            text: errorMessage,
+                                            backdrop: `
+                        rgba(0,0,123,0.4)
+                    `,
+                                            icon: "error"
+                                        });
+                                    }
+                                });
+                            });
+                        });
+                    </script>
 
                     <script>
                         // Get the dropdown menu
