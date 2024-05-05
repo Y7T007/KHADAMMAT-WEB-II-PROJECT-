@@ -463,6 +463,17 @@
                                     <div class="address-choose">
                                         <input type="date" id="demandDate" name="demandDate"  style="width:100%;padding: 25px; border-radius: 15px" >
                                     </div>
+                                    <script>
+                                        $(document).ready(function() {
+                                            var today = new Date();
+                                            var dd = String(today.getDate()).padStart(2, '0');
+                                            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                                            var yyyy = today.getFullYear();
+
+                                            today = yyyy + '-' + mm + '-' + dd;
+                                            document.getElementById('demandDate').value = today;
+                                        });
+                                    </script>
                                 </div>
 
                                 <div class="address-choose">
@@ -516,17 +527,37 @@
                                                             </span>
                                                             <br>
                                                             <span class="m-widget4__sub">
-                                    {{ isset($partner->proposed_services[0]) ? $partner->proposed_services[0]->prix . ' dhs/h' : '' }}                                                         </span>
+                                    {{ isset($partner->proposed_services[0]) ? $partner->proposed_services[0]->prix . ' dhs/h' : '' }}
+
+                                                            </span>
+
+                                                            <br>
+
                                                         </div>
                                                         <div class="m-widget4__progress">
                                                             <div class="m-widget4__progress-wrapper">
                                                             <span class="m-widget17__progress-number">
 
-                            Availability: {{ $partner->availability }}
-                                                           </span>
-                                                                <div class="progress m-progress--sm">
-                                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 63%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="63"></div>
-                                                                </div>
+<!-- Rating -->
+                                                            <div class="flex items-center" style="height: 100%;width: auto">
+                                                                @for ($i = 0; $i < 5; $i++)
+                                                                    @if ($partner->note > $i)
+                                                                        <span class="fa fa-star checked"></span>
+
+                                                                    @else
+                                                                        <span class="fa fa-star "></span>
+
+                                                                    @endif
+                                                                @endfor
+                                                            </div>
+                                                                <!-- End Rating -->                                                           </span>
+
+                                                                <style>
+                                                                    .checked {
+                                                                        color: orange;
+                                                                    }
+                                                                </style>
+
                                                             </div>
                                                         </div>
                                                         <div class="m-widget4__ext">
@@ -538,6 +569,7 @@
                                                             </a>
                                                         </div>
                                                     </div>
+
                                                 @endforeach
                                             </div>
                                         </div>

@@ -39,7 +39,8 @@ class User extends Authenticatable
         'remember_token',
         'current_team_id',
         'profile_photo_path',
-        'type'
+        'type',
+        'note'
     ];
 
     /**
