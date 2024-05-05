@@ -68,4 +68,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Partner::class, 'user_id');
     }
+
+    public function services()
+    {
+        return $this->hasMany(Service::class, 'partenaireid');
+    }
 }

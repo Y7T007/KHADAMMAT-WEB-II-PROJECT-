@@ -11,17 +11,17 @@ class PartnerController extends Controller
 {
     public function index()
     {
-        $partners = Partner::with(['user', 'professionalAreas'])->get();
-        $client = Auth::guard('client')->user();  // Récupère l'utilisateur connecté
+        $partners = User::with(['services'])->where('type', 'partner')->get();
+        $client = Auth::guard('client')->user();
         return view('client.partners.index', compact('partners', 'client'));
     }
 
     public function show($id)
-{
-    $partner = Partner::with(['user', 'professionalAreas'])->findOrFail($id);
-    $client = Auth::guard('client')->user();  // Récupère l'utilisateur connecté
-    return view('client.partner.show', compact('partner' , 'client'));
-}
+    {
+        $partner = User::with(['services'])->where('type', 'partner')->findOrFail($id);
+        $client = Auth::guard('client')->user();  // Récupère l'utilisateur connecté
+        return view('client.partner.show', compact('partner' , 'client'));
+    }
 
     public function getPartnersForService(Request $request)
     {
