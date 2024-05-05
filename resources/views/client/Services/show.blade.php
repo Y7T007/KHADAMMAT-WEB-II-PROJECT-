@@ -375,7 +375,7 @@
 
                         <!-- Left Column / Headphones Image -->
                         <div class="left-column">
-                            <img data-image="red" class="active" src="assets/img/plomb.avif" alt="" style="border-radius: 50px; padding: 30px;object-fit: contain">
+                            <img data-image="red" class="active" src="assets/img/plomb.avif" alt="" style="border-radius: 50px; padding: 30px;object-fit: contain;margin-top: 50px">
                         </div>
 
 
@@ -408,7 +408,6 @@
                                             <input type="text" id="otherAddress" name="otherAddress" style="display: none;">
 
                                         </div>
-                                        <br>
                                     </div>
                                     <script>
                                         $(document).ready(function() {
@@ -441,13 +440,26 @@
                                     <span>Sous Services Demande</span>
 
                                     <div class="address-choose">
-                                        <select name="sub_service" style="padding: 25px; border-radius: 15px" id="serviceDropdown">
+                                        <select name="sub_service" style="width:100%;padding: 25px; border-radius: 15px" id="serviceDropdown">
                                             <option value="">Tous les services</option>
                                         @foreach($service->sous_services as $subService)
                                                 <option value="{{ $subService }}">{{ $subService }}</option>
                                             @endforeach
                                         </select>
                                     </div>
+                                </div>
+                                <div class="product-color">
+                                    <span>Date du service : </span>
+
+                                    <div class="address-choose">
+                                        <input type="date" id="demandDate" name="demandDate"  style="width:100%;padding: 25px; border-radius: 15px" >
+                                    </div>
+                                </div>
+
+                                <div class="address-choose">
+                                    <label for="charge_horaire">Charge Horaire (en Heures)</label><br>
+                                    <input type="number" name="charge_horaire" id="charge_horaire" min="0" placeholder="" value="0" style="width:100%;padding: 25px; border-radius: 15px;margin-bottom: 15px">
+                                    <br>
                                 </div>
 
                             <!-- Product Pricing -->
@@ -495,9 +507,10 @@
                                                         </div>
                                                         <div class="m-widget4__progress">
                                                             <div class="m-widget4__progress-wrapper">
-                            <span class="m-widget17__progress-number">
-                                Disponnible dans 5 jours
-                            </span>
+                                                            <span class="m-widget17__progress-number">
+
+                            Availability: {{ $partner->availability }}
+                                                           </span>
                                                                 <div class="progress m-progress--sm">
                                                                     <div class="progress-bar bg-danger" role="progressbar" style="width: 63%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="63"></div>
                                                                 </div>
@@ -507,7 +520,7 @@
                                                             <a href="#" class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-primary">
                                                                 Voir profile
                                                             </a>
-                                                            <a href="#" class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-secondary" >
+                                                            <a href="#" class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-secondary" data-price="{{isset( $partner->proposed_services[0])? $partner->proposed_services[0]->prix:'' }}">
                                                                 Choisir.........
                                                             </a>
                                                         </div>
@@ -569,6 +582,15 @@
 
                                 // Update the price on the page
                                 $('.product-price span').text(newPrice + '$');
+                            });
+
+                            // Listen for clicks on the "Choisir..." buttons
+                            $('.btn-secondary').on('click', function() {
+                                // Get the price per hour from the data-price attribute
+                                pricePerHour = $(this).data('price');
+
+                                // Trigger an input event on the charge_horaire input field to update the price
+                                $('#charge_horaire').trigger('input');
                             });
                         });
                     </script>
