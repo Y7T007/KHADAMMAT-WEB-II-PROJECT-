@@ -46,12 +46,15 @@
                                     <img src="{{ Storage::url($partner->profile_photo_path) }}" alt="{{ $partner->name }}" class="img-fluid img-thumbnail profile-img">
                                     <h5 class="card-title">{{ $partner->name }}</h5>
                                     <p class="text-secondary mb-1">
-                                        @foreach ($partner->services as $service)
-                                            {{ $service->name }}
+                                        @foreach ($partner->services as $s)
+                                            {{ $s->nom }}
                                             @if (!$loop->last)
                                                 ,
                                             @endif
                                         @endforeach
+                                        @if ($partner->services->count() == 0)
+                                            Aucun service offert pour le moment
+                                        @endif
                                     </p>
                                     <p class="text-muted font-size-sm">{{ $partner->location_city }}</p>
                                 </div>
