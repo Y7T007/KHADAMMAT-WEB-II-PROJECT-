@@ -132,7 +132,7 @@ public function saveRating(Request $request, $demandeId)
 
     // Créer ou mettre à jour le commentaire associé à la demande
     $comment = Comment::updateOrCreate(
-        ['Demandeid' => $demandeId],  // Conditions pour trouver l'entrée existante
+        ['demande_id' => $demandeId],  // Conditions pour trouver l'entrée existante
         ['Note' => $request->rating, 'Userid' => Auth::id()]  // Champs à créer/mettre à jour
     );
 

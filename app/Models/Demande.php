@@ -44,4 +44,3 @@ class Demande extends Model
         return $this->hasMany(Demande::class, 'partenaireid');
     }
 }
-
