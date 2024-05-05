@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="../Client/assets/css/bootstrap.css">
     <link rel="stylesheet" href="../Client/assets/css/style.css">
     <link rel="stylesheet" href="../Client/assets/css/responsive.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
