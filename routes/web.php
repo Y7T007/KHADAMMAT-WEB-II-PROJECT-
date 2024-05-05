@@ -88,9 +88,9 @@ Route::get('/partners/{partner_id}', [PartnerController::class, 'show'])->name('
 
 // Service routes
 Route::get('/client/all-services', [ServiceController::class, 'allServices'])->name('client.services.index');
-Route::get('/client/service{service}', [ServiceController::class, 'show'])->name('client.services.show');
+Route::get('/client/service{service}', [ServiceController::class, 'show'])->name('client.services.show')->middleware('cors');
 Route::get('/client/service-history', [ServiceController::class, 'history'])->name('client.services.history');
-Route::get('/client/get-partners', [PartnerController::class, 'getPartnersForService'])->name('client.getPartnersForService');
+Route::get('/client/get-partners', [PartnerController::class, 'getPartnersForService'])->name('client.getPartnersForService')->middleware('cors');
 // Messaging routes
 Route::get('/client/message-box', [MessageController::class, 'index'])->name('client.messages.index');
 Route::get('/client/conversation/{receiver}', [MessageController::class, 'show'])->name('client.messages.show');

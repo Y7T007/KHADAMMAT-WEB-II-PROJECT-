@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,6 +18,7 @@ class ServiceController extends Controller
     }
     public function show($id)
     {
+        // Fetch the service with the given id
         // Read the JSON file
         $json = file_get_contents('./Services/services.json');
 
@@ -30,11 +32,19 @@ class ServiceController extends Controller
 
         $service = reset($service);
 
+        $proposed_service = Service::where('id', $id)->first();
+
+
+        $partners = User::with(['services'])->where('type', 'partner')->get();
+
+        foreach ($partners as $partner) {
+            $proposed_services = Service::where('partenaireid', $partner->id)->get();
+            $partner->proposed_services = $proposed_services;
+        }
 
         $client = Auth::guard('client')->user();
 
-
-        return view('client.services.show', ['service' => $service])->with('client', $client);
+        // Pass the partners to the view
+        return view('client.services.show', ['service' => $service, 'partners' => $partners, 'proposed_service'=>$proposed_service])->with('client', $client);
     }
-
 }
