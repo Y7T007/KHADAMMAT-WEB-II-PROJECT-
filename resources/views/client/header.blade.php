@@ -53,6 +53,18 @@
                             @csrf
                         </form>
 
+                        <li style="display: flex;flex-direction: column; justify-content: center;align-items: center">
+
+                            <button type="button" class="btn position-relative">
+                                <a href="notifications" class="nav-link dropdown-toggle " aria-haspopup="true"
+                                   aria-expanded="false">
+                                    <img src="https://img.icons8.com/ios/25/000000/appointment-reminders.png" alt="Notification Bell">
+                                    <span class="position-absolute top-20 start-80 translate-middle p-2 bg-danger border border-light rounded-circle">
+                                    <span class="visually-hidden">New alerts</span>
+                                </span>
+                                </a>
+                            </button>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
