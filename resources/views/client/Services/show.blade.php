@@ -398,7 +398,15 @@
                                 <p>{{ $service->sous_titre  }} </p>
                             </div>
 
-                            <!-- Product Configuration -->
+                            <form id="demandForm" action="{{ route('submit_demand') }}" method="POST">
+                                @csrf
+
+                                <input type="hidden" id="partenaireid" name="partenaireid" value="">
+
+
+                                <input type="hidden" id="idservice" name="idservice" value="{{ $service->id }}">
+
+                                <!-- Product Configuration -->
                             <div class="product-configuration">
 
                                 <!-- Product Color -->
@@ -407,12 +415,12 @@
 
                                     <div class="address-choose">
                                         <div>
-                                            <input  type="radio" id="Address" name="client_address" value="{{$client->address}}">
+                                            <input  type="radio" id="Address" name="client_address" value="{{$client->address}}" required>
                                             <label for="client_address">{{$client->address}}</label>
                                         </div>
                                         <br>
                                         <div>
-                                            <input type="radio" id="other" name="client_address">
+                                            <input type="radio" id="other" name="client_address" required>
                                             <label for="address">Autre ...</label>
                                             <input type="text" id="otherAddress" name="otherAddress" style="display: none;">
 
@@ -449,7 +457,7 @@
                                     <span>Sous Services Demande</span>
 
                                     <div class="address-choose">
-                                        <select name="sub_service" style="width:100%;padding: 25px; border-radius: 15px" id="serviceDropdown">
+                                        <select name="sub_service" style="width:100%;padding: 25px; border-radius: 15px" id="serviceDropdown" required>
                                             <option value="">Tous les services</option>
                                         @foreach($service->sous_services as $subService)
                                                 <option value="{{ $subService }}">{{ $subService }}</option>
@@ -461,7 +469,7 @@
                                     <span>Date du service : </span>
 
                                     <div class="address-choose">
-                                        <input type="date" id="demandDate" name="demandDate"  style="width:100%;padding: 25px; border-radius: 15px" >
+                                        <input type="date" id="demandDate" name="demandDate"  style="width:100%;padding: 25px; border-radius: 15px"  required>
                                     </div>
                                     <script>
                                         $(document).ready(function() {
@@ -478,7 +486,7 @@
 
                                 <div class="address-choose">
                                     <label for="charge_horaire">Charge Horaire (en Heures)</label><br>
-                                    <input type="number" name="charge_horaire" id="charge_horaire" min="0" placeholder="" value="0" style="width:100%;padding: 25px; border-radius: 15px;margin-bottom: 15px">
+                                    <input type="number" name="charge_horaire" id="charge_horaire" min="0" placeholder="" value="0" style="width:100%;padding: 25px; border-radius: 15px;margin-bottom: 15px" required>
                                     <br>
                                 </div>
 
@@ -489,7 +497,7 @@
 
                             </div>
                             <div class="product-price" style="font-size: small; width: 100%">
-                                <a href="#" class="cart-btn">Poursuivre la commande</a>
+                                <button type="submit" class="cart-btn">Poursuivre la commande</button>
                             </div>
                             </div>
 
@@ -564,7 +572,7 @@
                                                             <a href="#" class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-primary">
                                                                 Voir profile
                                                             </a>
-                                                            <a style="color: white" class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-secondary" data-price="{{isset( $partner->proposed_services[0])? $partner->proposed_services[0]->prix:'' }}">
+                                                            <a style="color: white" class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-secondary" data-partnerid="{{$partner->id}}" data-price="{{isset( $partner->proposed_services[0])? $partner->proposed_services[0]->prix:'' }}">
                                                                 Choisir.........
                                                             </a>
                                                         </div>
@@ -632,6 +640,13 @@
                             // Listen for clicks on the "Choisir..." buttons
                             $('.btn-secondary').on('click', function() {
                                 // Get the price per hour from the data-price attribute
+                                console.log("partner selected" + $(this).data('partnerid'));
+
+                                var partnerId = $(this).data('partnerid');
+
+                                // Set the value of the partenaireid field
+                                $('#partenaireid').val(partnerId);
+
                                 pricePerHour = $(this).data('price');
 
                                 // Trigger an input event on the charge_horaire input field to update the price
@@ -667,6 +682,8 @@
                     <div class="d-flex justify-content-center"><a href="" class="custom_dark-btn"> Read More </a></div>
                 </div>
             </section>
+
+
 
             <section class="container-fluid footer_section">
                 <p> Copyright © 2024 All Rights Reserved</p>
