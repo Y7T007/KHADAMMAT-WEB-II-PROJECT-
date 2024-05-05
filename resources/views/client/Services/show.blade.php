@@ -441,8 +441,9 @@
                                     <span>Sous Services Demande</span>
 
                                     <div class="address-choose">
-                                        <select name="sub_service" style="padding: 25px; border-radius: 15px">
-                                            @foreach($service->sous_services as $subService)
+                                        <select name="sub_service" style="padding: 25px; border-radius: 15px" id="serviceDropdown">
+                                            <option value="">Tous les services</option>
+                                        @foreach($service->sous_services as $subService)
                                                 <option value="{{ $subService }}">{{ $subService }}</option>
                                             @endforeach
                                         </select>
@@ -480,7 +481,7 @@
                                         <div class="tab-pane active" id="m_widget4_tab1_content">
                                             <div class="m-widget4 m-widget4--progress">
                                     @foreach($partners as $partner)
-                                                    <div class="m-widget4__item">
+                                                    <div class="m-widget4__item" data-service="{{  isset($partner->proposed_services[0])?$partner->proposed_services[0]->nom:'' }}">
                                                         <div class="m-widget4__img m-widget4__img--pic">
                                                             <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
                                                         </div>
@@ -490,7 +491,7 @@
                                                             </span>
                                                             <br>
                                                             <span class="m-widget4__sub">
-{{ isset($partner->proposed_services[0]) ? $partner->proposed_services[0]->prix . ' dhs/h' : '' }}                                                         </span>
+                                    {{ isset($partner->proposed_services[0]) ? $partner->proposed_services[0]->prix . ' dhs/h' : '' }}                                                         </span>
                                                         </div>
                                                         <div class="m-widget4__progress">
                                                             <div class="m-widget4__progress-wrapper">
@@ -524,6 +525,34 @@
                     </div>
 
                     <!-- Scripts -->
+
+                    <script>
+                        // Get the dropdown menu
+                        var dropdown = document.getElementById('serviceDropdown');
+
+                        // Listen for the change event
+                        dropdown.addEventListener('change', function() {
+                            // Get the selected service
+                            var selectedService = this.value;
+
+                            // Get all the partners
+                            var partners = document.querySelectorAll('.m-widget4__item');
+
+                            // Loop over the partners
+                            partners.forEach(function(partner) {
+                                // Get the service of the partner
+                                var partnerService = partner.getAttribute('data-service');
+
+                                // If the partner's service matches the selected service, show the partner, otherwise hide it
+                                if (partnerService === selectedService) {
+                                    partner.style.display = 'block';
+                                } else {
+                                    partner.style.display = 'none';
+                                }
+                            });
+                        });
+                    </script>
+
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
                     <script>
                         $(document).ready(function() {
