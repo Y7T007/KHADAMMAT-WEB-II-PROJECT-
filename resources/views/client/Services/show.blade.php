@@ -108,6 +108,15 @@
         </nav>
     </header>
 
+    <style>
+        .selected-partner {
+            background-color: #a0f1a0;
+            border-radius: 25px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    </style>
+
 
     @include('client.sidebar')
     <!-- ============================================================== -->
@@ -463,11 +472,15 @@
                                 </div>
 
                             <!-- Product Pricing -->
-                            <div class="product-price">
-                                <span>0$</span>
+                            <div class="product-price" style="font-size: small; width: 100%;margin: 25px">
+                                <strong><span>  Aucun Partenaire selectionné</span></strong>
+{{--                               the following button gonna be shown only if the partner is selected--}}
+
+                            </div>
+                            <div class="product-price" style="font-size: small; width: 100%">
                                 <a href="#" class="cart-btn">Poursuivre la commande</a>
                             </div>
-                        </div>
+                            </div>
 
                     </main>
 
@@ -520,7 +533,7 @@
                                                             <a href="#" class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-primary">
                                                                 Voir profile
                                                             </a>
-                                                            <a href="#" class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-secondary" data-price="{{isset( $partner->proposed_services[0])? $partner->proposed_services[0]->prix:'' }}">
+                                                            <a style="color: white" class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-secondary" data-price="{{isset( $partner->proposed_services[0])? $partner->proposed_services[0]->prix:'' }}">
                                                                 Choisir.........
                                                             </a>
                                                         </div>
@@ -570,7 +583,7 @@
                     <script>
                         $(document).ready(function() {
                             // Initialize the price per hour
-                            var pricePerHour = 300;
+                            var pricePerHour = 0;
 
                             // Listen for changes on the charge_horaire input field
                             $('#charge_horaire').on('input', function() {
@@ -581,7 +594,7 @@
                                 var newPrice = hours * pricePerHour;
 
                                 // Update the price on the page
-                                $('.product-price span').text(newPrice + '$');
+                                $('.product-price span').text((pricePerHour!=0)?newPrice + ' Dhs':'Aucun Partenaire selectionné');
                             });
 
                             // Listen for clicks on the "Choisir..." buttons
@@ -591,6 +604,13 @@
 
                                 // Trigger an input event on the charge_horaire input field to update the price
                                 $('#charge_horaire').trigger('input');
+                                // Remove the selected-partner class from all partners
+                                $('.m-widget4__item').removeClass('selected-partner');
+
+                                // Add the selected-partner class to the clicked button's parent partner element
+                                $(this).closest('.m-widget4__item').addClass('selected-partner');
+
+
                             });
                         });
                     </script>
