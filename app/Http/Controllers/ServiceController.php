@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,24 +18,43 @@ class ServiceController extends Controller
     }
     public function show($id)
     {
-        // Read the JSON file
+        // Fetch the service with the given id from the JSON file
         $json = file_get_contents('./Services/services.json');
-
-        // Decode the JSON into a PHP object
-        $services = json_decode($json);
-
-        // Find the service with the given id
-        $service = array_filter($services->services, function ($service) use ($id) {
+        $servicesFromJson = json_decode($json);
+        $serviceFromJson = array_filter($servicesFromJson->services, function ($service) use ($id) {
             return $service->id == $id;
         });
+        $serviceFromJson = reset($serviceFromJson);
 
-        $service = reset($service);
+        // Fetch the partners that provide this service
+        $partners = User::with(['services', 'demandes'])->where('type', 'partner')->get();
 
+        // For each partner, fetch the proposed services and add them to the partners array
+        foreach ($partners as $partner) {
+            $proposed_services = Service::where('partenaireid', $partner->id)->get();
+            $partner->proposed_services = $proposed_services;
+
+            // Fetch the demands for the partner
+            $demands = $partner->demandes;
+
+            // Count the number of demands for the selected date
+            $demandCount = 0;
+            if ($demands) {
+                $demandCount = $demands->where('date', request('demandDate'))->count();
+            }
+
+            // If the partner already has 3 demands for the selected date, set the availability to the next available date
+            if ($demandCount >= 3) {
+                $partner->availability = $demands->where('date', '>', request('demandDate'))->min('date');
+            } else {
+                $partner->availability = request('demandDate');
+            }
+        }
 
         $client = Auth::guard('client')->user();
 
-
-        return view('client.services.show', ['service' => $service])->with('client', $client);
+        // Pass the partners to the view
+        return view('client.services.show', ['service' => $serviceFromJson, 'partners' => $partners])->with('client', $client);
     }
     public function showService($id) {
         $service = Service::find($id);

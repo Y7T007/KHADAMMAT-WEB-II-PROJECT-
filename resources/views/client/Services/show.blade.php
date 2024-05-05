@@ -108,6 +108,15 @@
         </nav>
     </header>
 
+    <style>
+        .selected-partner {
+            background-color: #a0f1a0;
+            border-radius: 25px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    </style>
+
 
     @include('client.sidebar')
     <!-- ============================================================== -->
@@ -375,7 +384,7 @@
 
                         <!-- Left Column / Headphones Image -->
                         <div class="left-column">
-                            <img data-image="red" class="active" src="assets/img/plomb.avif" alt="" style="border-radius: 50px; padding: 30px;object-fit: contain">
+                            <img data-image="red" class="active" src="assets/img/plomb.avif" alt="" style="border-radius: 50px; padding: 30px;object-fit: contain;margin-top: 50px">
                         </div>
 
 
@@ -389,7 +398,14 @@
                                 <p>{{ $service->sous_titre  }} </p>
                             </div>
 
-                            <!-- Product Configuration -->
+                            <form id="demandForm" action="{{ route('submit_demand') }}" method="POST">
+                                @csrf
+
+                                <input type="hidden" id="partenaireid" name="partenaireid" value="">
+                                <input type="hidden" id="serviceId" name="serviceId" value="">
+                                <input type="hidden" id="idservice" name="idservice" value="{{ $service->id }}">
+
+                                <!-- Product Configuration -->
                             <div class="product-configuration">
 
                                 <!-- Product Color -->
@@ -398,17 +414,16 @@
 
                                     <div class="address-choose">
                                         <div>
-                                            <input  type="radio" id="Address" name="client_address" value="{{$client->address}}">
+                                            <input  type="radio" id="Address" name="client_address" value="{{$client->address}}" required>
                                             <label for="client_address">{{$client->address}}</label>
                                         </div>
                                         <br>
                                         <div>
-                                            <input type="radio" id="other" name="client_address">
+                                            <input type="radio" id="other" name="client_address" required>
                                             <label for="address">Autre ...</label>
                                             <input type="text" id="otherAddress" name="otherAddress" style="display: none;">
 
                                         </div>
-                                        <br>
                                     </div>
                                     <script>
                                         $(document).ready(function() {
@@ -441,30 +456,220 @@
                                     <span>Sous Services Demande</span>
 
                                     <div class="address-choose">
-                                        <select name="sub_service" style="padding: 25px; border-radius: 15px">
-                                            @foreach($service->sous_services as $subService)
+                                        <select name="sub_service" style="width:100%;padding: 25px; border-radius: 15px" id="serviceDropdown" required>
+                                            <option value="">Tous les services</option>
+                                        @foreach($service->sous_services as $subService)
                                                 <option value="{{ $subService }}">{{ $subService }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
+                                <div class="product-color">
+                                    <span>Date du service : </span>
+
+                                    <div class="address-choose">
+                                        <input type="date" id="demandDate" name="demandDate"  style="width:100%;padding: 25px; border-radius: 15px"  required>
+                                    </div>
+                                    <script>
+                                        $(document).ready(function() {
+                                            var today = new Date();
+                                            var dd = String(today.getDate()).padStart(2, '0');
+                                            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                                            var yyyy = today.getFullYear();
+
+                                            today = yyyy + '-' + mm + '-' + dd;
+                                            document.getElementById('demandDate').value = today;
+                                        });
+                                    </script>
+                                </div>
+
+                                <div class="address-choose">
+                                    <label for="charge_horaire">Charge Horaire (en Heures)</label><br>
+                                    <input type="number" name="charge_horaire" id="charge_horaire" min="0" placeholder="" value="0" style="width:100%;padding: 25px; border-radius: 15px;margin-bottom: 15px" required>
+                                    <br>
+                                </div>
 
                             <!-- Product Pricing -->
-                            <div class="product-price">
-                                <span>0$</span>
-                                <a href="#" class="cart-btn">Poursuivre la commande</a>
+                            <div class="product-price" style="font-size: small; width: 100%;margin: 25px">
+                                <strong><span>  Aucun Partenaire selectionné</span></strong>
+{{--                               the following button gonna be shown only if the partner is selected--}}
+
                             </div>
-                        </div>
+                            <div class="product-price" style="font-size: small; width: 100%">
+                                <button type="submit" class="cart-btn">Poursuivre la commande</button>
+                            </div>
+                            </div>
 
                     </main>
-                    @include('client.services.list_partenaire')
+
+{{--                    @include('client.services.list_partenaire')--}}
+                    <link rel="stylesheet" href="{{ asset('Client/assets/css/list_partenaire.css') }}"><div class="container">
+
+
+                        <div class="col-md-12">
+                            <!--begin:: Widgets/User Progress -->
+                            <div class="m-portlet m-portlet--full-height ">
+                                <div class="m-portlet__head">
+                                    <div class="m-portlet__head-caption">
+                                        <div class="m-portlet__head-title">
+                                            <h3 class="m-portlet__head-text">
+                                                Liste des agents disponibles
+                                            </h3>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="m-portlet__body">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="m_widget4_tab1_content">
+                                            <div class="m-widget4 m-widget4--progress">
+                                    @foreach($partners as $partner)
+                                                    <div class="m-widget4__item" data-service="{{  isset($partner->proposed_services[0])?$partner->proposed_services[0]->nom:'' }}">
+                                                        <div class="m-widget4__img m-widget4__img--pic">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                                        </div>
+                                                        <div class="m-widget4__info">
+                                                            <span class="m-widget4__title">
+                                    {{ $partner->name }}
+                                                            </span>
+                                                            <br>
+                                                            <span class="m-widget4__sub">
+                                    {{ isset($partner->proposed_services[0]) ? $partner->proposed_services[0]->prix . ' dhs/h' : '' }}
+
+
+                                                            </span>
+
+                                                            <br>
+
+                                                        </div>
+                                                        <div class="m-widget4__progress">
+                                                            <div class="m-widget4__progress-wrapper">
+                                                            <span class="m-widget17__progress-number">
+
+<!-- Rating -->
+                                                            <div class="flex items-center" style="height: 100%;width: auto">
+                                                                @for ($i = 0; $i < 5; $i++)
+                                                                    @if ($partner->note > $i)
+                                                                        <span class="fa fa-star checked"></span>
+
+                                                                    @else
+                                                                        <span class="fa fa-star "></span>
+
+                                                                    @endif
+                                                                @endfor
+                                                            </div>
+                                                                <!-- End Rating -->                                                           </span>
+
+                                                                <style>
+                                                                    .checked {
+                                                                        color: orange;
+                                                                    }
+                                                                </style>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="m-widget4__ext">
+                                                            <a href="#" class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-primary">
+                                                                Voir profile
+                                                            </a>
+                                                            <a style="color: white" class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-secondary" data-partnerid="{{$partner->id}}" data-serviceid="{{ isset($partner->proposed_services[0])?$partner->proposed_services[0]->id:''}}" data-price="{{isset( $partner->proposed_services[0])? $partner->proposed_services[0]->prix:'' }}">
+                                                                Choisir.........
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="m_widget4_tab2_content"></div>
+                                        <div class="tab-pane" id="m_widget4_tab3_content"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end:: Widgets/User Progress -->
+                        </div>
+                    </div>
 
                     <!-- Scripts -->
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+                    <script>
+                        $(document).ready(function() {
+                            // When the form is submitted
+                            $('#demandForm').submit(function(event) {
+                                // Prevent the default form submission action
+                                event.preventDefault();
+
+                                // Submit the form via AJAX
+                                $.ajax({
+                                    type: 'POST',
+                                    url: $(this).attr('action'),
+                                    data: $(this).serialize(),
+                                    success: function(response) {
+                                        // Show success alert
+                                        Swal.fire({
+                                            title: "Success!",
+                                            text: response.message, // Show the success message from the server
+                                            backdrop: `
+                        rgba(0,0,123,0.4)
+                    `,
+                                            icon: "success",
+                                            didClose: function () {
+                                                // Redirect to the service history page when the modal is closed
+                                                window.location.href = '/client/service-history';
+                                            }
+                                        });
+                                        // Optionally, you can perform additional actions after successful submission
+                                    },
+                                    error: function(xhr, status, error) {
+                                        // Handle error response
+                                        var errorMessage = xhr.responseJSON.message;
+                                        Swal.fire({
+                                            title: "Error!",
+                                            text: errorMessage,
+                                            backdrop: `
+                        rgba(0,0,123,0.4)
+                    `,
+                                            icon: "error"
+                                        });
+                                    }
+                                });
+                            });
+                        });
+                    </script>
+
+                    <script>
+                        // Get the dropdown menu
+                        var dropdown = document.getElementById('serviceDropdown');
+
+                        // Listen for the change event
+                        dropdown.addEventListener('change', function() {
+                            // Get the selected service
+                            var selectedService = this.value;
+
+                            // Get all the partners
+                            var partners = document.querySelectorAll('.m-widget4__item');
+
+                            // Loop over the partners
+                            partners.forEach(function(partner) {
+                                // Get the service of the partner
+                                var partnerService = partner.getAttribute('data-service');
+
+                                // If the partner's service matches the selected service, show the partner, otherwise hide it
+                                if (partnerService === selectedService) {
+                                    partner.style.display = 'block';
+                                } else {
+                                    partner.style.display = 'none';
+                                }
+                            });
+                        });
+                    </script>
+
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
                     <script>
                         $(document).ready(function() {
                             // Initialize the price per hour
-                            var pricePerHour = 300;
+                            var pricePerHour = 0;
 
                             // Listen for changes on the charge_horaire input field
                             $('#charge_horaire').on('input', function() {
@@ -475,7 +680,32 @@
                                 var newPrice = hours * pricePerHour;
 
                                 // Update the price on the page
-                                $('.product-price span').text(newPrice + '$');
+                                $('.product-price span').text((pricePerHour!=0)?newPrice + ' Dhs':'Aucun Partenaire selectionné');
+                            });
+
+                            // Listen for clicks on the "Choisir..." buttons
+                            $('.btn-secondary').on('click', function() {
+                                // Get the price per hour from the data-price attribute
+                                console.log("partner selected" + $(this).data('serviceid'));
+
+                                var serviceId = $(this).data('serviceid');
+                                var partnerId = $(this).data('partnerid');
+
+                                // Set the value of the partenaireid field
+                                $('#partenaireid').val(partnerId);
+                                $('#serviceId').val(serviceId);
+
+                                pricePerHour = $(this).data('price');
+
+                                // Trigger an input event on the charge_horaire input field to update the price
+                                $('#charge_horaire').trigger('input');
+                                // Remove the selected-partner class from all partners
+                                $('.m-widget4__item').removeClass('selected-partner');
+
+                                // Add the selected-partner class to the clicked button's parent partner element
+                                $(this).closest('.m-widget4__item').addClass('selected-partner');
+
+
                             });
                         });
                     </script>
@@ -500,6 +730,8 @@
                     <div class="d-flex justify-content-center"><a href="" class="custom_dark-btn"> Read More </a></div>
                 </div>
             </section>
+
+
 
             <section class="container-fluid footer_section">
                 <p> Copyright © 2024 All Rights Reserved</p>

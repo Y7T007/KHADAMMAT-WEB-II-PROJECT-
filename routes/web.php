@@ -1,20 +1,23 @@
 <?php
 
-use App\Http\Controllers\Auth\ClientRegisterController;
-use App\Http\Controllers\Auth\ClientLoginController;
 use App\Http\Controllers\Auth\ClientForgotPasswordController;
+use App\Http\Controllers\Auth\ClientLoginController;
+use App\Http\Controllers\Auth\ClientRegisterController;
 use App\Http\Controllers\Auth\ClientResetPasswordController;
 use App\Http\Controllers\Auth\ClientVerificationController;
-use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ClientController;
-use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\DemandeController;
+use App\Http\Controllers\FormController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\NotificationController;
-use App\Http\Controllers\FormController; // Add this line
-use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Partenaire;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\ServiceController;
+use Illuminate\Support\Facades\Route;
+
+// Add this line
 
 
 /*
@@ -91,9 +94,10 @@ Route::post('/rate/{demande}', [ClientController::class, 'saveRating'])->name('s
 
 // Service routes
 Route::get('/client/all-services', [ServiceController::class, 'allServices'])->name('client.services.index');
-Route::get('/client/service{service}', [ServiceController::class, 'show'])->name('client.services.show');
+Route::get('/client/service{service}', [ServiceController::class, 'show'])->name('client.services.show')->middleware('cors');
 Route::get('/client/service-history', [ServiceController::class, 'history'])->name('client.services.history');
-Route::get('/client/get-partners', [PartnerController::class, 'getPartnersForService'])->name('client.getPartnersForService');
+Route::get('/client/get-partners', [PartnerController::class, 'getPartnersForService'])->name('client.getPartnersForService')->middleware('cors');
+Route::post('/client/submit-demand', [DemandeController::class, 'submitDemand'])->name('submit_demand');
 // Messaging routes
 Route::get('/client/message-box', [MessageController::class, 'index'])->name('client.messages.index');
 Route::get('/client/conversation/{receiver}', [MessageController::class, 'show'])->name('client.messages.show');
