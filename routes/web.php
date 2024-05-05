@@ -55,9 +55,9 @@ Route::post('/register-client-step2', [ClientRegisterController::class, 'registe
 Route::post('/register-client-step3', [ClientRegisterController::class, 'registerStep3'])->name('client.register.step3');
 
 Route::get('/register-client-step1', [FormController::class, 'step1'])->name('register-client-step1');
-Route::post('/register-client-step1',[FormController::class, 'postStep1'])->name('postStep1');
+Route::post('/register-client-step1', [FormController::class, 'postStep1'])->name('postStep1');
 Route::get('/register-client-step2', [FormController::class, 'step2'])->name('register-client-step2');
-Route::post('/register-client-step2',[FormController::class, 'postStep2'])->name('postStep2');
+Route::post('/register-client-step2', [FormController::class, 'postStep2'])->name('postStep2');
 Route::get('/register-client-step3', [FormController::class, 'step3'])->name('register-client-step3');
 Route::post('/register-client-step3', [FormController::class, 'postStep3'])->name('postStep3');
 
@@ -85,6 +85,9 @@ Route::post('/client/profile_edit', [ClientController::class, 'updateProfile'])-
 Route::get('/services', 'ServiceController@index')->name('services.index');
 Route::get('/client/partners', [PartnerController::class, 'index'])->name('client.partners.index');
 Route::get('/partners/{partner_id}', [PartnerController::class, 'show'])->name('partners.show');
+Route::get('/client/service_history', [ClientController::class, 'serviceHistory'])->name('client.service_history');
+Route::post('/comment/{demande}', [ClientController::class, 'saveComment'])->name('saveComment');
+Route::post('/rate/{demande}', [ClientController::class, 'saveRating'])->name('saveRating');
 
 // Service routes
 Route::get('/client/all-services', [ServiceController::class, 'allServices'])->name('client.services.index');

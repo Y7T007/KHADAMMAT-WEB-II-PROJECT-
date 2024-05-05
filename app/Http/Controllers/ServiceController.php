@@ -36,5 +36,14 @@ class ServiceController extends Controller
 
         return view('client.services.show', ['service' => $service])->with('client', $client);
     }
-
+    public function showService($id) {
+        $service = Service::find($id);
+    
+        if (!$service) {
+            return redirect()->route('services.index')->with('error', 'Service non trouvé.');
+        }
+    
+        return view('client.services.show', compact('service'));
+    }
+    
 }

@@ -33,10 +33,9 @@
 
 
 
-
-                                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="services-history"
-                                    aria-expanded="false"><i class="bi bi-clock-history"></i><span
-                                        class="hide-menu">Historique </span></a></li>
+<li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('client.service_history') }}"
+    aria-expanded="false"><i class="bi bi-clock-history"></i><span
+        class="hide-menu">Historique </span></a></li>
 
 
                              <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="messages"
