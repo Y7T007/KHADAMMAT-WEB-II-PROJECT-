@@ -99,8 +99,8 @@
                 <div class="card mb-3" style="border-radius: .5rem;">
                   <div class="row g-0">
                     <div  class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                        <img src="{{ Storage::url($partner->user->profile_photo_path) }}" alt="{{ $partner->user->name }}"  class="img-fluid profile-img">
-                        <h5>{{ $partner->user->name }}</h5>
+                        <img src="{{ Storage::url($partner->profile_photo_path) }}" alt="{{ $partner->name }}"  class="img-fluid profile-img">
+                        <h5>{{ $partner->name }}</h5>
                         <p>{{ $partner->location_city }}</p>
                     </div>
                     <div class="col-md-8">
@@ -110,7 +110,7 @@
                         <div class="row pt-1">
                           <div class="col-6 mb-3">
                             <h6>Email</h6>
-                            <p class="text-muted">{{ $partner->user->email }}</p>
+                            <p class="text-muted">{{ $partner->email }}</p>
                           </div>
                           <div class="col-6 mb-3">
                             <h6>Company name</h6>
@@ -119,8 +119,8 @@
                           </div>
                           <h6>Domaines d'expertise</h6>
                             <p class="text-muted">
-                                @foreach ($partner->professionalAreas as $area)
-                                    {{ $area->domain }}@if (!$loop->last),@endif
+                                @foreach ($partner->services as $s)
+                                    {{ $s->nom }}@if (!$loop->last),@endif
                                 @endforeach
                             </p>
 
