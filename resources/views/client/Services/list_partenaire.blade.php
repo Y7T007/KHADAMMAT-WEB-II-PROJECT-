@@ -43,9 +43,9 @@
                                         </div>
                                     </div>
                                     <div class="m-widget4__ext">
-                                        <a href="#" class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-primary">
-                                            Voir profile
-                                        </a>
+                                    <a href="{{ route('partner.show', ['id' => $partner->id]) }}" class="btn btn-primary">Voir profile</a>
+
+
                                         <a href="#" class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-secondary" >
                                             Choisir.........
                                         </a>

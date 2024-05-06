@@ -9,13 +9,13 @@
                     <ul id="sidebarnav">
 
 
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="home"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="../client/home"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                     class="hide-menu">Home</span></a></li>
                         <li class="list-divider"></li>
 
 
-                        <li class="sidebar-item"> <a class="sidebar-link" href="all-services"
+                        <li class="sidebar-item"> <a class="sidebar-link" href="../client/all-services"
                                 aria-expanded="false"><i class="bi bi-tools"></i><span
                                     class="hide-menu">Nos Services
                                 </span></a>
@@ -41,7 +41,7 @@
                              <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="messages"
                                       aria-expanded="false"><i class="bi bi-chat-left-text-fill"></i><span
                                            class="hide-menu">Messagerie </span></a></li>
-                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="profile"
+                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="../client/profile"
                                       aria-expanded="false"><i class="bi bi-person-fill"></i><span
                                            class="hide-menu">Profile </span></a></li>
                              <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="logout"

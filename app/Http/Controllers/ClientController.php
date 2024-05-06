@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\Comment;
 use App\Models\Rating;
 use App\Models\Demande;
+
 class ClientController extends Controller
 {
     public function home()
@@ -100,43 +101,51 @@ class ClientController extends Controller
     {
         $client_id = Auth::guard('client')->user()->id;
         $client = Auth::guard('client')->user(); // Assurez-vous de récupérer l'utilisateur connecté
-        $demandes = \App\Models\Demande::with(['service', 'partenaire'])
+        $demandes = \App\Models\Demande::with(['service', 'partenaire', 'comments.user'])
             ->where('idclient', $client_id)
             ->get();
-    
-        return view('client.service_history', compact('demandes', 'client')); // Passez 'client' à la vue
+
+        return view('client.service_history', compact('demandes', 'client'))->with('client', $client); // Passez 'client' à la vue
     }
+   
     public function saveComment(Request $request, $demandeId)
 {
     $request->validate([
         'comment' => 'required|string|max:255',
     ]);
 
+    $client = Auth::guard('client')->user(); // Récupérer le client connecté
+
     $comment = new Comment();
-    $comment->demande_id = $demandeId;
+    $comment->Demandeid = $demandeId;
     $comment->content = $request->comment;
+    $comment->client_id = $client->id; // Ajouter l'ID du client au commentaire
     $comment->save();
 
     return redirect()->back()->with('success', 'Commentaire ajouté avec succès!');
 }
 
+    public function saveRating(Request $request, $demandeId)
+    {
+        $request->validate([
+            'rating' => 'required|integer|min:1|max:5',
+        ]);
 
-public function saveRating(Request $request, $demandeId)
-{
-    $request->validate([
-        'rating' => 'required|integer|min:1|max:5',
-    ]);
+        // Trouver la demande associée ou échouer si non trouvée
+        $demande = Demande::findOrFail($demandeId);
 
-    // Trouver la demande associée ou échouer si non trouvée
-    $demande = Demande::findOrFail($demandeId);
+        // Créer ou mettre à jour le commentaire associé à la demande
+        $comment = Comment::updateOrCreate(
+            ['Demandeid' => $demandeId],  // Conditions pour trouver l'entrée existante
+            ['Note' => $request->rating, 'Userid' => Auth::id()]  // Champs à créer/mettre à jour
+        );
 
-    // Créer ou mettre à jour le commentaire associé à la demande
-    $comment = Comment::updateOrCreate(
-        ['demande_id' => $demandeId],  // Conditions pour trouver l'entrée existante
-        ['Note' => $request->rating, 'Userid' => Auth::id()]  // Champs à créer/mettre à jour
-    );
+        return redirect()->back()->with('success', 'Note enregistrée avec succès!');
+    }
 
-    return redirect()->back()->with('success', 'Note enregistrée avec succès!');
-}
-
+    public function someControllerFunction()
+    {
+        $demandes = Demande::with(['service', 'partenaire', 'commentaires.user'])->where('idclient', Auth::id())->get();
+        return view('service_history', compact('demandes'));
+    }
 }

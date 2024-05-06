@@ -8,8 +8,8 @@ class Comment extends Model
 {
     protected $table = 'comments';  // Nom de la table dans la base de données
 
-    protected $fillable = ['Userid', 'content', 'Note', 'Demandeid', 'demande_id'];
-
+    // Assurez-vous d'ajouter 'client_id' aux attributs que vous pouvez assigner en masse
+    protected $fillable = ['Userid', 'content', 'Note', 'Demandeid', 'client_id'];
 
     public function user()
     {
@@ -20,4 +20,11 @@ class Comment extends Model
     {
         return $this->belongsTo(Demande::class, 'Demandeid');
     }
+
+    // Ajouter une nouvelle relation pour les clients
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'client_id');
+    }
+    
 }

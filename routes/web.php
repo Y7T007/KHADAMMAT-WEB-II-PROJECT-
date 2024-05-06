@@ -15,6 +15,7 @@ use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\Partenaire;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ServiceController;
+use App\Models\Demande;
 use Illuminate\Support\Facades\Route;
 
 // Add this line
@@ -91,6 +92,9 @@ Route::get('/partners/{partner_id}', [PartnerController::class, 'show'])->name('
 Route::get('/client/service_history', [ClientController::class, 'serviceHistory'])->name('client.service_history');
 Route::post('/comment/{demande}', [ClientController::class, 'saveComment'])->name('saveComment');
 Route::post('/rate/{demande}', [ClientController::class, 'saveRating'])->name('saveRating');
+Route::get('/notifications', 'HomeController@notifications')->name('notifications');
+Route::get('/partners/{id}', 'PartnerController@show')->name('client.partner.show');
+
 
 // Service routes
 Route::get('/client/all-services', [ServiceController::class, 'allServices'])->name('client.services.index');
