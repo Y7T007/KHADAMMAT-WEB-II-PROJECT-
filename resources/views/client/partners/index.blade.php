@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 @include('client.head')
-
+<script src="../Partenaire/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../Partenaire/assets/extra-libs/taskboard/js/jquery.ui.touch-punch-improved.js"></script>
+    <script src="../Partenaire/assets/extra-libs/taskboard/js/jquery-ui.min.js"></script>
+    <script src="../Partenaire/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../Partenaire/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- apps -->
+    <script src="../Partenaire/dist/js/app-style-switcher.js"></script>
+    <script src="../Partenaire/dist/js/feather.min.js"></script>
+    <script src="../Partenaire/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../Partenaire/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../Partenaire/dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <script src="../Partenaire/assets/libs/moment/min/moment.min.js"></script>
+    <script src="../Partenaire/assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="../Partenaire/dist/js/pages/calendar/cal-init.js"></script>
 <body>
     <div class="preloader">
         <div class="lds-ripple">
