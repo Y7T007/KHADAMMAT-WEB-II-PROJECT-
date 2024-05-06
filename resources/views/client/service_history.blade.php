@@ -94,16 +94,15 @@
                                 <td>{{ $demande->service->prix }} DH</td>
                                 <td>{{ $demande->statut }}</td>
                                 <td>
-                                    @if($demande->statut == 'complet')
+                                    @if($demande->statut == 'Accepter')
                                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#commentModal-{{ $demande->id }}">Commenter</button>
 <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#rateModal-{{ $demande->id }}">Noter</button>
 
                                     @endif
                                 </td>
                             </tr>
-                            @endforeach
 
-                            <div class="modal fade" id="commentModal-{{ $demande->id }}" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+    <div class="modal fade" id="commentModal-{{ $demande->id }}" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -145,10 +144,12 @@
     </div>
   </div>
 </div>
+                            @endforeach
+
                         </tbody>
                     </table>
                 </div>
-                
+
                 <!-- ============================================================== -->
                 <!-- End Container fluid  -->
                 <!-- ============================================================== -->

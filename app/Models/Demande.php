@@ -14,10 +14,12 @@ class Demande extends Model
 
         return $this->belongsTo(User::class, 'idclient');
     }
+
     public function service()
     {
         return $this->belongsTo(Service::class, 'idservice');
     }
+
     public function commentaires()
     {
         return $this->hasMany(Comment::class, 'Demandeid');
