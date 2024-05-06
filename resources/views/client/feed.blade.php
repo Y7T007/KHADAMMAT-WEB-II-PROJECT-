@@ -143,69 +143,30 @@
                                 <div class="title-div" style="width: auto;margin-top: 30px;margin-right: auto;margin-left: auto;margin-bottom: 30px;text-align: center;">
                                     <h1 style="text-align: center;">Derniers services</h1>
                                 </div>
-                                <div style="height: auto;background: var(--bs-light-border-subtle);margin-right: auto;margin-left: auto;max-width: 899px;border-radius: 38px;">
-                                    <div class="col">
-                                        <div class="row d-flex flex-row justify-content-center align-items-center align-content-center align-self-center" style="height: 80px;background: #3c3c3c;border-radius: 75px;width: 104%;margin-left: -2%;">
-                                            <div class="col-xl-1" style="max-width: 80px;min-width: 80px;"><img width="100" height="80" src="assets/img/office-front.jpeg" style="height: 60px;width: 60px;border-radius: 60px;margin-left: -1px;"></div>
-                                            <div class="col" style="margin-top: auto;margin-bottom: auto;">
-                                                <p style="font-size: 15px;font-family: Poppins;margin-top: auto;margin-bottom: auto;color: var(--bs-body-bg);"> <strong>Yassir WAHID</strong> (<i>#Client</i>)  -&gt;&nbsp;<strong>Nossair SEDKI</strong> (<i>#Partener</i>)</p>
+                                @foreach($providedServices as $providedService)
+                                    <div style="height: auto;background: var(--bs-light-border-subtle);margin-right: auto;margin-left: auto;max-width: 899px;border-radius: 38px;">
+                                        <div class="col">
+                                            <div class="row d-flex flex-row justify-content-center align-items-center align-content-center align-self-center" style="height: 80px;background: #3c3c3c;border-radius: 75px;width: 104%;margin-left: -2%;">
+                                                <div class="col-xl-1" style="max-width: 80px;min-width: 80px;">
+                                                    <img width="100" height="80" src="{{ $providedService->partenaire->photo ? $providedService->partenaire->photo : 'https://bootdey.com/img/Content/avatar/avatar1.png' }}" alt="{{ pathinfo($providedService->partenaire->photo, PATHINFO_FILENAME) }}" style="height: 60px;width: 60px;border-radius: 60px;margin-left: -1px;">                                                </div>
+                                                <div class="col" style="margin-top: auto;margin-bottom: auto;">
+                                                    <p style="font-size: 15px;font-family: Poppins;margin-top: auto;margin-bottom: auto;color: var(--bs-body-bg);"> <strong>{{ $providedService->partenaire->name }}</strong> (<i>#Partner</i>)</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="row" style="width: auto;margin-right: 0;margin-left: 0;">
-                                            <div class="col">
-                                                <p style="text-align: left;font-size: 25px;height: auto;width: auto;padding: 43px;">M. <strong>Yassir WAHID</strong>&nbsp; a demander le service de "<strong>Netoyage a domicile</strong>" de M. <strong>Nossair SEDKI</strong>.</p>
+                                            <div class="row" style="width: auto;margin-right: 0;margin-left: 0;">
+                                                <div class="col">
+                                                    <p style="text-align: left;font-size: 25px;height: auto;width: auto;padding: 43px;">M. <strong>{{ $providedService->partenaire->name }}</strong> (<i>#Partner</i>) offre actuellement le service de "<strong>{{ $providedService->nom }}</strong>". Vous pourrez voir son profil
+                                                        <a href="#  "> ici.</a></p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br><br>
-                                <div style="height: auto;background: var(--bs-light-border-subtle);margin-right: auto;margin-left: auto;max-width: 899px;border-radius: 38px;">
-                                    <div class="col">
-                                        <div class="row d-flex flex-row justify-content-center align-items-center align-content-center align-self-center" style="height: 80px;background: #3c3c3c;border-radius: 75px;width: 104%;margin-left: -2%;">
-                                            <div class="col-xl-1" style="max-width: 80px;min-width: 80px;"><img width="100" height="80" src="assets/img/office-front.jpeg" style="height: 60px;width: 60px;border-radius: 60px;margin-left: -1px;"></div>
-                                            <div class="col" style="margin-top: auto;margin-bottom: auto;">
-                                                <p style="font-size: 15px;font-family: Poppins;margin-top: auto;margin-bottom: auto;color: var(--bs-body-bg);"> <strong>Yassir WAHID</strong> (<i>#Client</i>)  -&gt;&nbsp;<strong>Nossair SEDKI</strong> (<i>#Partener</i>)</p>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="width: auto;margin-right: 0;margin-left: 0;">
-                                            <div class="col">
-                                                <p style="text-align: left;font-size: 25px;height: auto;width: auto;padding: 43px;">M. <strong>Yassir WAHID</strong>&nbsp; a demander le service de "<strong>Netoyage a domicile</strong>" de M. <strong>Nossair SEDKI</strong>.</p>
+                                            <div class="row">
+                                                <p style="text-align: right"><i class="bi bi-clock"></i>&nbsp Publié le : {{ $providedService->created_at->format('d/m/Y à H:i') }} &nbsp  &nbsp </p>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <br><br>
-                                <div style="height: auto;background: var(--bs-light-border-subtle);margin-right: auto;margin-left: auto;max-width: 899px;border-radius: 38px;">
-                                    <div class="col">
-                                        <div class="row d-flex flex-row justify-content-center align-items-center align-content-center align-self-center" style="height: 80px;background: #3c3c3c;border-radius: 75px;width: 104%;margin-left: -2%;">
-                                            <div class="col-xl-1" style="max-width: 80px;min-width: 80px;"><img width="100" height="80" src="assets/img/office-front.jpeg" style="height: 60px;width: 60px;border-radius: 60px;margin-left: -1px;"></div>
-                                            <div class="col" style="margin-top: auto;margin-bottom: auto;">
-                                                <p style="font-size: 15px;font-family: Poppins;margin-top: auto;margin-bottom: auto;color: var(--bs-body-bg);"> <strong>Yassir WAHID</strong> (<i>#Client</i>)  -&gt;&nbsp;<strong>Nossair SEDKI</strong> (<i>#Partener</i>)</p>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="width: auto;margin-right: 0;margin-left: 0;">
-                                            <div class="col">
-                                                <p style="text-align: left;font-size: 25px;height: auto;width: auto;padding: 43px;">M. <strong>Yassir WAHID</strong>&nbsp; a demander le service de "<strong>Netoyage a domicile</strong>" de M. <strong>Nossair SEDKI</strong>.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br><br>
-                                <div style="height: auto;background: var(--bs-light-border-subtle);margin-right: auto;margin-left: auto;max-width: 899px;border-radius: 38px;">
-                                    <div class="col">
-                                        <div class="row d-flex flex-row justify-content-center align-items-center align-content-center align-self-center" style="height: 80px;background: #3c3c3c;border-radius: 75px;width: 104%;margin-left: -2%;">
-                                            <div class="col-xl-1" style="max-width: 80px;min-width: 80px;"><img width="100" height="80" src="assets/img/office-front.jpeg" style="height: 60px;width: 60px;border-radius: 60px;margin-left: -1px;"></div>
-                                            <div class="col" style="margin-top: auto;margin-bottom: auto;">
-                                                <p style="font-size: 15px;font-family: Poppins;margin-top: auto;margin-bottom: auto;color: var(--bs-body-bg);"> <strong>Yassir WAHID</strong> (<i>#Client</i>)  -&gt;&nbsp;<strong>Nossair SEDKI</strong> (<i>#Partener</i>)</p>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="width: auto;margin-right: 0;margin-left: 0;">
-                                            <div class="col">
-                                                <p style="text-align: left;font-size: 25px;height: auto;width: auto;padding: 43px;">M. <strong>Yassir WAHID</strong>&nbsp; a demander le service de "<strong>Netoyage a domicile</strong>" de M. <strong>Nossair SEDKI</strong>.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <br><br>
+                                @endforeach
+
                             </div>
 
                     </div>

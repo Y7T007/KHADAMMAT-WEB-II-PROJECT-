@@ -32,7 +32,7 @@ class ClientController extends Controller
             ->get();
 
         // Fetch the services provided by all partners
-        $providedServices = Service::with('partenaire')->get();
+        $providedServices = Service::with('partenaire')->orderBy('created_at', 'desc')->get();
 
         // return the view for the client dashboard with client data
         return view('client.feed', compact('client', 'demandedServices', 'providedServices'));
