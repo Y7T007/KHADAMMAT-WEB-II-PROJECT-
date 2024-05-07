@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -18,6 +19,24 @@ class ClientController extends Controller
 
         // return the view for the client dashboard with client data
         return view('client.home')->with('client', $client);
+    }
+
+
+    public function feed()
+    {
+        // get the current logged in client
+        $client = Auth::guard('client')->user();
+
+        // Fetch the demanded services by the client
+        $demandedServices = Demande::with(['service', 'commentaires', 'client', 'partenaire'])
+            ->where('idclient', $client->id)
+            ->get();
+
+        // Fetch the services provided by all partners
+        $providedServices = Service::with('partenaire')->orderBy('created_at', 'desc')->get();
+
+        // return the view for the client dashboard with client data
+        return view('client.feed', compact('client', 'demandedServices', 'providedServices'));
     }
 
     public function profile()
@@ -118,6 +137,7 @@ class ClientController extends Controller
 
     $comment = new Comment();
     $comment->Demandeid = $demandeId;
+
     $comment->content = $request->comment;
     $comment->client_id = $client->id; // Ajouter l'ID du client au commentaire
     $comment->save();

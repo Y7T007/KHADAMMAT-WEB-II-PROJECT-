@@ -85,16 +85,25 @@
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
 
-                            <img style="object-fit: cover" src="{{Storage::url($client->profile_picture)}}" onerror="this.onerror=null; this.src='../Partenaire/assets/images/users/2.jpg'" class="rounded-circle" width="40" height="40">
-                            <span class="ms-2 d-none d-lg-inline-block"><span>Hello,</span> <span class="text-dark">{{$client-> name}}</span> <i data-feather="chevron-down" class="svg-icon"></i></span>
+                            <img style="object-fit: cover" src="{{Storage::url($client->profile_picture)}}"
+                                 onerror="this.onerror=null; this.src='../Partenaire/assets/images/users/2.jpg'"
+                                 class="rounded-circle" width="40" height="40">
+                            <span class="ms-2 d-none d-lg-inline-block"><span>Hello,</span> <span
+                                    class="text-dark">{{$client-> name}}</span> <i data-feather="chevron-down"
+                                                                                   class="svg-icon"></i></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-right user-dd animated flipInY">
-                            <a class="dropdown-item" href="profile"><i data-feather="user" class="svg-icon me-2 ms-1"></i> My Profile</a>
+                            <a class="dropdown-item" href="profile"><i data-feather="user"
+                                                                       class="svg-icon me-2 ms-1"></i> My Profile</a>
 
-                            <a class="dropdown-item" href="profile_edit"><i data-feather="user" class="svg-icon me-2 ms-1"></i>Update My Profile</a>
+                            <a class="dropdown-item" href="profile_edit"><i data-feather="user"
+                                                                            class="svg-icon me-2 ms-1"></i>Update My
+                                Profile</a>
 
 
-                            <a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="dropdown-item"><i data-feather="power" class="svg-icon me-2 ms-1"></i> Logout</a>
+                            <a href="javascript:void(0)"
+                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                               class="dropdown-item"><i data-feather="power" class="svg-icon me-2 ms-1"></i> Logout</a>
                             <div class="dropdown-divider"></div>
                         </div>
                     </li>
@@ -110,7 +119,7 @@
                 </ul>
                 <ul class="navbar-nav float-right me-auto ms-right">
                     <!---->
-                    <div class="search-box" >
+                    <div class="search-box">
                         <button class="btn-search"><i class="fas fa-search"></i></button>
                         <input type="text" class="input-search" id="searchInput" placeholder="Type to Search...">
                     </div>
@@ -180,7 +189,8 @@
                     <p class="custom_heading-text"> {{ $service->sous_titre  }} </p>
 
 
-                    <main class="container" style="  max-width: 1200px; margin: 0 auto;  padding: 15px;  display: flex;">
+                    <main class="container"
+                          style="  max-width: 1200px; margin: 0 auto;  padding: 15px;  display: flex;">
 
                         <Style>
 
@@ -219,6 +229,7 @@
                                 border-bottom: 1px solid #E1E8EE;
                                 margin-bottom: 20px;
                             }
+
                             .product-description span {
                                 font-size: 12px;
                                 color: #358ED7;
@@ -226,12 +237,14 @@
                                 text-transform: uppercase;
                                 text-decoration: none;
                             }
+
                             .product-description h1 {
                                 font-weight: 300;
                                 font-size: 52px;
                                 color: #43484D;
                                 letter-spacing: -2px;
                             }
+
                             .product-description p {
                                 font-size: 16px;
                                 font-weight: 300;
@@ -273,15 +286,17 @@
 
                             .color-choose input[type="radio"] + label span {
                                 border: 2px solid #FFFFFF;
-                                box-shadow: 0 1px 3px 0 rgba(0,0,0,0.33);
+                                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
                             }
 
                             .color-choose input[type="radio"]#red + label span {
                                 background-color: #C91524;
                             }
+
                             .color-choose input[type="radio"]#blue + label span {
                                 background-color: #314780;
                             }
+
                             .color-choose input[type="radio"]#black + label span {
                                 background-color: #323232;
                             }
@@ -328,6 +343,7 @@
                                 margin: 10px 0;
                                 display: inline-block;
                             }
+
                             .cable-config a:before {
                                 content: "?";
                                 height: 15px;
@@ -364,6 +380,7 @@
                                 padding: 12px 30px;
                                 transition: all .5s;
                             }
+
                             .cart-btn:hover {
                                 background-color: #64af3d;
                             }
@@ -399,7 +416,8 @@
 
                         <!-- Left Column / Headphones Image -->
                         <div class="left-column">
-                            <img data-image="red" class="active" src="assets/img/plomb.avif" alt="" style="border-radius: 50px; padding: 30px;object-fit: contain;margin-top: 50px">
+                            <img data-image="red" class="active" src="assets/img/plomb.avif" alt=""
+                                 style="border-radius: 50px; padding: 30px;object-fit: contain;margin-top: 50px">
                         </div>
 
 
@@ -421,104 +439,111 @@
                                 <input type="hidden" id="idservice" name="idservice" value="{{ $service->id }}">
 
                                 <!-- Product Configuration -->
-                            <div class="product-configuration">
+                                <div class="product-configuration">
 
-                                <!-- Product Color -->
-                                <div class="product-color">
-                                    <span>Addresse</span>
+                                    <!-- Product Color -->
+                                    <div class="product-color">
+                                        <span>Addresse</span>
+
+                                        <div class="address-choose">
+                                            <div>
+                                                <input type="radio" id="Address" name="client_address"
+                                                       value="{{$client->address}}" required>
+                                                <label for="client_address">{{$client->address}}</label>
+                                            </div>
+                                            <br>
+                                            <div>
+                                                <input type="radio" id="other" name="client_address" required>
+                                                <label for="address">Autre ...</label>
+                                                <input type="text" id="otherAddress" name="otherAddress"
+                                                       style="display: none;">
+
+                                            </div>
+                                        </div>
+                                        <script>
+                                            $(document).ready(function () {
+                                                $('input[type=radio][name=client_address]').change(function () {
+                                                    if (this.id == 'other') {
+                                                        $('#otherAddress').show();
+                                                    } else {
+                                                        $('#otherAddress').hide();
+                                                    }
+                                                });
+                                            });
+                                        </script>
+                                        <script>
+                                            document.getElementsByName('client_address').forEach(function (radio) {
+                                                radio.addEventListener('change', function () {
+                                                    if (this.id == 'other') {
+                                                        document.getElementById('otherAddress').style.display = 'block';
+                                                    } else {
+                                                        document.getElementById('otherAddress').style.display = 'none';
+                                                    }
+                                                });
+                                            });
+                                        </script>
+
+                                    </div>
+
+                                    <div class="product-color">
+                                        <span>Sous Services Demande</span>
+
+                                        <div class="address-choose">
+                                            <select name="sub_service"
+                                                    style="width:100%;padding: 25px; border-radius: 15px"
+                                                    id="serviceDropdown" required>
+                                                <option value="">Tous les services</option>
+                                                @foreach($service->sous_services as $subService)
+                                                    <option value="{{ $subService }}">{{ $subService }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="product-color">
+                                        <span>Date du service : </span>
+
+                                        <div class="address-choose">
+                                            <input type="date" id="demandDate" name="demandDate"
+                                                   style="width:100%;padding: 25px; border-radius: 15px" required>
+                                        </div>
+                                        <script>
+                                            $(document).ready(function () {
+                                                var today = new Date();
+                                                var dd = String(today.getDate()).padStart(2, '0');
+                                                var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                                                var yyyy = today.getFullYear();
+
+                                                today = yyyy + '-' + mm + '-' + dd;
+                                                document.getElementById('demandDate').value = today;
+                                            });
+                                        </script>
+                                    </div>
 
                                     <div class="address-choose">
-                                        <div>
-                                            <input  type="radio" id="Address" name="client_address" value="{{$client->address}}" required>
-                                            <label for="client_address">{{$client->address}}</label>
-                                        </div>
+                                        <label for="charge_horaire">Charge Horaire (en Heures)</label><br>
+                                        <input type="number" name="charge_horaire" id="charge_horaire" min="0"
+                                               placeholder="" value="0"
+                                               style="width:100%;padding: 25px; border-radius: 15px;margin-bottom: 15px"
+                                               required>
                                         <br>
-                                        <div>
-                                            <input type="radio" id="other" name="client_address" required>
-                                            <label for="address">Autre ...</label>
-                                            <input type="text" id="otherAddress" name="otherAddress" style="display: none;">
-
-                                        </div>
                                     </div>
-                                    <script>
-                                        $(document).ready(function() {
-                                            $('input[type=radio][name=client_address]').change(function() {
-                                                if (this.id == 'other') {
-                                                    $('#otherAddress').show();
-                                                }
-                                                else {
-                                                    $('#otherAddress').hide();
-                                                }
-                                            });
-                                        });
-                                    </script>
-                                    <script>
-                                        document.getElementsByName('client_address').forEach(function(radio) {
-                                            radio.addEventListener('change', function() {
-                                                if (this.id == 'other') {
-                                                    document.getElementById('otherAddress').style.display = 'block';
-                                                }
-                                                else {
-                                                    document.getElementById('otherAddress').style.display = 'none';
-                                                }
-                                            });
-                                        });
-                                    </script>
 
-                                </div>
+                                    <!-- Product Pricing -->
+                                    <div class="product-price" style="font-size: small; width: 100%;margin: 25px">
+                                        <strong><span>  Aucun Partenaire selectionné</span></strong>
+                                        {{--                               the following button gonna be shown only if the partner is selected--}}
 
-                                <div class="product-color">
-                                    <span>Sous Services Demande</span>
-
-                                    <div class="address-choose">
-                                        <select name="sub_service" style="width:100%;padding: 25px; border-radius: 15px" id="serviceDropdown" required>
-                                            <option value="">Tous les services</option>
-                                        @foreach($service->sous_services as $subService)
-                                                <option value="{{ $subService }}">{{ $subService }}</option>
-                                            @endforeach
-                                        </select>
+                                    </div>
+                                    <div class="product-price" style="font-size: small; width: 100%">
+                                        <button type="submit" class="cart-btn">Poursuivre la commande</button>
                                     </div>
                                 </div>
-                                <div class="product-color">
-                                    <span>Date du service : </span>
-
-                                    <div class="address-choose">
-                                        <input type="date" id="demandDate" name="demandDate"  style="width:100%;padding: 25px; border-radius: 15px"  required>
-                                    </div>
-                                    <script>
-                                        $(document).ready(function() {
-                                            var today = new Date();
-                                            var dd = String(today.getDate()).padStart(2, '0');
-                                            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-                                            var yyyy = today.getFullYear();
-
-                                            today = yyyy + '-' + mm + '-' + dd;
-                                            document.getElementById('demandDate').value = today;
-                                        });
-                                    </script>
-                                </div>
-
-                                <div class="address-choose">
-                                    <label for="charge_horaire">Charge Horaire (en Heures)</label><br>
-                                    <input type="number" name="charge_horaire" id="charge_horaire" min="0" placeholder="" value="0" style="width:100%;padding: 25px; border-radius: 15px;margin-bottom: 15px" required>
-                                    <br>
-                                </div>
-
-                            <!-- Product Pricing -->
-                            <div class="product-price" style="font-size: small; width: 100%;margin: 25px">
-                                <strong><span>  Aucun Partenaire selectionné</span></strong>
-{{--                               the following button gonna be shown only if the partner is selected--}}
-
-                            </div>
-                            <div class="product-price" style="font-size: small; width: 100%">
-                                <button type="submit" class="cart-btn">Poursuivre la commande</button>
-                            </div>
-                            </div>
 
                     </main>
 
-{{--                    @include('client.services.list_partenaire')--}}
-                    <link rel="stylesheet" href="{{ asset('Client/assets/css/list_partenaire.css') }}"><div class="container">
+                    {{--                    @include('client.services.list_partenaire')--}}
+                    <link rel="stylesheet" href="{{ asset('Client/assets/css/list_partenaire.css') }}">
+                    <div class="container">
 
 
                         <div class="col-md-12">
@@ -538,51 +563,55 @@
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="m_widget4_tab1_content">
                                             <div class="m-widget4 m-widget4--progress">
-                                    @foreach($partners as $partner)
-                                                    <div class="m-widget4__item" data-service="{{  isset($partner->proposed_services[0])?$partner->proposed_services[0]->nom:'' }}">
-                                                        <div class="m-widget4__img m-widget4__img--pic">
-                                                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                                                        </div>
-                                                        <div class="m-widget4__info">
-                                                            <span class="m-widget4__title">
-                                    {{ $partner->name }}
-                                                            </span>
-                                                            <br>
-                                                            <span class="m-widget4__sub">
-                                    {{ isset($partner->proposed_services[0]) ? $partner->proposed_services[0]->prix . ' dhs/h' : '' }}
-
-
-                                                            </span>
-
-                                                            <br>
-
-                                                        </div>
-                                                        <div class="m-widget4__progress">
-                                                            <div class="m-widget4__progress-wrapper">
-                                                            <span class="m-widget17__progress-number">
-
-<!-- Rating -->
-                                                            <div class="flex items-center" style="height: 100%;width: auto">
-                                                                @for ($i = 0; $i < 5; $i++)
-                                                                    @if ($partner->note > $i)
-                                                                        <span class="fa fa-star checked"></span>
-
-                                                                    @else
-                                                                        <span class="fa fa-star "></span>
-
-                                                                    @endif
-                                                                @endfor
+                                                @foreach($partners as $partner)
+                                                    @foreach($partner->proposed_services as $proposed_service)
+                                                        <div class="m-widget4__item"
+                                                             data-service="{{ $proposed_service->nom }}">
+                                                            <div class="m-widget4__img m-widget4__img--pic">
+                                                                <img
+                                                                    src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                                                                    alt="">
                                                             </div>
-                                                                <!-- End Rating -->                                                           </span>
-
-                                                                <style>
-                                                                    .checked {
-                                                                        color: orange;
-                                                                    }
-                                                                </style>
-
+                                                            <div class="m-widget4__info">
+                    <span class="m-widget4__title">
+                        {{ $partner->name }}
+                    </span>
+                                                                <br>
+                                                                <span class="m-widget4__sub">
+                    {{ $proposed_service->prix . ' dhs/h' }}
+                    </span>
+                                                                <br>
+                                                            </div>
+                                                            <div class="m-widget4__progress">
+                                                                <div class="m-widget4__progress-wrapper">
+                        <span class="m-widget17__progress-number">
+                          <div class="flex items-center" style="height: 100%;width: auto">
+                                @for ($i = 0; $i < 5; $i++)
+                                  @if ($partner->note > $i)
+                                      <span class="fa fa-star checked"></span>
+                                  @else
+                                      <span class="fa fa-star "></span>
+                                  @endif
+                              @endfor
+                        </div>
+                        </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="m-widget4__ext">
+                                                                <a href="#"
+                                                                   class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-primary">
+                                                                    Voir profile
+                                                                </a>
+                                                                <a style="color: white"
+                                                                   class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-secondary"
+                                                                   data-partnerid="{{$partner->id}}"
+                                                                   data-serviceid="{{ $proposed_service->id }}"
+                                                                   data-price="{{ $proposed_service->prix }}">
+                                                                    Choisir.........
+                                                                </a>
                                                             </div>
                                                         </div>
+
                                                         <div class="m-widget4__ext">
                                                         <a href="{{ route('client.partner.show', ['id' => $partner->id]) }}" class="btn btn-primary">Voir profile</a>
 
@@ -593,8 +622,14 @@
                                                         </div>
                                                     </div>
 
+
                                                 @endforeach
                                             </div>
+                                            <style>
+                                                .checked {
+                                                    color: orange;
+                                                }
+                                            </style>
                                         </div>
                                         <div class="tab-pane" id="m_widget4_tab2_content"></div>
                                         <div class="tab-pane" id="m_widget4_tab3_content"></div>
@@ -609,9 +644,9 @@
                     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
                     <script>
-                        $(document).ready(function() {
+                        $(document).ready(function () {
                             // When the form is submitted
-                            $('#demandForm').submit(function(event) {
+                            $('#demandForm').submit(function (event) {
                                 // Prevent the default form submission action
                                 event.preventDefault();
 
@@ -620,7 +655,7 @@
                                     type: 'POST',
                                     url: $(this).attr('action'),
                                     data: $(this).serialize(),
-                                    success: function(response) {
+                                    success: function (response) {
                                         // Show success alert
                                         Swal.fire({
                                             title: "Success!",
@@ -636,7 +671,7 @@
                                         });
                                         // Optionally, you can perform additional actions after successful submission
                                     },
-                                    error: function(xhr, status, error) {
+                                    error: function (xhr, status, error) {
                                         // Handle error response
                                         var errorMessage = xhr.responseJSON.message;
                                         Swal.fire({
@@ -658,7 +693,7 @@
                         var dropdown = document.getElementById('serviceDropdown');
 
                         // Listen for the change event
-                        dropdown.addEventListener('change', function() {
+                        dropdown.addEventListener('change', function () {
                             // Get the selected service
                             var selectedService = this.value;
 
@@ -666,7 +701,7 @@
                             var partners = document.querySelectorAll('.m-widget4__item');
 
                             // Loop over the partners
-                            partners.forEach(function(partner) {
+                            partners.forEach(function (partner) {
                                 // Get the service of the partner
                                 var partnerService = partner.getAttribute('data-service');
 
@@ -680,14 +715,15 @@
                         });
                     </script>
 
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+                            charset="utf-8"></script>
                     <script>
-                        $(document).ready(function() {
+                        $(document).ready(function () {
                             // Initialize the price per hour
                             var pricePerHour = 0;
 
                             // Listen for changes on the charge_horaire input field
-                            $('#charge_horaire').on('input', function() {
+                            $('#charge_horaire').on('input', function () {
                                 // Get the number of hours from the input field
                                 var hours = $(this).val();
 
@@ -695,11 +731,11 @@
                                 var newPrice = hours * pricePerHour;
 
                                 // Update the price on the page
-                                $('.product-price span').text((pricePerHour!=0)?newPrice + ' Dhs':'Aucun Partenaire selectionné');
+                                $('.product-price span').text((pricePerHour != 0) ? newPrice + ' Dhs' : 'Aucun Partenaire selectionné');
                             });
 
                             // Listen for clicks on the "Choisir..." buttons
-                            $('.btn-secondary').on('click', function() {
+                            $('.btn-secondary').on('click', function () {
                                 // Get the price per hour from the data-price attribute
                                 console.log("partner selected" + $(this).data('serviceid'));
 
@@ -725,9 +761,9 @@
                         });
                     </script>
                     <script>
-                        $(document).ready(function() {
+                        $(document).ready(function () {
 
-                            $('.color-choose input').on('click', function() {
+                            $('.color-choose input').on('click', function () {
                                 var headphonesColor = $(this).attr('data-image');
 
                                 $('.active').removeClass('active');
@@ -740,12 +776,9 @@
                     </script>
 
 
-
-
                     <div class="d-flex justify-content-center"><a href="" class="custom_dark-btn"> Read More </a></div>
                 </div>
             </section>
-
 
 
             <section class="container-fluid footer_section">
@@ -777,7 +810,6 @@
             <script src="assets/bootstrap/js/bootstrap.min.js"></script>
             <script src="assets/js/jquery-3.4.1.min.js"></script>
             <script src="assets/js/bootstrap.js"></script>
-
 
 
             <div class="row">

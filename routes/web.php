@@ -82,6 +82,8 @@ Route::get('/client/logout', [ClientLoginController::class, 'logout'])->name('cl
 
 // Client routes
 Route::get('/client/home', [ClientController::class, 'home'])->name('client.home');
+Route::get('/client/feed', [ClientController::class, 'feed'])->name('client.feed');
+
 Route::get('/client/profile', [ClientController::class, 'profile'])->name('client.profile');
 Route::post('/upload-profile-picture/{client}', [ImageController::class, 'uploadProfilePicture'])->name('upload.profile.picture');
 Route::get('/client/profile_edit', [ClientController::class, 'editProfile'])->name('client.profile.edit');

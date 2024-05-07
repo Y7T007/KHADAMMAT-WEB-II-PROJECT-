@@ -124,6 +124,7 @@
                     </div>
                   </div>
                 </div>
+
               </div>
 
               <!-- Modale pour noter -->
@@ -172,6 +173,7 @@
                 @empty
                 <p style="text-align: center; color: #6c757d; margin-top: 20px;">Aucun commentaire n'a été trouvé pour cette demande.</p>
                 @endforelse
+
             </div>
         </div>
     </div>
