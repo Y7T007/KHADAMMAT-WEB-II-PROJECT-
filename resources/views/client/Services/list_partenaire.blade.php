@@ -43,9 +43,9 @@
                                         </div>
                                     </div>
                                     <div class="m-widget4__ext">
-                                        <a href="#" class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-primary">
-                                            Voir profile
-                                        </a>
+                                    <a href="{{ route('partner.show', ['id' => $partner->id]) }}" class="btn btn-primary">Voir profile</a>
+
+
                                         <a href="#" class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-secondary" >
                                             Choisir.........
                                         </a>
@@ -60,5 +60,21 @@
             </div>
         </div>
         <!--end:: Widgets/User Progress -->
+        <script src="../Partenaire/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../Partenaire/assets/extra-libs/taskboard/js/jquery.ui.touch-punch-improved.js"></script>
+    <script src="../Partenaire/assets/extra-libs/taskboard/js/jquery-ui.min.js"></script>
+    <script src="../Partenaire/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../Partenaire/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- apps -->
+    <script src="../Partenaire/dist/js/app-style-switcher.js"></script>
+    <script src="../Partenaire/dist/js/feather.min.js"></script>
+    <script src="../Partenaire/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../Partenaire/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../Partenaire/dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <script src="../Partenaire/assets/libs/moment/min/moment.min.js"></script>
+    <script src="../Partenaire/assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="../Partenaire/dist/js/pages/calendar/cal-init.js"></script>
     </div>
 </div>

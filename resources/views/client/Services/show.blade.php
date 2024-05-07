@@ -2,7 +2,22 @@
 <html dir="ltr" lang="en">
 
 @include('client.head')
-
+<script src="../Partenaire/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../Partenaire/assets/extra-libs/taskboard/js/jquery.ui.touch-punch-improved.js"></script>
+    <script src="../Partenaire/assets/extra-libs/taskboard/js/jquery-ui.min.js"></script>
+    <script src="../Partenaire/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../Partenaire/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- apps -->
+    <script src="../Partenaire/dist/js/app-style-switcher.js"></script>
+    <script src="../Partenaire/dist/js/feather.min.js"></script>
+    <script src="../Partenaire/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../Partenaire/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../Partenaire/dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <script src="../Partenaire/assets/libs/moment/min/moment.min.js"></script>
+    <script src="../Partenaire/assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="../Partenaire/dist/js/pages/calendar/cal-init.js"></script>
 <body>
 <!-- ============================================================== -->
 <!-- Preloader - style you can find in spinners.css -->
@@ -596,7 +611,18 @@
                                                                 </a>
                                                             </div>
                                                         </div>
-                                                    @endforeach
+
+                                                        <div class="m-widget4__ext">
+                                                        <a href="{{ route('client.partner.show', ['id' => $partner->id]) }}" class="btn btn-primary">Voir profile</a>
+
+
+                                                            <a style="color: white" class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-secondary" data-partnerid="{{$partner->id}}" data-serviceid="{{ isset($partner->proposed_services[0])?$partner->proposed_services[0]->id:''}}" data-price="{{isset( $partner->proposed_services[0])? $partner->proposed_services[0]->prix:'' }}">
+                                                                Choisir.........
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+
                                                 @endforeach
                                             </div>
                                             <style>
