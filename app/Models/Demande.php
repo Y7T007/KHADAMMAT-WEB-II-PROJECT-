@@ -38,12 +38,18 @@ class Demande extends Model
         'idservice',
         'duree',
         'date',
-        'statut'
+        'statut',
+        'reponse'
     ];
 
     public function demandes()
     {
         return $this->hasMany(Demande::class, 'partenaireid');
     }
+    // Dans le modèle Demande
+public function comments()
+{
+    return $this->hasMany(Comment::class, 'Demandeid');
 }
 
+}
