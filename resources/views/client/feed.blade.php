@@ -33,30 +33,7 @@
 
 
     <div class="page-wrapper">
-        @foreach($demandedServices as $demandedService)
-            <!-- Display the demanded service -->
-            <div>
-                <h2>{{ $demandedService->service->nom }}</h2>
-                <p>{{ $demandedService->service->description }}</p>
-                <p>Requested by: {{ $demandedService->client->name }}</p>
-                <p>Provided by: {{ $demandedService->partenaire->name }}</p>
-                <!-- Display the comments related to the demanded service -->
-                @foreach($demandedService->commentaires as $comment)
-                    <div>
-                        <p>{{ $comment->content }}</p>
-                    </div>
-                @endforeach
-            </div>
-        @endforeach
 
-        @foreach($providedServices as $providedService)
-            <!-- Display the provided service -->
-            <div>
-                <h2>{{ $providedService->nom }}</h2>
-                <p>{{ $providedService->description }}</p>
-                <p>Provided by: {{ $providedService->partenaire->name }}</p>
-            </div>
-        @endforeach
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
