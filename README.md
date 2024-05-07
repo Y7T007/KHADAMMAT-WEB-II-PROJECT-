@@ -6,7 +6,7 @@ Ce projet est une application web Robuste Basee sur LARAVEL, construite le conte
 - Professeur Al ACHHAB
 ### Realise Par :
 - YASSIR WAHID [(Y7T007)](https://github.com/Y7T007)
-- NOSSAIR SEDKI [(1nossairsedki)](https://github.com/1nossairsedki)
+- NOSSAIR SEDKI [(nossairsd)](https://github.com/nossairsd)
 - NADA HIMDI [(nadahimdi)](https://github.com/nadahimdi)
 - OMAR ABARRA [(Omarab2022)](https://github.com/Omarab2022)
 - NAJOUA ABOUCHAMA [(najwaabouchama)](https://github.com/najwaabouchama)
