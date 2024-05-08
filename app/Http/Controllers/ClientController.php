@@ -119,7 +119,7 @@ class ClientController extends Controller
     {
         $client_id = Auth::guard('client')->user()->id;
         $client = Auth::guard('client')->user(); // Assurez-vous de récupérer l'utilisateur connecté
-        $demandes = \App\Models\Demande::with(['service', 'partenaire', 'comments.user'])
+        $demandes = Demande::with(['service', 'partenaire', 'comments.user'])
             ->where('idclient', $client_id)
             ->get();
 

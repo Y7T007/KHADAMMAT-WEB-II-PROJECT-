@@ -422,6 +422,7 @@
                                 <input type="hidden" id="partenaireid" name="partenaireid" value="">
                                 <input type="hidden" id="serviceId" name="serviceId" value="">
                                 <input type="hidden" id="idservice" name="idservice" value="{{ $service->id }}">
+                                <input type="hidden" id="idclient" name="idclient" value="{{ $client->id }}">
 
                                 <!-- Product Configuration -->
                                 <div class="product-configuration">
@@ -719,6 +720,8 @@
                                 // Set the value of the partenaireid field
                                 $('#partenaireid').val(partnerId);
                                 $('#serviceId').val(serviceId);
+                                console.log("partner selected" + partnerId);
+                                console.log("service selected" + serviceId);
 
                                 pricePerHour = $(this).data('price');
 

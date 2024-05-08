@@ -12,7 +12,7 @@ class Demande extends Model
     public function client()
     {
 
-        return $this->belongsTo(User::class, 'idclient');
+        return $this->belongsTo(Client::class, 'id');
     }
 
     public function service()
