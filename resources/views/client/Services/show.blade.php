@@ -162,7 +162,7 @@
         <!-- Container fluid  -->
         <!-- ============================================================== -->
         <div class="container-fluid">
-            <!-- *************************************************************** -->
+            <!-- ***********************************=*************************** -->
             <!-- Start First Cards -->
             <!-- *************************************************************** -->
 
@@ -170,8 +170,8 @@
             <section class="service_section layout_padding">
                 <div class="container">
 
-                    <h2 class="custom_heading">Le Service de {{ $service->nom  }}</h2>
-                    <p class="custom_heading-text"> {{ $service->sous_titre  }} </p>
+                    <h2 class="custom_heading">Le Service de {{ $service -> nom  }}</h2>
+                    <p class="custom_heading-text"> {{ $service -> sous_titre  }} </p>
 
 
                     <main class="container"
@@ -640,7 +640,7 @@
                                             icon: "success",
                                             didClose: function () {
                                                 // Redirect to the service history page when the modal is closed
-                                                window.location.href = '/client/service-history';
+                                                window.location.href = '/client/service_history';
                                             }
                                         });
                                         // Optionally, you can perform additional actions after successful submission
