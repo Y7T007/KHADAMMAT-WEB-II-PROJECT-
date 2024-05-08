@@ -56,14 +56,4 @@ class ServiceController extends Controller
         // Pass the partners to the view
         return view('client.services.show', ['service' => $serviceFromJson, 'partners' => $partners])->with('client', $client);
     }
-    public function showService($id) {
-        $service = Service::find($id);
-    
-        if (!$service) {
-            return redirect()->route('services.index')->with('error', 'Service non trouvé.');
-        }
-    
-        return view('client.services.show', compact('service'));
-    }
-    
 }
