@@ -38,20 +38,20 @@
 <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
         <header class="topbar" data-navbarbg="skin6">
-            
+
             <nav class="navbar top-navbar navbar-expand-lg">
-                
+
                 <div class="navbar-header" data-logobg="skin6">
-                    
+
                     <!-- This is for the sidebar toggle which is visible on mobile only -->
                     <a class="nav-toggler waves-effect waves-light d-block d-lg-none" href="javascript:void(0)"><i
                             class="ti-menu ti-close"></i></a>
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    
+
                     <div style="background-color: #ffca2bd1;" class="navbar-brand">
-                    
+
                         <!-- Logo icon -->
                         <a href="index.html">
                             <img style="width: 65px;" src="../Partenaire/assets/images/logo.jpeg" alt="" class="img-fluid">
@@ -63,7 +63,7 @@
                     <!-- ============================================================== -->
                     <!-- Toggle which is visible on mobile only -->
                     <!-- ============================================================== -->
-                    
+
                     <a class="topbartoggler d-block d-lg-none waves-effect waves-light" href="javascript:void(0)"
                         data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i
@@ -75,7 +75,7 @@
                 <div class="navbar-collapse collapse" id="navbarSupportedContent">
                     <!-- ============================================================== -->
                     <!-- toggle and nav items -->
-                    
+
                     <!-- ============================================================== -->
                     <ul class="navbar-nav float-left me-auto ms-3 ps-1">
                         <!---->
@@ -91,7 +91,7 @@
                     <!-- Right side toggle and nav items -->
                     <!-- ============================================================== -->
                     <ul class="navbar-nav float-end">
-                        
+
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
@@ -106,7 +106,7 @@
                         <li style="display: flex;flex-direction: column; justify-content: center;align-items: center">
 
                             <button type="button" class="btn position-relative">
-                                <a href="notifications" class="nav-link dropdown-toggle " aria-haspopup="true"
+                                <a href="service_history" class="nav-link dropdown-toggle " aria-haspopup="true"
                                    aria-expanded="false">
                                     <img src="https://img.icons8.com/ios/25/000000/appointment-reminders.png" alt="Notification Bell">
                                     <span class="position-absolute top-20 start-80 translate-middle p-2 bg-danger border border-light rounded-circle">
@@ -115,7 +115,7 @@
                                 </a>
                             </button>
                         </li>
-                        
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
@@ -138,7 +138,7 @@
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                     </ul>
-                  
+
                 </div>
             </nav>
         </header>
@@ -147,7 +147,7 @@
         <!-- ============================================================== -->
 
 
-    
+
     @include('client.sidebar')
     <!-- ============================================================== -->
     <!-- End Left Sidebar - style you can find in sidebar.scss  -->

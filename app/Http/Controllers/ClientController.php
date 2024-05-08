@@ -29,7 +29,6 @@ class ClientController extends Controller
 
         // Fetch the demanded services by the client
         $demandedServices = Demande::with(['service', 'commentaires', 'client', 'partenaire'])
-            ->where('idclient', $client->id)
             ->get();
 
         // Fetch the services provided by all partners
@@ -126,7 +125,7 @@ class ClientController extends Controller
 
         return view('client.service_history', compact('demandes', 'client'))->with('client', $client); // Passez 'client' à la vue
     }
-   
+
     public function saveComment(Request $request, $demandeId)
 {
     $request->validate([
