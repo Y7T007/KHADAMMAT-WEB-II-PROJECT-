@@ -14,11 +14,11 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         'client/*',
         'login-client/',
-        '/register-client',
-        '/register-client-step1',
-        '/register-client-step2',
-        '/register-client-step3',
-        '/client/submit-demand',
-        '/client/conversation/*',
+        'register-client/',
+        'register-client-step1/',
+        'register-client-step2/',
+        'register-client-step3/',
+        'client/submit-demand/',
+        'client/conversation/*',
     ];
 }
