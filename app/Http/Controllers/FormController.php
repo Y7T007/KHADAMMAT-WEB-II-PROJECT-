@@ -46,11 +46,11 @@ class FormController extends Controller
     public function postStep2(Request $request)
     {
         $request->validate([
-            'ville' => 'required|string|max:255',
-            'address' => 'required|string|max:255',
-            'phone_number' => 'required|numeric',
-            'date_naissance' => 'required|date',
-            'genre' => 'required|in:M,F',
+            'ville' => 'sometimes|string|max:255',
+            'address' => 'sometimes|string|max:255',
+            'phone_number' => 'sometimes|numeric',
+            'date_naissance' => 'sometimes|date',
+            'genre' => 'sometimes|in:M,F',
         ]);
 
         $client = Auth::guard('client')->user();

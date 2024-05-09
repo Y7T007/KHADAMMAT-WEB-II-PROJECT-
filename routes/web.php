@@ -171,7 +171,7 @@ Route::get('/AjouterComment', [Partenaire::class, 'AjouterComment']);
 Route::get('/home', [HomeController::class, 'redirect'])->middleware('auth', 'verified');
 Route::get('/Clients', [HomeController::class, 'Clients'])->name('Client');
 Route::get('/Partenaires', [HomeController::class, 'Partenaires'])->name('Partenaire');
-Route::get('/Services', [HomeController::class, 'Services'])->name('Services');
+Route::get('/services', [HomeController::class, 'Services'])->name('services');
 Route::get('/Commentaires', [HomeController::class, 'Commentaires'])->name('Commentaires');
 Route::middleware([
     'auth:sanctum',

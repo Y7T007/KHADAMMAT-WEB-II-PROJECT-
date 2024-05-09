@@ -19,14 +19,14 @@
                                     class="hide-menu">Clients List
                                 </span></a>
                         </li>
-                        
+
                         <li class="sidebar-item"> <a class="sidebar-link" href="{{route('Partenaire')}}"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                                     class="hide-menu">partenaire List
                                 </span></a>
                         </li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link" href="{{route('Services')}}"
+                        <li class="sidebar-item"> <a class="sidebar-link" href="{{route('services')}}"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                                     class="hide-menu">Services
                                 </span></a>
@@ -37,7 +37,7 @@
                                     class="hide-menu">Commentaires
                                 </span></a>
                         </li>
-                      
+
                         <!-- // -->
 
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="authentication-login1.html"

@@ -19,7 +19,7 @@ class ServiceController extends Controller
     public function show($id)
     {
         // Fetch the service with the given id from the JSON file
-        $json = file_get_contents('./Services/services.json');
+        $json = file_get_contents('./services/services.json');
         $servicesFromJson = json_decode($json);
         $serviceFromJson = array_filter($servicesFromJson->services, function ($service) use ($id) {
             return $service->id == $id;

@@ -197,7 +197,7 @@
                     <div class="row" id="serviceCards">
                         <?php
                         // Read the JSON file
-                        $json = file_get_contents('./Services/services.json');
+                        $json = file_get_contents('./services/services.json');
 
                         // Decode the JSON into a PHP object
                         $services = json_decode($json);
