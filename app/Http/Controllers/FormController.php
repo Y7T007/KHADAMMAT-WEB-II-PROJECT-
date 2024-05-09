@@ -20,7 +20,7 @@ class FormController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:clients',
             'password' => 'required|string|min:8|confirmed',
-            'profile_picture' => 'image',
+            'profile_picture' => 'sometimes|image',
         ]);
 
 //        Log::info('Step 1 data: ', $request->all()); // Log request data
