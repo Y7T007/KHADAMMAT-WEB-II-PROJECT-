@@ -95,7 +95,7 @@
                 <td>{{ $demande->service->prix }} DH</td>
                 <td>{{ $demande->statut }}</td>
                 <td>
-                  @if($demande->statut == 'complet')
+                  @if($demande->statut == 'Accepter')
                   <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#commentModal-{{ $demande->id }}">Commenter</button>
                   <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#rateModal-{{ $demande->id }}">Noter</button>
                   <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewCommentsModal-{{ $demande->id }}">Voir Commentaires</button>
