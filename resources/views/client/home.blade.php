@@ -42,7 +42,7 @@
                     <div class="d-flex align-items-center">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb m-0 p-0">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a>
+                                <li class="breadcrumb-item"><a href="#">Home</a>
                                 </li>
                             </ol>
                         </nav>
@@ -73,11 +73,33 @@
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <div class="slider_item-detail">
-                                                        <div>
-                                                            <h1>Bonjour Mr. {{$client->name}}</h1>
-                                                            <p> Transformez votre maison en un havre de paix. Réservez dès aujourd'hui des services à domicile sur notre plateforme intuitive. Que ce soit pour l'entretien ménager, la réparation, ou tout simplement pour prendre soin de votre espace, nous sommes là pour vous simplifier la vie. Libérez-vous du stress et laissez-nous prendre soin de votre maison. Bienvenue chez nous, où chaque service est synonyme de qualité et de tranquillité d'esprit. </p>
-                                                            <div class="d-flex"><a class="text-uppercase custom_orange-btn mr-3" href="">Decouvrir</a><a class="text-uppercase custom_dark-btn" href=""> Contact Us </a></div>
+                                                    <div class="container text-center">
+                                                        <h1 class="display-4 d-none d-sm-block">Bonjour Mr. {{$client->name}}</h1>
+                                                        <h1 class="h3 d-block d-sm-none">Bonjour Mr. {{$client->name}}</h1>
+                                                        <div id="text">
+                                                            <span id="less">Transformez votre maison en un havre de paix. Réservez dès aujourd'hui ... </span>
+                                                            <span id="more" style="display: none;"> Transformez votre maison en un havre de paix. Réservez dès aujourd'hui des services à domicile sur notre plateforme intuitive. Que ce soit pour l'entretien ménager, la réparation, ou tout simplement pour prendre soin de votre espace, nous sommes là pour vous simplifier la vie. Libérez-vous du stress et laissez-nous prendre soin de votre maison. Bienvenue chez nous, où chaque service est synonyme de qualité et de tranquillité d'esprit. </p></span>
+                                                        </div>
+                                                        <br>
+                                                        <a class="btn btn-primary text-uppercase mr-3" style="color: white" id="readMore" >Read More</a>
+                                                        <br><br><br>
+                                                        <script>
+                                                            document.getElementById('readMore').addEventListener('click', function() {
+                                                                var moreText = document.getElementById('more');
+                                                                var buttonText = document.getElementById('readMore');
+
+                                                                if (moreText.style.display === 'none') {
+                                                                    moreText.style.display = 'inline';
+                                                                    buttonText.innerHTML = 'Read Less';
+                                                                } else {
+                                                                    moreText.style.display = 'none';
+                                                                    buttonText.innerHTML = 'Read More';
+                                                                }
+                                                            });
+                                                        </script>
+                                                        <div class="d-flex justify-content-center">
+                                                            <a class="btn btn-warning text-uppercase mr-3" href="">Decouvrir</a>
+                                                            <a class="btn btn-dark text-uppercase" href="">Contact Us</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -219,25 +241,25 @@
     <script src="../Partenaire/assets/libs/moment/min/moment.min.js"></script>
     <script src="../Partenaire/assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
     <script src="../Partenaire/dist/js/pages/calendar/cal-init.js"></script>
-<script src="../Partenaire/assets/libs/jquery/dist/jquery.min.js"></script>
-<script src="../Partenaire/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<!-- apps -->
-<!-- apps -->
-<script src="../Partenaire/dist/js/app-style-switcher.js"></script>
-<script src="../Partenaire/dist/js/feather.min.js"></script>
-<script src="../Partenaire/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-<script src="../Partenaire/dist/js/sidebarmenu.js"></script>
-<!--Custom JavaScript -->
-<script src="../Partenaire/dist/js/custom.min.js"></script>
-<!--This page JavaScript -->
-<script src="../Partenaire/assets/extra-libs/c3/d3.min.js"></script>
-<script src="../Partenaire/assets/extra-libs/c3/c3.min.js"></script>
-<script src="../Partenaire/assets/libs/chartist/dist/chartist.min.js"></script>
-<script src="../Partenaire/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-<script src="../Partenaire/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
-<script src="../Partenaire/assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
-<script src="../Partenaire/dist/js/pages/dashboards/dashboard1.min.js"></script>
-<script>
+{{--<script src="../Partenaire/assets/libs/jquery/dist/jquery.min.js"></script>--}}
+{{--<script src="../Partenaire/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>--}}
+{{--<!-- apps -->--}}
+{{--<!-- apps -->--}}
+{{--<script src="../Partenaire/dist/js/app-style-switcher.js"></script>--}}
+{{--<script src="../Partenaire/dist/js/feather.min.js"></script>--}}
+{{--<script src="../Partenaire/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>--}}
+{{--<script src="../Partenaire/dist/js/sidebarmenu.js"></script>--}}
+{{--<!--Custom JavaScript -->--}}
+{{--<script src="../Partenaire/dist/js/custom.min.js"></script>--}}
+{{--<!--This page JavaScript -->--}}
+{{--<script src="../Partenaire/assets/extra-libs/c3/d3.min.js"></script>--}}
+{{--<script src="../Partenaire/assets/extra-libs/c3/c3.min.js"></script>--}}
+{{--<script src="../Partenaire/assets/libs/chartist/dist/chartist.min.js"></script>--}}
+{{--<script src="../Partenaire/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>--}}
+{{--<script src="../Partenaire/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>--}}
+{{--<script src="../Partenaire/assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>--}}
+{{--<script src="../Partenaire/dist/js/pages/dashboards/dashboard1.min.js"></script>--}}
+{{--<script>--}}
     let currentStep = 1;
     const totalSteps = 3;
 

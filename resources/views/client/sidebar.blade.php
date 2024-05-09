@@ -2,7 +2,7 @@
 
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        <aside style="background-color: #ffca2bd1;" class="left-sidebar" data-sidebarbg="skin6">
+        <aside style="background-color: #ffca2bd1" class="left-sidebar" data-sidebarbg="skin6">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar" data-sidebarbg="skin6">
                 <!-- Sidebar navigation-->
