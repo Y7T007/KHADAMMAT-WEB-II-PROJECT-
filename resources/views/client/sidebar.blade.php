@@ -14,8 +14,8 @@
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                     class="hide-menu">Home</span></a></li>
                         <li class="list-divider"></li>
-                        
-                        
+
+
                 <li class="sidebar-item" >
                     <a class="sidebar-link" href="feed" aria-expanded="false">
                         <i class="bi bi-postcard-heart" style="display: flex;flex-direction: row;justify-content: center;align-items: center"></i>
@@ -33,7 +33,7 @@
 
                        <!-- Dans votre sidebar.blade.php ou un fichier similaire -->
 <!-- Sidebar item for 'Nos Partenaires' -->
-<li class="sidebar-item"> 
+<li class="sidebar-item">
     <a class="sidebar-link" href="{{ route('client.partners.index') }}" aria-expanded="false">
         <i class="bi bi-people-fill"></i>
         <span class="hide-menu">Nos Partenaires</span>
@@ -48,9 +48,7 @@
         class="hide-menu">Historique </span></a></li>
 
 
-                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="messages"
-                                      aria-expanded="false"><i class="bi bi-chat-left-text-fill"></i><span
-                                           class="hide-menu">Messagerie </span></a></li>
+
                              <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="../client/profile"
                                       aria-expanded="false"><i class="bi bi-person-fill"></i><span
                                            class="hide-menu">Profile </span></a></li>
