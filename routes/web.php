@@ -49,14 +49,14 @@ Route::get('/', function () {
 Route::get('/register-client', [ClientRegisterController::class, 'showRegistrationForm'])->name('client.register');
 Route::post('/register-client', [ClientRegisterController::class, 'register']);
 
-// Step 1 route
-Route::post('/register-client-step1', [ClientRegisterController::class, 'registerStep1'])->name('client.register.step1');
-
-// Step 2 route
-Route::post('/register-client-step2', [ClientRegisterController::class, 'registerStep2'])->name('client.register.step2');
-
-// Step 3 route
-Route::post('/register-client-step3', [ClientRegisterController::class, 'registerStep3'])->name('client.register.step3');
+//// Step 1 route
+//Route::post('/register-client-step1', [ClientRegisterController::class, 'registerStep1'])->name('client.register.step1');
+//
+//// Step 2 route
+//Route::post('/register-client-step2', [ClientRegisterController::class, 'registerStep2'])->name('client.register.step2');
+//
+//// Step 3 route
+//Route::post('/register-client-step3', [ClientRegisterController::class, 'registerStep3'])->name('client.register.step3');
 
 Route::get('/register-client-step1', [FormController::class, 'step1'])->name('register-client-step1');
 Route::post('/register-client-step1', [FormController::class, 'postStep1'])->name('postStep1');
