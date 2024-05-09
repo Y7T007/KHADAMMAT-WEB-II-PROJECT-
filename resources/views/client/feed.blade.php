@@ -39,11 +39,7 @@
         <!-- ============================================================== -->
         <section class="bg-white">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12 col-lg-12" style="padding: 0px;background: url(assets/img/office-front.jpeg) center / cover no-repeat;">
-                        <p><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
-                    </div>
-                </div>
+
                 <div class="row">
                     <div class="col-md-12 col-lg-12">
                         <div class="row">

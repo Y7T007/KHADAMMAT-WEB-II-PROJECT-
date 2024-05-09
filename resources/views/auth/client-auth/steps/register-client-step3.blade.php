@@ -143,7 +143,7 @@
                                 <br>
                                 <div class="form-group">
                                     <label for="superficie">{{ __('House Superficie (m²)') }}</label>
-                                    <input id="superficie" type="number" min="0" class="form-control @error('superficie') is-invalid @enderror" name="superficie" value="{{ old('superficie') }}" required>
+                                    <input id="superficie" type="number" min="0" class="form-control @error('superficie') is-invalid @enderror" name="superficie" value="{{ old('superficie',120) }}" required>
                                     @error('superficie')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
