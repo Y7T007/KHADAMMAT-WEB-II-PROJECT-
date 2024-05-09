@@ -584,7 +584,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="m-widget4__ext">
-                                                                <a href="#"
+                                                                <a href="/partners/{{ $partner->id }}"
                                                                    class="m-btn m-btn--hover-brand m-btn--pill btn btn-sm btn-primary">
                                                                     Voir profile
                                                                 </a>
