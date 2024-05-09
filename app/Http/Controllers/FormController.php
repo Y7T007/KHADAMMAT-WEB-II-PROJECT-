@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use http\Exception\InvalidArgumentException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use mysql_xdevapi\Exception;
 
 class FormController extends Controller
 {
@@ -55,7 +57,7 @@ class FormController extends Controller
 
         $client = Auth::guard('client')->user();
 
-        if ($client) {
+        try {
             $client->ville = $request->ville?? '';
             $client->address = $request->address?? '';
             $client->phone_number = $request->phone_number?? '';
@@ -64,10 +66,10 @@ class FormController extends Controller
             $client->save();
 
             return redirect()->route('register-client-step3');
-        } else {
-            // Handle the case where there's no authenticated user
-            return redirect()->route('client.login');
+        } catch (InvalidArgumentException $e ) {
+            return redirect()->route('register-client-step2');
         }
+
     }
 
     public function step3()
