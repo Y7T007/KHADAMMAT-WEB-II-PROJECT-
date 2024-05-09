@@ -105,14 +105,14 @@
 
                     <div class="card-body">
 
-                        <form method="POST" action="{{ route('postStep1') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('postStep1') }}" enctype="multipart/form-data" class="form-container slideRight-animation">
                             @csrf
 
                             <div class="form-group -align-center align-content-center">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Profile Picture') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="name" type="file" class="form-control @error('profile_picture') is-invalid @enderror" name="profile_picture" value="{{ old('profile_picture') }}"  required autocomplete="profile_picture" autofocus>
+                                    <input id="name" type="file" class="form-control @error('profile_picture') is-invalid @enderror" name="profile_picture" value="{{ old('profile_picture') }}" required autocomplete="profile_picture" autofocus>
 
                                     @error('profile_picture')
                                     <span class="invalid-feedback" role="alert">

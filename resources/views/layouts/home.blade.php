@@ -44,15 +44,22 @@
 </head>
 <body>
 <main class="card-container slideUp-animation">
-    <div class="image-container">
-        <h1 class="company">Khadamat </h1>
-        <img src="signIn_signup/images/signup.svg" class="illustration" alt="">
-        <p class="quote">Sign up today to get exciting offers..!</p>
-        <a href="#btm" class="mobile-btm-nav">
-            <img src="signIn_signup/images/dbl-arrow.png" alt="">
-        </a>
-    </div>
-    @yield('content')
+{{--    <div class="row "style="display: flex;flex-direction: row;justify-content: center;align-items: center" >--}}
+{{--        <div class="col" style="width: 40%">--}}
+            <div class="image-container">
+                <h1 class="company">Khadamat </h1>
+                <img src="signIn_signup/images/signup.svg" class="illustration" alt="">
+                <p class="quote">Sign up today to get exciting offers..!</p>
+                <a href="#btm" class="mobile-btm-nav">
+                    <img src="signIn_signup/images/dbl-arrow.png" alt="">
+                </a>
+            </div>
+{{--        </div>--}}
+        <div class="col">
+            @yield('content')
+        </div>
+{{--    </div>--}}
+
 
 </main>
 <section class="outro-overlay disabled slideUp-animation">

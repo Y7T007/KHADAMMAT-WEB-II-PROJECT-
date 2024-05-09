@@ -110,16 +110,15 @@
                     </div>
                 </div>
                 <div class="card-body" style="width:100%">
-                    <form method="POST" action="{{ route('postStep3') }}">
+                    <form method="POST" action="{{ route('postStep3') }}" class="form-container slideRight-animation">
                         @csrf
-                        <div class="row" style="width:100%; display: flex;flex-direction: row;justify-content: center;align-items: center">
-                            <div class="col-md-6" style="width:40%">
+
                                 <!-- Maison, Jardin, Garage, Number of Rooms, Number of Bathrooms -->
                                 <!-- Maison -->
 
 
                                 <!-- Number of Rooms -->
-                                <div class="form-group" >
+                                <div class="form-group row" >
                                     <label for="nb_chambres">{{ __('Number of Rooms') }}</label>
                                     <input id="nb_chambres" type="number" min="0" class="form-control @error('nb_chambres') is-invalid @enderror" name="nb_chambres" value="{{ old('nb_chambres') }}" required>
                                     @error('nb_chambres')
@@ -131,7 +130,7 @@
                                 <br>
 
                                 <!-- Number of Bathrooms -->
-                                <div class="form-group">
+                                <div class="form-group row">
                                     <label for="nb_bain">{{ __('Number of Bathrooms') }}</label>
                                     <input id="nb_bain" type="number" min="0" class="form-control @error('nb_bain') is-invalid @enderror" name="nb_bain" value="{{ old('nb_bain') }}" required>
                                     @error('nb_bain')
@@ -141,7 +140,7 @@
                                     @enderror
                                 </div>
                                 <br>
-                                <div class="form-group">
+                                <div class="form-group row">
                                     <label for="superficie">{{ __('House Superficie (m²)') }}</label>
                                     <input id="superficie" type="number" min="0" class="form-control @error('superficie') is-invalid @enderror" name="superficie" value="{{ old('superficie',120) }}" required>
                                     @error('superficie')
@@ -150,14 +149,12 @@
                                     </span>
                                     @enderror
                                 </div>
-                            </div>
 
-                            <div class="col-md-6" style="width:40%">
                                 <!-- Television, Refrigerator, Washing Machine, Other Devices -->
                                 <h3>Your House contain :</h3>
 
                                 <!-- Jardin -->
-                                <div class="form-group" style="width:100%;display: flex;flex-direction: row;justify-content: left;align-items: start">
+                                <div class="form-group row" style="width:100%;display: flex;flex-direction: row;justify-content: left;align-items: start">
                                     <input id="jardin" type="checkbox" class="form-control @error('jardin') is-invalid @enderror" name="jardin" value=0" style="width:10%">
                                     <label for="jardin">{{ __('Jardin') }}</label>
                                     @error('jardin')
@@ -168,7 +165,7 @@
                                 </div>
 
                                 <!-- Garage -->
-                                <div class="form-group" style="width:100%;display: flex;flex-direction: row;justify-content: left;align-items: start">
+                                <div class="form-group row" style="width:100%;display: flex;flex-direction: row;justify-content: left;align-items: start">
                                     <input id="garage" type="checkbox" class="form-control @error('garage') is-invalid @enderror" name="garage" value="0" style="width:10%">
                                     <label for="garage">{{ __('Garage') }}</label>
                                     @error('garage')
@@ -182,7 +179,7 @@
                                 <h3>Your Eletrical Devices</h3>
 
                                 <!-- Television -->
-                                <div class="form-group" style="width:100%;display: flex;flex-direction: row;justify-content: left;align-items: start">
+                                <div class="form-group row" style="width:100%;display: flex;flex-direction: row;justify-content: left;align-items: start">
                                     <input id="television" type="checkbox" class="form-control @error('television') is-invalid @enderror" name="television" value="1" style="width:10%">
                                     <label for="television">{{ __('Television') }}</label>
                                     @error('television')
@@ -193,7 +190,7 @@
                                 </div>
 
                                 <!-- Refrigerator -->
-                                <div class="form-group" style="width:100%;display: flex;flex-direction: row;justify-content: left;align-items: start">
+                                <div class="form-group row" style="width:100%;display: flex;flex-direction: row;justify-content: left;align-items: start">
                                     <input id="refrigirateur" type="checkbox" class="form-control @error('refrigirateur') is-invalid @enderror" name="refrigirateur" value="1" style="width:10%">
                                     <label for="refrigirateur">{{ __('Refrigerator') }}</label>
                                     @error('refrigirateur')
@@ -204,7 +201,7 @@
                                 </div>
 
                                 <!-- Washing Machine -->
-                                <div class="form-group" style="width:100%;display: flex;flex-direction: row;justify-content: left;align-items: start">
+                                <div class="form-group row" style="width:100%;display: flex;flex-direction: row;justify-content: left;align-items: start">
                                     <input id="machine_a_laver" type="checkbox" class="form-control @error('machine_a_laver') is-invalid @enderror" name="machine_a_laver" value="1" style="width:10%">
                                     <label for="machine_a_laver">{{ __('Washing Machine') }}</label>
                                     @error('machine_a_laver')
@@ -215,7 +212,7 @@
                                 </div>
 
 {{--                                <!-- Other Devices -->--}}
-{{--                                <div class="form-group">--}}
+{{--                                <div class="form-group row">--}}
 {{--                                    <label for="autres">{{ __('Other Devices') }}</label>--}}
 {{--                                    <input id="autres" type="text" class="form-control @error('autres') is-invalid @enderror" name="autres" value="{{ old('autres') }}">--}}
 {{--                                    @error('autres')--}}
@@ -224,8 +221,7 @@
 {{--                                    </span>--}}
 {{--                                    @enderror--}}
 {{--                                </div>--}}
-                            </div>
-                        </div>
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

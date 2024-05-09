@@ -111,7 +111,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('postStep2') }}">
+                    <form method="POST" action="{{ route('postStep2') }}" class="form-container slideRight-animation">
                         @csrf
 
                         <!-- Include form fields for step 2 -->
