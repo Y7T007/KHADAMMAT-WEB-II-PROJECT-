@@ -13,6 +13,8 @@
     <link rel="shortcut icon" href="signIn_signup/images/logo.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="signIn_signup/css/styles.css">
     <script src="signIn_signup/js/script.js" defer></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 <body>
     <main class="card-container slideUp-animation">
