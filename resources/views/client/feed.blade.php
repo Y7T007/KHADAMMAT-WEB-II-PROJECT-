@@ -112,7 +112,7 @@
                                             <div class="row" style="width: auto;margin-right: 0;margin-left: 0;">
                                                 <div class="col">
                                                     <p style="text-align: left;font-size: 25px;height: auto;width: auto;padding: 43px;">M. <strong>{{ $providedService->partenaire->name }}</strong> (<i>#Partner</i>) offre actuellement le service de "<strong>{{ $providedService->nom }}</strong>". Vous pourrez voir son profil
-                                                        <a href="#  "> ici.</a></p>
+                                                        <a href="/partners/{{ $providedService->partenaire->id }}  "> ici.</a></p>
                                                 </div>
                                             </div>
                                             <div class="row">
