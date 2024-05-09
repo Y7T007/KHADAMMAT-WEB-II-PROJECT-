@@ -54,9 +54,12 @@ class FormController extends Controller
             'date_naissance' => 'sometimes|date',
             'genre' => 'sometimes|in:M,F',
         ]);
-
         $client = Auth::guard('client')->user();
-
+        if (Auth::guard('client')->check()) {
+            echo "User is logged in";
+        } else {
+            echo "User is not logged in";
+        }
         try {
             $client->ville = $request->ville?? '';
             $client->address = $request->address?? '';
