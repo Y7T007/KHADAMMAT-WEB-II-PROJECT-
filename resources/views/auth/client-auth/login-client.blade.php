@@ -27,22 +27,4 @@
             </p>
         </div>
     </form>
-
-    <form method="POST" action="{{ route('client.login') }}">
-        @csrf
-
-        <div>
-            <label for="email">{{ __('E-Mail Address') }}</label>
-            <input id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-        </div>
-
-        <div>
-            <label for="password">{{ __('Password') }}</label>
-            <input id="password" type="password" name="password" required autocomplete="current-password">
-        </div>
-
-        <div>
-            <button type="submit">{{ __('Login') }}</button>
-        </div>
-    </form>
 @endsection
