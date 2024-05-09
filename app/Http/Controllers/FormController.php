@@ -54,11 +54,11 @@ class FormController extends Controller
         ]);
 
         $client = Auth::guard('client')->user();
-        $client->ville = $request->ville;
-        $client->address = $request->address;
-        $client->phone_number = $request->phone_number;
-        $client->date_naissance = $request->date_naissance;
-        $client->genre = $request->genre;
+        $client->ville = $request->ville?? '';
+        $client->address = $request->address?? '';
+        $client->phone_number = $request->phone_number?? '';
+        $client->date_naissance = $request->date_naissance?? '';
+        $client->genre = $request->genre?? '';
         $client->save();
 
         return redirect()->route('register-client-step3');
