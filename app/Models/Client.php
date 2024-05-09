@@ -9,6 +9,7 @@ class Client extends Authenticatable
     protected $table = 'clients';
 
     protected $fillable = [
+        'id',
         'name',
         'email',
         'password',
@@ -28,4 +29,8 @@ class Client extends Authenticatable
         'jardin',
         'superficie',
     ];
+    public function demandes()
+    {
+        return $this->hasMany(Demande::class, 'idclient');
+    }
 }

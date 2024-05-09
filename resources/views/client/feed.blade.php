@@ -64,7 +64,7 @@
                                             </div>
                                             <div class="row" style="width: auto;margin-right: 0;margin-left: 0;">
                                                 <div class="col">
-                                                    <p style="text-align: left;font-size: 25px;height: auto;width: auto;padding: 43px;">M. <strong>{{ $demandedService->client->name }}</strong>&nbsp; a demander le service de "<strong>{{ $demandedService->service->nom }}</strong>" de M. <strong>{{ $demandedService->partenaire->name }}</strong>.</p>
+                                                    <p style="text-align: left;font-size: 25px;height: auto;width: auto;padding: 43px;">M. <strong>{{ $demandedService->client->name}}</strong>&nbsp; a demander le service de "<strong>{{ $demandedService->service->nom }}</strong>" de M. <strong>{{ $demandedService->partenaire->name }}</strong>.</p>
                                                 </div>
                                             </div>
                                             <div class="row" style="border-radius:75px">

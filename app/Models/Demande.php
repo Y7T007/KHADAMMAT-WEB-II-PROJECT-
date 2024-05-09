@@ -12,7 +12,7 @@ class Demande extends Model
     public function client()
     {
 
-        return $this->belongsTo(Client::class, 'id');
+        return $this->belongsTo(Client::class, 'idclient');
     }
 
     public function service()
@@ -42,11 +42,6 @@ class Demande extends Model
         'reponse'
     ];
 
-    public function demandes()
-    {
-        return $this->hasMany(Demande::class, 'partenaireid');
-    }
-    // Dans le modèle Demande
 public function comments()
 {
     return $this->hasMany(Comment::class, 'Demandeid');
