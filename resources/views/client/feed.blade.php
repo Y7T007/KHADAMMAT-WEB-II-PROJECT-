@@ -57,7 +57,7 @@
 
                                         <div class="col">
                                             <div class="row d-flex flex-row justify-content-center align-items-center align-content-center align-self-center" style="height: 80px;background: #3c3c3c;border-radius: 75px;width: 104%;margin-left: -2%;">
-                                                <div class="col-xl-1" style="max-width: 80px;min-width: 80px;"><img width="100" height="80" src="assets/img/office-front.jpeg" style="height: 60px;width: 60px;border-radius: 60px;margin-left: -1px;"></div>
+                                                <div class="col-xl-1" style="max-width: 80px;min-width: 80px;"><img width="100" height="80" src="../Client/assets/img/office-front.jpeg" style="height: 60px;width: 60px;border-radius: 60px;margin-left: -1px;"></div>
                                                 <div class="col" style="margin-top: auto;margin-bottom: auto;">
                                                     <p style="font-size: 15px;font-family: Poppins;margin-top: auto;margin-bottom: auto;color: var(--bs-body-bg);"> <strong>{{ $demandedService->client->name }}</strong> (<i>#Client</i>)  -&gt;&nbsp;<strong>{{ $demandedService->partenaire->name }}</strong> (<i>#Partener</i>)</p>
                                                 </div>
@@ -134,7 +134,7 @@
                 </div>
             </div>
         </section>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../Client/assets/bootstrap/js/bootstrap.min.js"></script>
     <!-- ============================================================== -->
     <!-- End Page wrapper  -->
     <!-- ============================================================== -->

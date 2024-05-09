@@ -401,7 +401,7 @@
 
                         <!-- Left Column / Headphones Image -->
                         <div class="left-column">
-                            <img data-image="red" class="active" src="assets/img/plomb.avif" alt=""
+                            <img data-image="red" class="active" src="../../Client/assets/img/plomb.avif" alt=""
                                  style="border-radius: 50px; padding: 30px;object-fit: contain;margin-top: 50px">
                         </div>
 
@@ -784,9 +784,9 @@
                     });
                 }
             </script>
-            <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-            <script src="assets/js/jquery-3.4.1.min.js"></script>
-            <script src="assets/js/bootstrap.js"></script>
+            <script src="../../Client/assets/bootstrap/js/bootstrap.min.js"></script>
+            <script src="../../Client/assets/js/jquery-3.4.1.min.js"></script>
+            <script src="../../Client/assets/js/bootstrap.js"></script>
 
 
             <div class="row">

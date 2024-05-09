@@ -83,7 +83,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="slider_img-box">
-                                                        <div><img alt="" src="assets/img/illustration.avif"></div>
+                                                        <div><img alt="" src="../Client/assets/img/illustration.avif"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -168,9 +168,9 @@
                     });
                 }
             </script>
-            <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-            <script src="assets/js/jquery-3.4.1.min.js"></script>
-            <script src="assets/js/bootstrap.js"></script>
+            <script src="../Client/assets/bootstrap/js/bootstrap.min.js"></script>
+            <script src="../Client/assets/js/jquery-3.4.1.min.js"></script>
+            <script src="../Client/assets/js/bootstrap.js"></script>
 
 
 

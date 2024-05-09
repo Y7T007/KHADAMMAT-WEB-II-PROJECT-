@@ -288,9 +288,9 @@
                     });
                 }
             </script>
-            <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-            <script src="assets/js/jquery-3.4.1.min.js"></script>
-            <script src="assets/js/bootstrap.js"></script>
+            <script src="../Client/assets/bootstrap/js/bootstrap.min.js"></script>
+            <script src="../Client/assets/js/jquery-3.4.1.min.js"></script>
+            <script src="../Client/assets/js/bootstrap.js"></script>
 
 
 
