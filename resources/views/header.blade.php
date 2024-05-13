@@ -22,7 +22,7 @@
               <a  href="/login-client"  class="menu__link u-hover">Connexion</a>
             </li>
             <li class="menu__item">
-              <a  href="{{ route('login') }}"  class="menu__link u-hover">Devenir Partenaire</a>
+              <a  href="https://y7t007-khadamat-2e03a7b44149.herokuapp.com/login"  class="menu__link u-hover">Devenir Partenaire</a>
             </li>
           </ul>
         </nav>
